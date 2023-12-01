@@ -1,12 +1,8 @@
 import React from "react";
-<<<<<<< HEAD
-import './css/InicioSinLogin.css'
-=======
-import "../css/InicioSinLogin.css";
+import "./css/InicioSinLogin.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
->>>>>>> 9d58def6774789544ba69905ea2936cadb087b8f
 
 const InicioSinLogin = () => {
   return (
