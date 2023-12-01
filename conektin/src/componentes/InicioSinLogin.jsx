@@ -2,6 +2,7 @@ import React from "react";
 import '../css/InicioSinLogin.css'
 
 const InicioSinLogin = () => {
+  const listaDeImagenes = ['facebook.png', 'twiiter.png', 'instagram.png']
 
   return (
 
@@ -28,7 +29,7 @@ const InicioSinLogin = () => {
             repellendus quaerat! Officiis ipsa dolore necessitatibus commodi
             eligendi adipisci? Nostrum earum repellendus quia?
           </p>
-          <img src="https://i.kinja-img.com/image/upload/c_fit,q_60,w_1315/290c1a587fb5e6a9ac97ee526ff8d6c7.jpg" />
+          <img className='imgcont' src="https://i.kinja-img.com/image/upload/c_fit,q_60,w_1315/290c1a587fb5e6a9ac97ee526ff8d6c7.jpg" />
         </section>
         <section className="contenido2">
           <h2>Titulo Lema</h2>
@@ -76,8 +77,9 @@ const InicioSinLogin = () => {
           </div>
         </section>
       </div>
-      <h3>Siguenos</h3>
+      
       <div className="pie">
+      <h3>Siguenos</h3>
         <div className='enlacesimg'>
           <img />
           <img />

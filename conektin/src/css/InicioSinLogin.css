@@ -6,7 +6,7 @@
 .pie {
     display: flex;
     justify-content: space-between;
-    align-items: start;
+    align-items: center;
     padding: 10px
 }
 
@@ -42,7 +42,10 @@
     padding: 20px;
     margin-bottom: 20px;
 }
-
+.imgcont{
+    width: 800px;
+    height: 600px;
+}
 .objetivos {
     display: flex;
     justify-content: space-evenly;
@@ -54,4 +57,11 @@
     flex-direction: column;
     align-items: flex-end;
     margin-bottom: 20px;
+    background-color: black;
 }
+
+.pie , .pie h3, .enlacespag a{
+    background-color: black;
+    color: white;
+}
+
