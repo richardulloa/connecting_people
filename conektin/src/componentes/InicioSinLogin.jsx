@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/InicioSinLogin.css'
+import './css/InicioSinLogin.css'
 
 const InicioSinLogin = () => {
   const listaDeImagenes = ['facebook.png', 'twiiter.png', 'instagram.png']

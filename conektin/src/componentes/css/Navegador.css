@@ -1,0 +1,58 @@
+.navegador {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+}
+
+.logo-navegador {
+    width: 100px;
+}
+
+.barra-busqueda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #8f8f8f;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+
+.buscar {
+    height: 100%;
+    border-left: 2px solid #8f8f8f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.input-barra {
+    height: 35px;
+    border: none;
+    font-size: 1.15em;
+    padding-left: 15px;
+}
+
+.input-barra:focus {
+    outline: none;
+    border: none;
+}
+
+.label-barra {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em
+}
+
