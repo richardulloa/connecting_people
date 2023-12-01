@@ -1,67 +1,91 @@
 * {
+<<<<<<< HEAD:conektin/src/componentes/css/InicioSinLogin.css
     
+=======
+  background-color: antiquewhite;
+>>>>>>> 9d58def6774789544ba69905ea2936cadb087b8f:conektin/src/css/InicioSinLogin.css
 }
 
-.cabecera,
-.pie {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .imglogo {
-    width: 200px;
-    height: 100px;
+  width: 200px;
+  height: 100px;
 }
 
 .botones button {
-    padding: 10px 20px;
-    background-color: orange;
-    color: white;
-    border: 1px solid black;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: orange;
+  color: white;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .botones button:hover {
-    background-color: cyan;
-    color: black;
+  background-color: cyan;
+  color: black;
 }
 
 .btn1 {
-    border-radius: 50px 0px 0px 50px;
+  border-radius: 50px 0px 0px 50px;
 }
 
 .btn2 {
-    border-radius: 0px 50px 50px 0px;
+  border-radius: 0px 50px 50px 0px;
 }
 
 .contenido1,
 .contenido2 {
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
 }
-.imgcont{
-    width: 800px;
-    height: 600px;
+.imgcont {
+  width: 800px;
+  height: 600px;
 }
 .objetivos {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 40px;
+}
+
+.pie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: black;
+}
+
+.enlacesimg {
+  display: flex;
+  gap: 10px;
 }
 
 .enlacespag {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-bottom: 20px;
-    background-color: black;
+  display: flex;
+  gap: 10px;
+  margin-left: auto; /* Mueve enlacespag hacia la derecha */
+  flex-direction: column;
+  align-items: end;
 }
 
-.pie , .pie h3, .enlacespag a{
-    background-color: black;
-    color: white;
+.pie h3, .enlacespag,
+.enlacespag a,
+.enlacesimg,
+.fi,
+.ti,
+.ii {
+  background-color: black;
+  color: white;
 }
 
+.pie h3 {
+    margin-right: 30px;
+}
