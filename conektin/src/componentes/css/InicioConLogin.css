@@ -1,0 +1,61 @@
+.contenido {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.secciones {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(207, 210, 213);
+
+}
+
+.secciones h2 {
+    margin-left: 30px;
+}
+
+.proximos-eventos {
+    width: 65%;
+    height: 250px;
+    background-image: url("../../../public/img/proximosEventos.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+
+.proximos-eventos:hover{
+    background-color: #606060;
+}
+
+.tusEventos {
+    width: 25%;
+    height: 250px;
+}
+
+.eventosFamilias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+
+.eventos-ciudad {
+    width: 48%;
+    height: 250px;
+}
+
+.tusFamilias {
+    width: 48%;
+    height: 250px;
+}
+
+.tradiciones {
+    width: 25%;
+    height: 250px;
+}
