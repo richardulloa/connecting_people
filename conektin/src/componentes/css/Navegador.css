@@ -26,6 +26,9 @@
     padding: 0 10px;
 }
 
+.texto-lista {
+    font-size: 1.15em;
+}
 
 .buscar {
     height: 100%;
@@ -56,3 +59,7 @@
     gap: 1em
 }
 
+.foto-perfil {
+    font-size: 3em;
+    cursor: pointer;
+}
