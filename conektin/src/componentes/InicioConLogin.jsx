@@ -13,6 +13,16 @@ const InicioConLogin = () => {
             </header>
 
             <main className="contenido">
+                <Link to={"/"} className="box-container">
+                    <div className="box">
+                        <div className="background-image" style={{ backgroundImage: `url("https://img.freepik.com/foto-gratis/grupo-diverso-amigos-disparar-verano_53876-47015.jpg?w=1380&t=st=1701516264~exp=1701516864~hmac=0d3acfe6acbb5d0bffea85f2894eaeea4ecf3f695238290dd3d8c931395cae14")` }}></div>
+                        <div className="overlay">
+                            <p className="text">Proximos Eventos</p>
+                        </div>
+                    </div>
+                </Link>
+
+
 
 
                 <Link className="secciones proximos-eventos">
