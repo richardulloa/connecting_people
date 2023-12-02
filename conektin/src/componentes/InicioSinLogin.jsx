@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./css/InicioSinLogin.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -7,19 +8,23 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 const InicioSinLogin = () => {
   return (
     <div className="Nologin">
-      <div className="cabecera">
-        <div>
+      <header className="cabecera">
           <img
             className="imglogo"
             src="https://th.bing.com/th/id/OIP.BSdNpNqWXmy1WQ0o0qtRCwHaFy?rs=1&pid=ImgDetMain"
+            alt="Logo"
           />
+        <div>
+          <Link to={"/main"}>BOTON DE PRUEBA PARA CAMBIAR DE PAGINAS</Link>
         </div>
+
         <div className="botones">
           <button className="btn1">Iniciar Sesion</button>
           <button className="btn2">Registrate</button>
         </div>
-      </div>
-      <div className="contenido">
+      </header>
+
+      <main className="contenido">
         <section className="contenido1">
           <h2>Titulo Descripción</h2>
           <p>
@@ -31,6 +36,7 @@ const InicioSinLogin = () => {
           <img
             className="imgcont"
             src="https://i.kinja-img.com/image/upload/c_fit,q_60,w_1315/290c1a587fb5e6a9ac97ee526ff8d6c7.jpg"
+            alt="imagen principal"
           />
         </section>
         <section className="contenido2">
@@ -78,22 +84,21 @@ const InicioSinLogin = () => {
             </article>
           </div>
         </section>
-      </div>
+      </main>
 
-      <div className="pie">
+      <footer className="pie">
         <h3>Siguenos</h3>
         <div className="enlacesimg">
-          <FacebookIcon className="fi"  fontSize="large"/>
-          <TwitterIcon className="ti" fontSize="large"/>
-          <InstagramIcon className="ii" fontSize="large"/>
-          <img />
+          <FacebookIcon className="fi" fontSize="large" />
+          <TwitterIcon className="ti" fontSize="large" />
+          <InstagramIcon className="ii" fontSize="large" />
         </div>
         <div className="enlacespag">
           <a>Iniciar Sesión</a>
           <a>Registrate</a>
           <a>Ayuda</a>
         </div>
-      </div>
+      </footer>
     </div>
   );
 };

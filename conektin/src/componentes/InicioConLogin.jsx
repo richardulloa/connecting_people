@@ -1,6 +1,7 @@
 import React from "react";
 import './css/InicioConLogin.css'
 import Navegador from "./Navegador";
+import { Link } from "react-router-dom";
 
 
 const InicioConLogin = () => {
@@ -12,9 +13,11 @@ const InicioConLogin = () => {
             </header>
 
             <main className="contenido">
-                <section className="secciones proximos-eventos">
+
+
+                <Link className="secciones proximos-eventos">
                     <h2>Proximos Eventos</h2>
-                </section>
+                </Link>
 
                 <section className="secciones tusEventos">
                     <h2>Tus Eventos</h2>

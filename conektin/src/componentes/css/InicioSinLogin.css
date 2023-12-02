@@ -1,7 +1,7 @@
 
 .cabecera {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 10px;
 }
@@ -17,11 +17,11 @@
   color: white;
   border: 1px solid black;
   cursor: pointer;
+  transition: 0.1s;
 }
 
 .botones button:hover {
-  background-color: cyan;
-  color: black;
+  background-color: rgb(163, 108, 7);
 }
 
 .btn1 {

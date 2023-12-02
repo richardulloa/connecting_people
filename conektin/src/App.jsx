@@ -1,11 +1,16 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import './App.css';
-import InicioSinLogin from './componentes/InicioSinLogin';
-import InicioConLogin from './componentes/InicioConLogin';
+import { Router } from './Router/router';
+
+
 
 function App() {
   return (
     <div className="App">
-      <InicioConLogin/>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </div>
   );
 }

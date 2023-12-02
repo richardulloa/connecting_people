@@ -1,5 +1,5 @@
 .contenido {
-    width: 80%;
+    width: 85%;
     margin: 50px auto;
     display: flex;
     justify-content: center;
@@ -8,34 +8,39 @@
     gap: 2em;
 }
 
+.contenido a {
+    text-decoration: none;
+}
+
 .secciones {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(207, 210, 213);
-
-}
-
-.secciones h2 {
-    margin-left: 30px;
+    height: 35vh;
 }
 
 .proximos-eventos {
     width: 65%;
-    height: 250px;
-    background-image: url("../../../public/img/proximosEventos.jpg");
+    background-image: url("https://img.freepik.com/foto-gratis/grupo-diverso-amigos-disparar-verano_53876-47015.jpg?w=1380&t=st=1701516264~exp=1701516864~hmac=0d3acfe6acbb5d0bffea85f2894eaeea4ecf3f695238290dd3d8c931395cae14");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 1%;
     position: relative;
     z-index: -1;
 }
 
-.proximos-eventos:hover{
+
+.secciones h2 {
+    margin-left: 30px;
+    color: white;
+    z-index: 1;
+}
+.proximos-eventos:hover {
     background-color: #606060;
 }
 
 .tusEventos {
     width: 25%;
-    height: 250px;
 }
 
 .eventosFamilias {
@@ -47,15 +52,12 @@
 
 .eventos-ciudad {
     width: 48%;
-    height: 250px;
 }
 
 .tusFamilias {
     width: 48%;
-    height: 250px;
 }
 
 .tradiciones {
     width: 25%;
-    height: 250px;
 }
