@@ -59,7 +59,39 @@
     gap: 1em
 }
 
+.perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 185px;
+}
+
 .foto-perfil {
-    font-size: 3em;
+    font-size: 2em;
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
+}
+
+.añadir-ruta {
+    font-size: 1.75em;
+    background-color: black;
+    width: 130px;
+    height: 40px;
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.añadir-ruta-text {
+    font-size: initial;
 }

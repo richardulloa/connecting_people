@@ -44,9 +44,9 @@ const InicioConLogin = () => {
 
                     <Link to={"/"} className="secciones tus-familias">
                         <div className="caja">
-                            <div className="image tf"></div>
+                            <div className="image tc"></div>
                             <div className="overlay">
-                                <p className="text">Tus Familias</p>
+                                <p className="text">Tradiciones Ciudad</p>
                             </div>
                         </div>
                     </Link>
@@ -54,9 +54,9 @@ const InicioConLogin = () => {
 
                 <Link to={"/"} className="secciones tradiciones">
                     <div className="caja">
-                        <div className="image tc"></div>
+                        <div className="image tf"></div>
                         <div className="overlay">
-                            <p className="text">Tradiciones Ciudad</p>
+                            <p className="text">Tus Familias</p>
                         </div>
                     </div>
                 </Link>

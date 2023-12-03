@@ -2,7 +2,8 @@ import React from "react";
 import './css/Navegador.css'
 import ListIcon from '@mui/icons-material/List';
 import SearchIcon from '@mui/icons-material/Search';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PersonIcon from '@mui/icons-material/Person';
+import AddIcon from '@mui/icons-material/Add';
 
 
 const Navegador = () => {
@@ -20,7 +21,8 @@ const Navegador = () => {
                 </div>
             </section>
             <section className="perfil">
-                <div className="foto-perfil"><AccountCircleIcon fontSize="inherit"/></div>
+                <div className="foto-perfil"><PersonIcon fontSize="inherit"/></div>
+                <div className="añadir-ruta"><AddIcon fontSize="inherit" /> <span className="añadir-ruta-text">Crear Familia</span> </div>
             </section>
         </header>
     )
