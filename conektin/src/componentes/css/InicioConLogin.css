@@ -8,54 +8,20 @@
     gap: 2em;
 }
 
-.contenido a {
-    text-decoration: none;
-}
-
 .secciones {
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(207, 210, 213);
+    text-decoration: none;
     height: 35vh;
 }
 
 .proximos-eventos {
     width: 65%;
-    background-image: url("https://img.freepik.com/foto-gratis/grupo-diverso-amigos-disparar-verano_53876-47015.jpg?w=1380&t=st=1701516264~exp=1701516864~hmac=0d3acfe6acbb5d0bffea85f2894eaeea4ecf3f695238290dd3d8c931395cae14");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 1%;
-    position: relative;
 }
 
-.proximos-eventos::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.1);
-}
-
-.contenido a:hover .proximos-eventos::after{
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.secciones h2 {
-    margin-left: 30px;
-    color: rgb(255, 255, 255);
-    z-index: 1;
-}
-.proximos-eventos:hover {
-    background-color: #606060;
-}
-
-.tusEventos {
+.tus-eventos {
     width: 25%;
 }
 
-.eventosFamilias {
+.eventos-familias {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +32,7 @@
     width: 48%;
 }
 
-.tusFamilias {
+.tus-familias {
     width: 48%;
 }
 
@@ -74,28 +40,42 @@
     width: 25%;
 }
 
-
-
-.box-container {
-    text-decoration: none;
-  }
-  
-  .box {
+.caja {
+    border-radius: 5px;
     position: relative;
-    width: 300px;
-    height: 200px;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-  }
-  
-  .background-image {
+}
+
+.image {
     width: 100%;
     height: 100%;
     background-size: cover;
     background-position: center;
-    transition: filter 0.3s;
-  }
-  
-  .overlay {
+}
+
+.pe {
+    background-image: url("https://img.freepik.com/foto-gratis/grupo-diverso-amigos-disparar-verano_53876-47015.jpg?w=1380&t=st=1701516264~exp=1701516864~hmac=0d3acfe6acbb5d0bffea85f2894eaeea4ecf3f695238290dd3d8c931395cae14");
+}
+
+.te {
+    background-image: url("https://img.freepik.com/foto-gratis/gente-jugando-globos-fondo-pantalla-fiesta_53876-137700.jpg?size=626&ext=jpg&ga=GA1.1.1658983444.1698594809&semt=ais");
+}
+
+.ec {
+    background-image: url("https://www.tornaveu.cat/app/uploads/sites/25/2023/11/9d9folre.jpg");
+}
+
+.tf {
+    background-image: url("https://img.freepik.com/foto-gratis/grupo-fanaticos-reunidos-estadio-thge-animando_1303-18617.jpg?w=1380&t=st=1701601669~exp=1701602269~hmac=8a9c509f50f3bb91dcd72fd7004dc5ec4fae3e137edde52b50f8fe8471e0f746");
+}
+
+.tc {
+    background-image: url("https://www.tiodenadal.online/wp-content/uploads/2023/10/catalan-barretina-cagatio.jpg");
+}
+
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -104,21 +84,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.3);
-  }
-  
-  .text {
+    background: rgba(0, 0, 0, 0.2);
+    transition: 0.2s;
+}
+
+.text {
+    position: absolute;
+    top: 3%;
+    left: 5%;
     color: white;
-    font-size: 1.2rem; /* Tamaño inicial del texto */
-    font-weight: 1000;
-    text-align: center;
-    transition: font-size 0.3s; /* Animación del cambio de tamaño */
-  }
-  
-  .box:hover .background-image {
-    filter: brightness(0.7); /* Oscurecer la imagen al hacer hover */
-  }
-  
-  .box .overlay:hover .text {
-    font-size: 1.5rem; /* Tamaño del texto al hacer hover */
-  }
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+
+.caja:hover .overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.caja:hover .text {
+    color: white;
+    font-size: 1.75rem;
+}
