@@ -13,7 +13,7 @@ const Navegador = () => {
             <img className="logo-navegador" src="./logo192.png" alt="Logo" />
             <section className="barra-busqueda">
                 <div className="lista">
-                    <div className="label-barra"> <ListIcon /> <span className="texto-lista">Lista intereses</span> </div>
+                    <div className="label-barra"> <ListIcon /> <span className="texto-lista">Intereses</span> </div>
                 </div>
                 <div className="buscar">
                     <input id="barra" className="input-barra" type="text" placeholder="Buscar" />
