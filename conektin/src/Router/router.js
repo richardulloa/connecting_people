@@ -1,8 +1,9 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import InicioSinLogin from '../Componentes/InicioSinLogin';
-import InicioConLogin from '../Componentes/InicioConLogin';
+import InicioSinLogin from '../componentes/InicioSinLogin';
+import InicioConLogin from '../componentes/InicioConLogin';
 import Miperfil from '../componentes/Miperfil';
+import Alta from '../componentes/Alta'
 
 
 export function Router() {
@@ -10,7 +11,8 @@ export function Router() {
         <Routes>
             <Route path='/' element={<InicioSinLogin />} />
             <Route path='/main' element={<InicioConLogin />} />
-            <Route path= '/perfil' element={<Miperfil/>}/>
+            <Route path='/perfil' element={<Miperfil/>}/>
+            <Route path='/alta' element={<Alta />} />
         </Routes>
     )
 }
