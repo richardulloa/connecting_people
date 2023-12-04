@@ -5,15 +5,19 @@ import './css/Alta.css'
 
 
 function Alta() {
-    const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
-    const password = watch('password','')
-   /* const validateFechaNacimiento = (value) => {
+    const { register, handleSubmit, formState: { errors }, reset, setFocus, watch } = useForm()
+    const password = watch('password')
+    const validateFechaNacimiento = (value) => {
         const fechaNacimiento = new Date(value);
         const edadMinima = new Date();
         edadMinima.setFullYear(edadMinima.getFullYear() - 18);
-
-        return fechaNacimiento <= edadMinima ||  <div className='errores'>Debe tener almenos 18 años</div>;
-    };*/
+        console.log(fechaNacimiento >= edadMinima, edadMinima, fechaNacimiento)
+        if (fechaNacimiento <= edadMinima) {
+            return <div className='errores'>Debes tener al menos 18  años</div>
+        }
+        else
+            return
+    };
     const recogerDatos = (datos) => {
         console.table(datos)
         setFocus('nombre')
@@ -41,11 +45,7 @@ function Alta() {
                         <div className="errores">Este campo es obligatorio</div> : null}
                     {errors.nombre?.type === 'maxLength' &&
                         <div className='errores'>La longitud del nombre no puede superar los 30 carácteres</div>}
-                    <div className='pregunta'>
-                        <label htmlFor='apellidos'>Apellidos</label>
-                        <br></br>
-                        <input id='apellidos'  {...register('apellidos')} />
-                    </div>
+
                     <div className='pregunta'>
                         <label htmlFor='email'>Correo electrónico: </label>
                         <br></br>
@@ -60,22 +60,6 @@ function Alta() {
                         <p className='errores'>Ingrese un correo electrónico válido</p>
                     )}
                     <div className='pregunta'>
-                        <label htmlFor='usuario'>Usuario</label>
-                        <br></br>
-                        <input id='usuario' {...register('usuario', { required: true, maxLength: 10, minLength: 6 })} />
-                    </div>
-                    {errors.usuario?.type === 'required' ?
-                        <div className="errores">Este campo es obligatorio</div>
-                        :
-                        null
-                    }
-                    {errors.nombre?.type === 'maxLength' &&
-                        <div className='errores'>El usuario debe tener entre 6 y 10 carácteres</div>
-                    }
-                    {errors.nombre?.type === 'minLength' &&
-                        <div className='errores'>El usuario debe tener entre 6 y 10 carácteres</div>
-                    }
-                    <div className='pregunta'>
                         <label htmlFor='password'>Contraseña</label>
                         <br></br>
                         <input type='password' id='password' {...register('password', { required: true, minLength: 6, })} />
@@ -87,25 +71,25 @@ function Alta() {
                         )}
                     </div>
                     <div className='pregunta'>
-                        <label htmlFor='password'>Confirma tu contraseña</label>
+                        <label htmlFor='confirmPassword'>Confirma tu contraseña</label>
                         <br></br>
-                        <input type='password' id='confirmPassword' {... register('confirmPassword',{validate:(value)=> value === watch('password')})}/>
+                        <input type='password' id='confirmPassword' {...register('confirmPassword', { validate: (value) => value === watch('password') })} />
                         {errors.confirmPassword && (
                             <div className='errores'>
-                                
+                                {errors.confirmPassword.type === 'validate' && 'Las contraseñas no coinciden'}
+                            </div>
                         )}
                     </div>
-
                     <div className='pregunta'>
                         <label htmlFor='fechaNacimiento'>Fecha de nacimiento</label>
                         <br></br>
                         <input type='date' id='fechaNacimiento' {...register('fechaNacimiento', {
-                            required: true,
+                            required: true, validate: validateFechaNacimiento
                         })}
                         />
                         {errors.fechaNacimiento?.type === 'required' ?
-                            <div className='errores'>Este campo es obligatorio</div>:null
-                    }
+                            <div className='errores'>Este campo es obligatorio</div> : null}
+                        {errors.fechaNacimiento?.type === 'validate' && 'Debes tener al menos 18 años'}
                     </div>
                     <div className='pregunta'>
                         <label htmlFor='cp'>Código postal</label>

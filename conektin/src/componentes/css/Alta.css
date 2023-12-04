@@ -6,6 +6,8 @@ label {
     display: block;
     font-size: small;
     text-align: justify;
+    color: white;
+    
 }
 
 .pregunta {
@@ -27,6 +29,7 @@ form {
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background-color: #3a5ba0;
 
 }
 
