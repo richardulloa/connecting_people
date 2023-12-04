@@ -3,7 +3,6 @@ import { useForm, } from 'react-hook-form';
 import './css/Alta.css'
 
 
-
 function Alta() {
     const { register, handleSubmit, formState: { errors }, reset, setFocus, watch } = useForm()
     const password = watch('password')

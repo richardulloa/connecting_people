@@ -5,6 +5,7 @@ import InicioConLogin from '../componentes/InicioConLogin';
 import Miperfil from '../componentes/Miperfil';
 import Alta from '../componentes/Alta'
 import ProximosEventos from '../componentes/ProximosEventos';
+import Evento from '../componentes/Evento';
 
 
 export function Router() {
@@ -15,6 +16,7 @@ export function Router() {
             <Route path='/perfil' element={<Miperfil/>}/>
             <Route path='/alta' element={<Alta />} />
             <Route path='/proximos-eventos' element={<ProximosEventos />} />
+            <Route path='/evento' element={<Evento />} />
         </Routes>
     )
 }

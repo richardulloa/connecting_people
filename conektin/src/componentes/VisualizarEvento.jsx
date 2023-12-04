@@ -2,6 +2,8 @@ import React from "react";
 import "./css/VisualizarEvento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import GroupsIcon from '@mui/icons-material/Groups';
+
 
 const VisualizarEvento = () => {
     return (
@@ -10,8 +12,7 @@ const VisualizarEvento = () => {
                 <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
                 <section className="info-inicial">
                     <h3>Barbacoa</h3>
-                    <h3><span className="nombre-familia">Nombre familia</span></h3>
-
+                    <h3 className="family"><GroupsIcon /><span className="nombre-familia">Nombre familia</span></h3>
                     <p>Nombre organizador</p>
                 </section>
             </div>

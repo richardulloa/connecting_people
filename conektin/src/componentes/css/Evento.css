@@ -1,0 +1,20 @@
+.evento-info {
+    width: 85%;
+    margin: 50px auto;
+}
+
+.titulo-evento {
+    font-size: 3em;
+}
+
+.imagen-evento {
+    width: 500px;
+}
+
+.titulo-descripcion-evento {
+    font-size: 2em
+}
+
+.descripcion-evento {
+    width: 65%;
+}
