@@ -8,9 +8,7 @@ const InicioConLogin = () => {
 
     return (
         <div className="contenido-inicio">
-            <header>
-                <Navegador />
-            </header>
+            <Navegador />
 
             <main className="contenido">
 

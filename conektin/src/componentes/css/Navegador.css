@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: #1f4690;
 }
 
 .logo-navegador {
@@ -16,7 +16,7 @@
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
-    border: 1px solid #8f8f8f;
+    color: #3a5ba0;
 }
 
 .lista {
@@ -32,7 +32,7 @@
 
 .buscar {
     height: 100%;
-    border-left: 2px solid #8f8f8f;
+    border-left: 2px solid #1f4690;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +44,7 @@
     border: none;
     font-size: 1.15em;
     padding-left: 15px;
+    color: #3a5ba0;
 }
 
 .input-barra:focus {
@@ -63,12 +64,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 185px;
+    width: 200px;
 }
 
 .foto-perfil {
     font-size: 2em;
-    background-color: black;
+    background-color: #ffc700;
     width: 40px;
     height: 40px;
     color: white;
@@ -81,8 +82,9 @@
 
 .añadir-ruta {
     font-size: 1.75em;
-    background-color: black;
-    width: 130px;
+    font-weight: 700;
+    background-color: #ffc700;
+    width: 150px;
     height: 40px;
     color: white;
     border-radius: 5px;
