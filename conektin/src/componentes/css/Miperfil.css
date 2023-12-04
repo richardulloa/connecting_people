@@ -1,0 +1,38 @@
+.perfil {
+    display: flex;
+}
+
+.contenidoPerfil {
+    display: flex;
+}
+
+.barraLateral {
+    width: 100px;
+    /* Ancho de la barra lateral */
+    background-color: red
+    /* Color de fondo de la barra lateral */
+}
+
+.imagenPerfil {
+    width: 80px;
+    /* Ancho de la imagen de perfil */
+    height: 80px;
+    /* Altura de la imagen de perfil */
+    border-radius: 50%;
+    /* Para hacer un círculo */
+    background-color: #ccc;
+    /* Color de fondo si no hay imagen */
+    margin: 10px auto;
+    /* Margen para centrar la imagen verticalmente */
+    /* Puedes agregar la propiedad background-image con la URL de la imagen de perfil */
+}
+
+.imagenPerfil {
+    background-image: url(https://www.paulinacocina.net/wp-content/uploads/2021/12/arroz-chaufa-peruano-receta-800x534.jpg)
+}
+
+.cajaEvento {
+    width: 60px;
+    height: 40px;
+    border: 1px solid black
+}
