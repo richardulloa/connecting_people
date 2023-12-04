@@ -6,13 +6,14 @@ import './css/Alta.css'
 
 function Alta() {
     const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
-    const validateFechaNacimiento = (value) => {
+    const password = watch('password','')
+   /* const validateFechaNacimiento = (value) => {
         const fechaNacimiento = new Date(value);
         const edadMinima = new Date();
         edadMinima.setFullYear(edadMinima.getFullYear() - 18);
 
         return fechaNacimiento <= edadMinima ||  <div className='errores'>Debe tener almenos 18 años</div>;
-    };
+    };*/
     const recogerDatos = (datos) => {
         console.table(datos)
         setFocus('nombre')
@@ -77,12 +78,21 @@ function Alta() {
                     <div className='pregunta'>
                         <label htmlFor='password'>Contraseña</label>
                         <br></br>
-                        <input id='password' {...register('password', { required: true, minLength: 6, })} />
+                        <input type='password' id='password' {...register('password', { required: true, minLength: 6, })} />
                         {errors.password && (
                             <div className='errores'>
                                 {errors.password.type === 'minLength' && 'La contraseña debe tener al menos 6 caracteres'}
                                 {errors.password.type === 'required' && 'Este campo es obligatorio'}
                             </div>
+                        )}
+                    </div>
+                    <div className='pregunta'>
+                        <label htmlFor='password'>Confirma tu contraseña</label>
+                        <br></br>
+                        <input type='password' id='confirmPassword' {... register('confirmPassword',{validate:(value)=> value === watch('password')})}/>
+                        {errors.confirmPassword && (
+                            <div className='errores'>
+                                
                         )}
                     </div>
 
@@ -91,7 +101,6 @@ function Alta() {
                         <br></br>
                         <input type='date' id='fechaNacimiento' {...register('fechaNacimiento', {
                             required: true,
-                            validate: validateFechaNacimiento,
                         })}
                         />
                         {errors.fechaNacimiento?.type === 'required' ?
