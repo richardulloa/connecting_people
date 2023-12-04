@@ -9,10 +9,9 @@ const InicioConLogin = () => {
     return (
         <div className="contenido-inicio">
             <Navegador />
-
             <main className="contenido">
 
-                <Link to={"/"} className="secciones proximos-eventos">
+                <Link to={"/proximos-eventos"} className="secciones proximos-eventos">
                     <div className="caja">
                         <div className="image pe"></div>
                         <div className="overlay">
@@ -39,7 +38,7 @@ const InicioConLogin = () => {
                             </div>
                         </div>
                     </Link>
-
+                    
                     <Link to={"/"} className="secciones tus-familias">
                         <div className="caja">
                             <div className="image tc"></div>

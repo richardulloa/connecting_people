@@ -1,0 +1,18 @@
+.proximos-eventos-seccion {
+    width: 85%;
+    margin: 50px auto;
+
+}
+
+.titulo-seccion {
+    font-size: 3em;
+}
+
+.eventos-seccion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+
+}

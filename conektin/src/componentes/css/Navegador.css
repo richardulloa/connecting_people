@@ -2,8 +2,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1f4690;
+    background-color: #3a5ba0;
 }
+/*background-color: #1f4690;*/
 
 .logo-navegador {
     width: 75px;
@@ -16,7 +17,8 @@
     background-color: white;
     border-radius: 5px;
     overflow: hidden;
-    color: #3a5ba0;
+    color: #1f4690;
+    font-weight: 500;
 }
 
 .lista {
@@ -45,6 +47,13 @@
     font-size: 1.15em;
     padding-left: 15px;
     color: #3a5ba0;
+}
+
+.input-barra::placeholder {
+    color: #3a5ba0;
+    position: absolute;
+    margin-top: 1px;
+    font-weight: 500;
 }
 
 .input-barra:focus {
