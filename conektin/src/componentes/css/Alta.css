@@ -14,7 +14,7 @@ label {
     margin-bottom: 1px;
 }
 
-form > div > input {
+form#altaUsuario > div > input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -23,7 +23,7 @@ form > div > input {
     box-sizing: border-box;
 }
 
-form {
+form#altaUsuario {
     max-width: 400px;
     margin: auto;
     padding: 20px;
@@ -72,3 +72,11 @@ form > h1 {
     font-size: 0.8em;
 }
 
+.submit1{
+    color: white;
+    background-color: #ffc700;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    
+
+}

@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+
+main{
+    margin-top: 50px;
+}
+
+form#formularioFamilia{
+max-width: 800px;
+margin: auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 8px;
+background-color: #1f4690;
+}
+
+/*form#formularioFamilia > div > input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 300px;
+}*/
+
+input#nombreFamilia{
+    height: 40px;
+    width: 750px;
+}
+
+textarea#descripccion{
+    color: black;
+    font-size: small;
+    font-weight: lighter;
+    height: 200px;
+    width: 750px;
+    resize: none;
+}
+
+form > h1 {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    margin-left: 0;
+    font-weight: bold;
+    font-size: 25px;
+    color: white;
+}
+
+label#nombreFamilia, #descripccion{
+    font-size: xx-large;
+    font-weight: 900;
+    color: #ffc700;
+}
+
+
+
+p{
+    color: white;
+}
+
+.submit2{
+    font-size: large;
+    color: black;
+    background-color: #ffc700;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100px;
+    height: 50px;
+    margin-left: 325px;
+    background: radial-gradient( #ffe5b4, #d19100)
+
+}
