@@ -34,10 +34,10 @@ function Alta() {
                 </div>
             </header>
             <main>
-                <form onSubmit={handleSubmit(recogerDatos)}>
+                <form id='altaUsuario' onSubmit={handleSubmit(recogerDatos)}>
                     <h1>Regístrate</h1>
                     <div className='pregunta'>
-                        <label htmlFor='nombre'>Nombre y Apellidos</label>
+                        <label id='altaUsuario' htmlFor='nombre'>Nombre y Apellidos</label>
                         <br></br>
                         <input id='nombre' autoFocus {...register('nombre', { required: true, maxLength: 30 })} />
                     </div>
@@ -66,7 +66,7 @@ function Alta() {
                             <p className='errores'>Ingrese un correo electrónico válido</p>)
                     }
                     <div className='pregunta'>
-                        <label htmlFor='password'>Contraseña</label>
+                        <label htmlFor='password'>Contraseña:</label>
                         <br></br>
                         <input type='password' id='password' {...register('password', { required: true, minLength: 6, })} />
                         {
@@ -78,7 +78,7 @@ function Alta() {
                         }
                     </div>
                     <div className='pregunta'>
-                        <label htmlFor='confirmPassword'>Confirma tu contraseña</label>
+                        <label htmlFor='confirmPassword'>Confirma tu contraseña:</label>
                         <br></br>
                         <input type='password' id='confirmPassword' {...register('confirmPassword', { validate: (value) => value === watch('password') })} />
                         {errors.confirmPassword && (
@@ -89,7 +89,7 @@ function Alta() {
                     </div>
 
                     <div className='pregunta'>
-                        <label htmlFor='fechaNacimiento'>Fecha de nacimiento</label>
+                        <label htmlFor='fechaNacimiento'>Fecha de nacimiento:</label>
                         <br></br>
                         <input type='date' id='fechaNacimiento' {...register('fechaNacimiento', {
                             required: true, validate: validateFechaNacimiento
@@ -111,7 +111,7 @@ function Alta() {
                     </div>
 
                     <div className='pregunta'>
-                        <label htmlFor='cp'>Código postal</label>
+                        <label htmlFor='cp'>Código postal:</label>
                         <br />
                         <input id='cp' {...register('cp', { required: true, maxLength: 5 })} />
                     </div>
@@ -126,7 +126,7 @@ function Alta() {
                     <div className='pregunta'>
                         <label></label>
                         <br></br>
-                        <input type='submit' className='submit' />
+                        <input type='submit' className='submit1' />
                     </div>
                 </form>
             </main>
