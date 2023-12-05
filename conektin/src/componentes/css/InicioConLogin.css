@@ -1,11 +1,11 @@
 .contenido {
-    width: 85%;
+    width: 75%;
     margin: 50px auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 2.25em;
 }
 
 .secciones {
@@ -14,18 +14,18 @@
 }
 
 .proximos-eventos {
-    width: 65%;
+    width: 70%;
 }
 
 .tus-eventos {
-    width: 25%;
+    width: 27%;
 }
 
 .eventos-familias {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 65%;
+    width: 70%;
 }
 
 .eventos-ciudad {
@@ -37,7 +37,7 @@
 }
 
 .tradiciones {
-    width: 25%;
+    width: 27%;
 }
 
 .caja {

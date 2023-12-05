@@ -10,7 +10,6 @@ const InicioConLogin = () => {
         <div className="contenido-inicio">
             <Navegador />
             <main className="contenido">
-
                 <Link to={"/proximos-eventos"} className="secciones proximos-eventos">
                     <div className="caja">
                         <div className="image pe"></div>

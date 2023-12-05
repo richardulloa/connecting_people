@@ -7,14 +7,12 @@ const ProximosEventos = () => {
     return (
         <div className='contenido-proximos-eventos'>
             <Navegador />
-
             <main className="proximos-eventos-seccion">
                 <h1 className="titulo-seccion">Proximos Eventos</h1>
                 <section className="eventos-seccion">
                     <VisualizarEvento />
                     <VisualizarEvento />
                     <VisualizarEvento />
-                    
                 </section>
 
             </main>

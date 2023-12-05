@@ -1,7 +1,8 @@
-
 .cabecera {
+  width: 75%;
+  margin: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
 }
@@ -38,10 +39,12 @@
   padding: 20px;
   margin-bottom: 20px;
 }
+
 .imgcont {
   width: 800px;
   height: 600px;
 }
+
 .objetivos {
   display: flex;
   justify-content: space-evenly;
@@ -49,27 +52,33 @@
 }
 
 .pie {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 10px;
   background-color: black;
 }
 
+.pie-flex {
+  width: 75%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .enlacesimg {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .enlacespag {
   display: flex;
   gap: 10px;
-  margin-left: auto; /* Mueve enlacespag hacia la derecha */
   flex-direction: column;
   align-items: end;
 }
 
-.pie h3, .enlacespag,
+.pie h3,
+.enlacespag,
 .enlacespag a,
 .enlacesimg,
 .fi,
@@ -80,5 +89,5 @@
 }
 
 .pie h3 {
-    margin-right: 30px;
+  margin-right: 30px;
 }

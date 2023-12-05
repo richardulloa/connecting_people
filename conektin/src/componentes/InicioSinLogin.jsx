@@ -10,11 +10,11 @@ const InicioSinLogin = () => {
   return (
     <div className="Nologin">
       <header className="cabecera">
-          <img
-            className="imglogo"
-            src="https://th.bing.com/th/id/OIP.BSdNpNqWXmy1WQ0o0qtRCwHaFy?rs=1&pid=ImgDetMain"
-            alt="Logo"
-          />
+        <img
+          className="imglogo"
+          src="https://th.bing.com/th/id/OIP.BSdNpNqWXmy1WQ0o0qtRCwHaFy?rs=1&pid=ImgDetMain"
+          alt="Logo"
+        />
         <div>
           <Link to={"/main"}>BOTON DE PRUEBA PARA CAMBIAR DE PAGINAS</Link>
         </div>
@@ -88,16 +88,18 @@ const InicioSinLogin = () => {
       </main>
 
       <footer className="pie">
-        <h3>Siguenos</h3>
-        <div className="enlacesimg">
-          <FacebookIcon className="fi" fontSize="large" />
-          <TwitterIcon className="ti" fontSize="large" />
-          <InstagramIcon className="ii" fontSize="large" />
-        </div>
-        <div className="enlacespag">
-          <a>Iniciar Sesión</a>
-          <a>Registrate</a>
-          <a>Ayuda</a>
+        <div className="pie-flex">
+          <div className="enlacesimg">
+            <h3>Siguenos</h3>
+            <FacebookIcon className="fi" fontSize="large" />
+            <TwitterIcon className="ti" fontSize="large" />
+            <InstagramIcon className="ii" fontSize="large" />
+          </div>
+          <div className="enlacespag">
+            <a>Iniciar Sesión</a>
+            <a>Registrate</a>
+            <a>Ayuda</a>
+          </div>
         </div>
       </footer>
     </div>

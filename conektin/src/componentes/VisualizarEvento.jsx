@@ -3,11 +3,12 @@ import "./css/VisualizarEvento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupsIcon from '@mui/icons-material/Groups';
+import { Link } from "react-router-dom";
 
 
 const VisualizarEvento = () => {
     return (
-        <div className='contenido-evento'>
+        <Link to={"/evento"} className='contenido-evento'>
             <div className="flex-evento">
                 <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
                 <section className="info-inicial">
@@ -20,7 +21,7 @@ const VisualizarEvento = () => {
                 <p><CalendarMonthIcon /><span>19/08/2024</span></p>
                 <p><LocationOnIcon />Ubicación</p>
             </section>
-        </div>
+        </Link>
     );
 }
 

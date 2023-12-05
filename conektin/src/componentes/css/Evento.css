@@ -1,14 +1,48 @@
-.evento-info {
-    width: 85%;
+.evento-box-flex {
+    width: 75%;
     margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.evento-info {
+    width: 65%;
 }
 
 .titulo-evento {
     font-size: 3em;
+    margin-top: 0;
+}
+
+.caja-evento {
+    display: flex;
+    justify-content: start;
+    gap: 2em;
 }
 
 .imagen-evento {
-    width: 500px;
+    width: 700px;
+}
+
+.caja-evento-info {
+    border: 1px solid black;
+}
+
+.caja-evento-info>p {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0 0 15px 0;
+    font-size: 1.15em;
+}
+
+.miembros-evento {}
+
+.miembros-evento h3 {
+    font-size: 2em;
+    width: 400px;
+    border: 1px solid black;
 }
 
 .titulo-descripcion-evento {
@@ -16,5 +50,11 @@
 }
 
 .descripcion-evento {
-    width: 65%;
+    width: 100%;
+}
+
+.mapa-evento {
+    width: 25%;
+    margin: 104px 0 0 0;
+    border: 1px solid black;
 }
