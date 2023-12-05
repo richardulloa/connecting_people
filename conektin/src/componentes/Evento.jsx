@@ -13,10 +13,10 @@ const Evento = () => {
             <div className="evento-box-flex">
                 <div className="evento-info">
                     <h1 className="titulo-evento">Nombre Evento</h1>
+                    <p><GroupsIcon fontSize="inherit" />Nombre familia</p>
                     <section className="caja-evento">
                         <img className="imagen-evento" src="./img/bbq1.jpeg" alt="" />
                         <div className="caja-evento-info">
-                            <p ><GroupsIcon fontSize="inherit" />Nombre familia</p>
                             <p><CalendarMonthIcon fontSize="inherit" />19/08/2024</p>
                             <p><LocationOnIcon fontSize="inherit" />Ubicación</p>
                             <section className="miembros-evento">

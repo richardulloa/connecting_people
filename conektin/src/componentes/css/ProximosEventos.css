@@ -1,5 +1,5 @@
 .proximos-eventos-seccion {
-    width: 75%;
+    width: 80%;
     margin: 50px auto;
 }
 
@@ -13,5 +13,4 @@
     justify-content: center;
     flex-direction: column;
     gap: 1em;
-
 }

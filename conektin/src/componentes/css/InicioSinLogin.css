@@ -1,5 +1,5 @@
 .cabecera {
-  width: 75%;
+  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -57,7 +57,7 @@
 }
 
 .pie-flex {
-  width: 75%;
+  width: 80%;
   margin: auto;
   display: flex;
   justify-content: space-between;
