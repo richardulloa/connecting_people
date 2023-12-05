@@ -1,0 +1,16 @@
+.busca-familia-seccion {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.titulo-seccion {
+    font-size: 3em;
+}
+
+.familias-seccion {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1em;
+}
