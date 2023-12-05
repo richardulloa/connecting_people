@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 
+
 const InicioSinLogin = () => {
   return (
     <div className="Nologin">
@@ -19,8 +20,8 @@ const InicioSinLogin = () => {
         </div>
 
         <div className="botones">
-          <button className="btn1">Iniciar Sesion</button>
-          <button className="btn2">Registrate</button>
+          <Link className="btn1">Iniciar Sesion</Link>
+          <Link to={"/alta"} className="btn2">Registrate</Link>
         </div>
       </header>
 

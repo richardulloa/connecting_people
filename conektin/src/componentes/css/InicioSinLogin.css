@@ -11,7 +11,7 @@
   height: 100px;
 }
 
-.botones button {
+.botones a {
   padding: 10px 20px;
   background-color: orange;
   color: white;
@@ -20,7 +20,7 @@
   transition: 0.1s;
 }
 
-.botones button:hover {
+.botones a:hover {
   background-color: rgb(163, 108, 7);
 }
 
