@@ -6,8 +6,6 @@ import './css/Alta.css'
 function Alta() {
     const { register, handleSubmit, formState: { errors }, reset, setFocus, watch } = useForm()
 
-    const password = watch('password')
-
     const validateFechaNacimiento = (value) => {
         const fechaNacimiento = new Date(value);
         const edadMinima = new Date();
@@ -20,7 +18,38 @@ function Alta() {
     };
 
     const recogerDatos = (datos) => {
-        console.table(datos)
+
+        const API_EXCURSIONES = 'http://localhost:3000/api/usuarios'
+
+        const objetoDatos = {
+            nombreUsuario: datos.nombre,
+            email: datos.email,
+            password: datos.password,
+            cp: datos.cp,
+            fechaNacimiento: datos.fechaNacimiento
+        }
+
+        const parametros = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objetoDatos),
+            mode: 'cors'
+        }
+
+        const peticion = fetch(API_EXCURSIONES, parametros)
+        peticion
+            .then((resp) => resp.json())
+            .then((mesage) => {
+                if (mesage.error) {
+                    alert("ALGO SALIO MAL")
+                } else {
+                    alert("ALTA COMPLETADA")
+                }
+            })
+            .catch((error) => alert(error))
+
         setFocus('nombre')
         reset()
     }

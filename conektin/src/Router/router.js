@@ -18,7 +18,7 @@ export function Router() {
             <Route path='/perfil' element={<Perfil/>}/>
             <Route path='/alta' element={<Alta />} />
             <Route path='/proximos-eventos' element={<ProximosEventos />} />
-            <Route path='/evento' element={<Evento />} />
+            <Route path='/evento/:id' element={<Evento />} />
             <Route path='/crear-familia' element={<CrearFamilia />} />
             <Route path='/busca-familia' element={<BuscaFamilias />} />
             <Route path='/*' element={<Navigate to='/'/>}/>

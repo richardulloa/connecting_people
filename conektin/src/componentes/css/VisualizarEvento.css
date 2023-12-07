@@ -29,7 +29,6 @@
 }
 
 .contenido-evento > .flex-evento > .info-inicial {
-    width: 300px;
     display: flex;
     justify-content: start;
     align-items: start;

@@ -5,9 +5,37 @@ import Navegador from './Navegador';
 
 function CrearFamilia() {
     const { register, handleSubmit, formState: { errors }, reset, setFocus, } = useForm()
-    
+
     const datosFamilia = (datos) => {
-        console.table(datos)
+
+        const API_EXCURSIONES = 'http://localhost:3000/api/familias'
+
+        const objetoDatos = {
+            nombreFamilia: datos.nombreFamilia,
+            descripcionFamilia: datos.descripccion,
+        }
+
+        const parametros = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objetoDatos),
+            mode: 'cors'
+        }
+
+        const peticion = fetch(API_EXCURSIONES, parametros)
+        peticion
+            .then((resp) => resp.json())
+            .then((mesage) => {
+                if (mesage.error) {
+                    alert("ALGO SALIO MAL")
+                } else {
+                    alert("ALTA COMPLETADA")
+                }
+            })
+            .catch((error) => alert(error))
+
         setFocus('nombreFamilia')
         reset()
     }

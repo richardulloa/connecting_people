@@ -1,5 +1,6 @@
 *{
   box-sizing: border-box;
+  
 }
 
 body {
@@ -10,6 +11,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #FFE5B4;
+  overflow-y: scroll;
+  height: 100vh;
 }
 
 code {
