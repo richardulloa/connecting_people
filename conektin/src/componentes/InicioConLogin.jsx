@@ -19,15 +19,15 @@ const InicioConLogin = () => {
                     </div>
                 </Link>
 
-                <Link to={"/"} className="secciones tus-eventos">
+                <Link to={"/busca-familia"} className="secciones busca-familia">
                     <div className="caja">
-                        <div className="image te"></div>
+                        <div className="image bf"></div>
                         <div className="overlay">
                             <p className="text">Busca una familia</p>
                         </div>
                     </div>
                 </Link>
-
+                
                 <section className="eventos-familias">
                     <Link to={"/"} className="secciones eventos-ciudad ">
                         <div className="caja">

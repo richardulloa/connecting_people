@@ -7,6 +7,7 @@ import Alta from '../componentes/Alta'
 import ProximosEventos from '../componentes/ProximosEventos';
 import Evento from '../componentes/Evento';
 import CrearFamilia from '../componentes/CrearFamilia';
+import BuscaFamilias from '../componentes/BuscaFamilia';
 
 
 export function Router() {
@@ -19,6 +20,8 @@ export function Router() {
             <Route path='/proximos-eventos' element={<ProximosEventos />} />
             <Route path='/evento' element={<Evento />} />
             <Route path='/crear-familia' element={<CrearFamilia />} />
+            <Route path='/busca-familia' element={<BuscaFamilias />} />
+            <Route path='/*' element={<Navigate to='/'/>}/>
         </Routes>
     )
 }

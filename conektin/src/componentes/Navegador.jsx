@@ -30,9 +30,9 @@ const Navegador = () => {
                 </section>
             </div>
             <div className={`menu ${menu ? 'open' : ''}`}>
-                <ul>
+                <ul className="openedMenu">
                     <li><Link to={"/proximos-eventos"}>Proximos Eventos</Link></li>
-                    <li><Link to={"/"}>Busca una Familia</Link></li>
+                    <li><Link to={"/busca-familia"}>Busca una Familia</Link></li>
                     <li><Link to={"/"}>Eventos Ciudad</Link></li>
                     <li><Link to={"/"}>Tradiciones Ciudad</Link></li>
                     <li><Link to={"/"}>Evento Cercano</Link></li>

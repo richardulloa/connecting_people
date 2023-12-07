@@ -34,6 +34,7 @@
 
 .texto-lista {
     font-size: 1.15em;
+    font-weight: 500;
 }
 
 .buscar {
@@ -91,6 +92,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.foto-perfil:hover {
+    background-color: #d19100;
 }
 
 .crear-familia {
@@ -106,43 +112,50 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.crear-familia:hover {
+    background-color: #d19100;
 }
 
 .crear-familia-text {
     font-size: initial;
 }
 
-
 .menu {
-    width: 80%;
-    margin: auto;
+    border-top: 2px solid #1f4690;
+    width: 100%;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.1s ease-out;
 }
 
 .open {
     max-height: 100px;
 }
 
-ul {
+.openedMenu {
+    width: 80%;
+    margin: 1em auto;
     list-style: none;
     padding: 0;
     display: flex;
     justify-content: space-between;
 }
 
-li {
+.openedMenu li {
     background-color: #ffc700;
     border-radius: 5px;
     transition: background-color 0.2s;
 }
 
-li:hover{
+.openedMenu li:hover{
     background-color: #d19100;
 }
 
-li a {
+.openedMenu li a {
+    font-weight: 700;
     padding: 10px;
     display: block;
     width: 100%;
