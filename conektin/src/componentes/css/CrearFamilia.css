@@ -2,11 +2,11 @@
     box-sizing: border-box;
 }
 
-main{
+#crearFamilia{
     margin-top: 50px;
 }
 
-form#formularioFamilia{
+#formularioFamilia{
 max-width: 800px;
 margin: auto;
 padding: 20px;
@@ -14,16 +14,6 @@ border: 1px solid #ccc;
 border-radius: 8px;
 background-color: #1f4690;
 }
-
-/*form#formularioFamilia > div > input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    height: 300px;
-}*/
 
 input#nombreFamilia{
     height: 40px;
@@ -55,9 +45,7 @@ label#nombreFamilia, #descripccion{
     color: #ffc700;
 }
 
-
-
-p{
+#crearFamilia p{
     color: white;
 }
 
@@ -71,5 +59,4 @@ p{
     height: 50px;
     margin-left: 325px;
     background: radial-gradient( #ffe5b4, #d19100)
-
 }

@@ -23,7 +23,7 @@ const InicioConLogin = () => {
                     <div className="caja">
                         <div className="image te"></div>
                         <div className="overlay">
-                            <p className="text">Tus Eventos</p>
+                            <p className="text">Busca una familia</p>
                         </div>
                     </div>
                 </Link>
@@ -38,7 +38,7 @@ const InicioConLogin = () => {
                         </div>
                     </Link>
                     
-                    <Link to={"/"} className="secciones tus-familias">
+                    <Link to={"/"} className="secciones tradiciones">
                         <div className="caja">
                             <div className="image tc"></div>
                             <div className="overlay">
@@ -48,11 +48,11 @@ const InicioConLogin = () => {
                     </Link>
                 </section>
 
-                <Link to={"/"} className="secciones tradiciones">
+                <Link to={"/"} className="secciones evento-cercano">
                     <div className="caja">
-                        <div className="image tf"></div>
+                        <div className="image ec"></div>
                         <div className="overlay">
-                            <p className="text">Tus Familias</p>
+                            <p className="text">Evento Cercano</p>
                         </div>
                     </div>
                 </Link>

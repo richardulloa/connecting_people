@@ -1,3 +1,6 @@
+.contenido-inicio{
+    margin-bottom: 150px;
+}
 .contenido {
     width: 80%;
     margin: 50px auto;
@@ -32,11 +35,11 @@
     width: 48%;
 }
 
-.tus-familias {
+.tradiciones {
     width: 48%;
 }
 
-.tradiciones {
+.evento-cercano {
     width: 27%;
 }
 
@@ -68,7 +71,7 @@
     background-image: url("https://www.tornaveu.cat/app/uploads/sites/25/2023/11/9d9folre.jpg");
 }
 
-.tf {
+.ec {
     background-image: url("https://img.freepik.com/foto-gratis/grupo-fanaticos-reunidos-estadio-thge-animando_1303-18617.jpg?w=1380&t=st=1701601669~exp=1701602269~hmac=8a9c509f50f3bb91dcd72fd7004dc5ec4fae3e137edde52b50f8fe8471e0f746");
 }
 

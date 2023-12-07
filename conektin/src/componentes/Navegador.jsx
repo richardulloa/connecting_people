@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import './css/Navegador.css'
 import ListIcon from '@mui/icons-material/List';
 import SearchIcon from '@mui/icons-material/Search';
@@ -9,13 +9,15 @@ import { Link } from "react-router-dom";
 
 const Navegador = () => {
 
+    const [menu, setMenu] = useState(false)
+
     return (
         <header className="navegador">
             <div className="navegador-flex">
                 <Link to={"/main"}><img className="logo-navegador" src="./logo192.png" alt="Logo" /></Link>
                 <section className="barra-busqueda">
                     <div className="lista">
-                        <div className="label-barra"> <ListIcon /> <span className="texto-lista">Intereses</span> </div>
+                        <div onClick={() => setMenu(!menu)} className="label-barra"> <ListIcon /> <span className="texto-lista">Menu</span> </div>
                     </div>
                     <div className="buscar">
                         <input id="barra" className="input-barra" type="text" placeholder="Buscar" />
@@ -24,8 +26,17 @@ const Navegador = () => {
                 </section>
                 <section className="perfil">
                     <Link to={"/perfil"} className="foto-perfil"><PersonIcon fontSize="inherit" /></Link>
-                    <div className="añadir-ruta"><AddIcon fontSize="inherit" /> <span className="añadir-ruta-text">Crear Familia</span> </div>
+                    <Link to={"/crear-familia"} className="crear-familia"><AddIcon fontSize="inherit" /> <span className="crear-familia-text">Crear Familia</span></Link>
                 </section>
+            </div>
+            <div className={`menu ${menu ? 'open' : ''}`}>
+                <ul>
+                    <li><Link to={"/proximos-eventos"}>Proximos Eventos</Link></li>
+                    <li><Link to={"/"}>Busca una Familia</Link></li>
+                    <li><Link to={"/"}>Eventos Ciudad</Link></li>
+                    <li><Link to={"/"}>Tradiciones Ciudad</Link></li>
+                    <li><Link to={"/"}>Evento Cercano</Link></li>
+                </ul>
             </div>
         </header>
     )
