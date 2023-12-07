@@ -12,7 +12,7 @@ const InicioSinLogin = () => {
       <header className="cabecera">
         <img
           className="imglogo"
-          src="https://th.bing.com/th/id/OIP.BSdNpNqWXmy1WQ0o0qtRCwHaFy?rs=1&pid=ImgDetMain"
+          src="../logo512.png"
           alt="Logo"
         />
         <div>

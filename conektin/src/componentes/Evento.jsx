@@ -25,11 +25,14 @@ const Evento = () => {
                 setEvento(evento[0])
             })
             .catch((error) => window.alert(error))
+            
+        //https://es.locationiq.com/
+
     }, [id])
 
     let fechaEvento = ""
 
-    if(Object.keys(evento).length){
+    if (Object.keys(evento).length) {
         fechaEvento = evento.fechaEvento.split("T")[0]
     }
 
