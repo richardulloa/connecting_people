@@ -25,7 +25,7 @@ const Evento = () => {
                 setEvento(evento[0])
             })
             .catch((error) => window.alert(error))
-            
+
         //https://es.locationiq.com/
 
     }, [id])
@@ -42,7 +42,7 @@ const Evento = () => {
             <div className="evento-box-flex">
                 <div className="evento-info">
                     <h1 className="titulo-evento">{evento.nombreEvento}</h1>
-                    <p><GroupsIcon fontSize="inherit" />Nombre familia</p>
+                    <p><GroupsIcon fontSize="inherit" />Nombre familia idfamilia: {evento.idfamilia}</p>
                     <section className="caja-evento">
                         <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
                         <div className="caja-evento-info">
@@ -55,7 +55,7 @@ const Evento = () => {
                         </div>
                     </section>
                     <h3 className="titulo-descripcion-evento">Descripcion</h3>
-                    <p className="descripcion-evento">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi pariatur autem voluptates, voluptatibus laboriosam quo libero odit. Deleniti eum rerum et, minus ab similique, error cum, illum autem delectus sint.</p>
+                    <p className="descripcion-evento">{evento.descripcionEvento}</p>
                 </div>
                 <div className="mapa-evento">
                     MAPA

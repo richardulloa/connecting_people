@@ -36,7 +36,6 @@ const ProximosEventos = () => {
                         })
                     }
                 </section>
-
             </main>
         </div>
     );
