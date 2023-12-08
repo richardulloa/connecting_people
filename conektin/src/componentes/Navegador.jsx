@@ -4,6 +4,7 @@ import ListIcon from '@mui/icons-material/List';
 import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
+import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from "react-router-dom";
 
 
@@ -25,10 +26,12 @@ const Navegador = () => {
                     </div>
                 </section>
                 <section className="perfil">
-                    <Link to={"/perfil"} className="foto-perfil"><PersonIcon fontSize="inherit" /></Link>
                     <Link to={"/crear-familia"} className="crear-familia"><AddIcon fontSize="inherit" /> <span className="crear-familia-text">Crear Familia</span></Link>
+                    <Link to={"/perfil"} className="foto-perfil"><PersonIcon fontSize="inherit" /></Link>
+                    <Link to={"/perfil"} className="foto-perfil"><LogoutIcon fontSize="inherit" /></Link>
                 </section>
             </div>
+
             <div className={`menu ${menu ? 'open' : ''}`}>
                 <ul className="openedMenu">
                     <li><Link to={"/proximos-eventos"}>Proximos Eventos</Link></li>

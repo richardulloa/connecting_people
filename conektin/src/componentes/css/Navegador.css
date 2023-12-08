@@ -78,7 +78,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    width: 250px;
 }
 
 .foto-perfil {
@@ -124,7 +124,6 @@
 }
 
 .menu {
-    border-top: 2px solid #1f4690;
     width: 100%;
     max-height: 0;
     overflow: hidden;
@@ -132,6 +131,7 @@
 }
 
 .open {
+    border-top: 2px solid #1f4690;
     max-height: 100px;
 }
 
