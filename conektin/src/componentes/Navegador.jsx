@@ -28,7 +28,7 @@ const Navegador = () => {
                 <section className="perfil">
                     <Link to={"/crear-familia"} className="crear-familia"><AddIcon fontSize="inherit" /> <span className="crear-familia-text">Crear Familia</span></Link>
                     <Link to={"/perfil"} className="foto-perfil"><PersonIcon fontSize="inherit" /></Link>
-                    <Link to={"/perfil"} className="foto-perfil"><LogoutIcon fontSize="inherit" /></Link>
+                    <Link to={"/logout"} className="foto-perfil"><LogoutIcon fontSize="inherit" /></Link>
                 </section>
             </div>
 

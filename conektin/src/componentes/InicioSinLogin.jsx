@@ -10,17 +10,13 @@ const InicioSinLogin = () => {
   return (
     <div className="Nologin">
       <header className="cabecera">
-        <img
-          className="imglogo"
-          src="../logo512.png"
-          alt="Logo"
-        />
+        <Link><img className="imglogo" src="../logo512.png" alt="Logo" /></Link>
         <div>
           <Link to={"/main"}>BOTON DE PRUEBA PARA CAMBIAR DE PAGINAS</Link>
         </div>
 
         <div className="botones">
-          <Link className="btn1">Iniciar Sesion</Link>
+          <Link to={"/login"} className="btn1">Iniciar Sesion</Link>
           <Link to={"/alta"} className="btn2">Registrate</Link>
         </div>
       </header>
@@ -96,8 +92,8 @@ const InicioSinLogin = () => {
             <InstagramIcon className="ii" fontSize="large" />
           </div>
           <div className="enlacespag">
-            <a>Iniciar Sesión</a>
-            <a>Registrate</a>
+            <Link to={"/login"}>Iniciar Sesión</Link>
+            <Link to={"/alta"}>Registrate</Link>
             <a>Ayuda</a>
           </div>
         </div>

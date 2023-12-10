@@ -51,7 +51,6 @@ function Alta() {
             })
             .catch((error) => alert(error))
 
-        setFocus('nombre')
         reset()
     }
 
@@ -61,10 +60,10 @@ function Alta() {
             <header>
                 <div className='cajita'>
                     <Link to={"/"}><img src="../logo512.png" alt="logo"/></Link>
-                    <Link className='inicioSesion'>Inicia sesión</Link>
+                    <Link to={"/login"} className='inicioSesion'>Inicia sesión</Link>
                 </div>
             </header>
-            <main>
+            <main className='registro'>
                 <form id='altaUsuario' onSubmit={handleSubmit(recogerDatos)}>
                     <h1>Regístrate</h1>
                     <div className='pregunta'>

@@ -1,4 +1,4 @@
-.cajita {
+.cabezeraInicio > div {
     width: 80%;
     height: 100px;
     margin: auto;
@@ -7,11 +7,11 @@
     align-items: center;
 }
 
-.cajita img {
+.cabezeraInicio > div img {
     width: 75px;
 }
 
-.cajita .inicioSesion {
+.cabezeraInicio > div >.inicioSesion {
     text-decoration: none;
     font-size: 1.15em;
     font-weight: 700;
@@ -23,11 +23,11 @@
     transition: 0.2s;
 }
 
-.cajita .inicioSesion:hover {
+.cabezeraInicio > div .inicioSesion:hover {
     background-color: #d19100;
 }
 
-form#altaUsuario {
+.formularioInicio {
     max-width: 400px;
     margin: auto;
     padding: 20px;
@@ -36,11 +36,11 @@ form#altaUsuario {
     background-color: #1f4690;
 }
 
-.registro {
+.mainInicioSesion {
     margin-top: 50px;
 }
 
-form#altaUsuario>h1 {
+.formularioInicio > h1 {
     text-align: justify;
     margin-top: 5px;
     margin-bottom: 35px;
@@ -57,7 +57,7 @@ form#altaUsuario>h1 {
     margin-bottom: 5px;
 }
 
-form#altaUsuario>div>input {
+.formularioInicio > div >input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -76,7 +76,7 @@ form#altaUsuario>div>input {
     font-size: 0.8em;
 }
 
-.submit1 {
+.submit3 {
     font-family: inherit;
     font-weight: 700;
     font-size: 1.15em;
@@ -92,6 +92,6 @@ form#altaUsuario>div>input {
     transition: 0.2s;
 }
 
-.submit1:hover {
+.submit3:hover {
     background: radial-gradient(#ffe5b4, #d19100)
 }

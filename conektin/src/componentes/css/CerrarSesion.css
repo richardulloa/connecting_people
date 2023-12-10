@@ -1,0 +1,44 @@
+.mainCerrarSesion {
+    margin-top: 50px;
+}
+
+.formularioCerrar {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #1f4690;
+}
+
+.formularioCerrar > h1 {
+    text-align: justify;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    margin-left: 0;
+    font-weight: bold;
+    font-size: 25px;
+    color: #ffc700;
+}
+
+.cerrarSession h2{
+    color: white;
+}
+
+.cerrarSession button {
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    height: 45px;
+    font-family: inherit;
+    font-size: 1.15em;
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cerrarSession button:hover {
+    background-color: rgb(168, 8, 8);
+}
