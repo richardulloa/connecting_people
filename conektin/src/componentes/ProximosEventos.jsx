@@ -9,7 +9,7 @@ const ProximosEventos = () => {
 
 
     useEffect(() => {
-        const API_EVENTOS = "http://localhost:3000/api/eventos"
+        const API_EVENTOS = "http://localhost:3300/api/eventosfamilia"
 
         const peticion = fetch(API_EVENTOS)
         peticion
@@ -22,6 +22,8 @@ const ProximosEventos = () => {
             .catch((error) => window.alert(error))
     }, [])
 
+    console.log(proximosEventos)
+
     return (
         <div className='contenido-proximos-eventos'>
             <Navegador />
@@ -29,9 +31,9 @@ const ProximosEventos = () => {
                 <h1 className="titulo-seccion">Proximos Eventos</h1>
                 <section className="eventos-seccion">
                     {
-                        proximosEventos.map(evento => {
+                        proximosEventos.map((evento,index) => {
                             return (
-                                <VisualizarEvento key={evento.ideventos} evento={evento} />
+                                <VisualizarEvento key={index} evento={evento} />
                             )
                         })
                     }

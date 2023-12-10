@@ -20,8 +20,8 @@ const VisualizarEvento = ({evento}) => {
                 <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
                 <section className="info-inicial">
                     <h3>{evento.nombreEvento}</h3>
-                    <h3 className="family"><GroupsIcon /><span className="nombre-familia">Nombre familia</span></h3>
-                    <p>Nombre organizador</p>
+                    <h3 className="family"><GroupsIcon /><span className="nombre-familia">{evento.nombreFamilia}</span></h3>
+                    <p>{evento.nombreUsuario}</p>
                 </section>
             </div>
             <section className="info-adicional">
