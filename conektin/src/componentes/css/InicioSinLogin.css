@@ -8,7 +8,7 @@
 }
 
 .imglogo {
- width: 7%;
+  width: 75px;
 }
 
 .botones a {
@@ -82,7 +82,8 @@
 .enlacesimg,
 .fi,
 
-.ti,.ii {
+.ti,
+.ii {
   background-color: black;
   color: white;
 }

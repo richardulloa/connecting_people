@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm, } from 'react-hook-form';
 import './css/Alta.css'
+import { Link } from 'react-router-dom';
 
 
 function Alta() {
@@ -59,15 +60,15 @@ function Alta() {
         <div>
             <header>
                 <div className='cajita'>
-                    <a>Inicia sesión</a>
+                    <Link to={"/"}><img src="../logo512.png" alt="logo"/></Link>
+                    <Link className='inicioSesion'>Inicia sesión</Link>
                 </div>
             </header>
             <main>
                 <form id='altaUsuario' onSubmit={handleSubmit(recogerDatos)}>
                     <h1>Regístrate</h1>
                     <div className='pregunta'>
-                        <label id='altaUsuario' htmlFor='nombre'>Nombre y Apellidos</label>
-                        <br></br>
+                        <label className="labelPregunta" htmlFor='nombre'>Nombre y Apellidos</label>
                         <input id='nombre' autoFocus {...register('nombre', { required: true, maxLength: 30 })} />
                     </div>
                     {
@@ -81,8 +82,7 @@ function Alta() {
                     }
 
                     <div className='pregunta'>
-                        <label htmlFor='email'>Correo electrónico: </label>
-                        <br></br>
+                        <label className="labelPregunta" htmlFor='email'>Correo electrónico: </label>
                         <input type='email' id='email' {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />
                     </div>
                     {
@@ -95,8 +95,7 @@ function Alta() {
                             <p className='errores'>Ingrese un correo electrónico válido</p>)
                     }
                     <div className='pregunta'>
-                        <label htmlFor='password'>Contraseña:</label>
-                        <br></br>
+                        <label className="labelPregunta" htmlFor='password'>Contraseña:</label>
                         <input type='password' id='password' {...register('password', { required: true, minLength: 6, })} />
                         {
                             errors.password && (
@@ -107,8 +106,7 @@ function Alta() {
                         }
                     </div>
                     <div className='pregunta'>
-                        <label htmlFor='confirmPassword'>Confirma tu contraseña:</label>
-                        <br></br>
+                        <label className="labelPregunta" htmlFor='confirmPassword'>Confirma tu contraseña:</label>
                         <input type='password' id='confirmPassword' {...register('confirmPassword', { validate: (value) => value === watch('password') })} />
                         {errors.confirmPassword && (
                             <div className='errores'>
@@ -118,8 +116,7 @@ function Alta() {
                     </div>
 
                     <div className='pregunta'>
-                        <label htmlFor='fechaNacimiento'>Fecha de nacimiento:</label>
-                        <br></br>
+                        <label className="labelPregunta" htmlFor='fechaNacimiento'>Fecha de nacimiento:</label>
                         <input type='date' id='fechaNacimiento' {...register('fechaNacimiento', {
                             required: true, validate: validateFechaNacimiento
                         })}
@@ -140,23 +137,17 @@ function Alta() {
                     </div>
 
                     <div className='pregunta'>
-                        <label htmlFor='cp'>Código postal:</label>
-                        <br />
+                        <label className="labelPregunta" htmlFor='cp'>Código postal:</label>
                         <input id='cp' {...register('cp', { required: true, maxLength: 5 })} />
                     </div>
-                    {errors.cp?.type === 'required' ?
-                        <div className="errores">Este campo es obligatorio</div>
-                        :
-                        null
+                    {errors.cp?.type === 'required'
+                        ? <div className="errores">Este campo es obligatorio</div>
+                        : null
                     }
                     {errors.cp?.type === 'maxLength' &&
                         <div className='errores'>La longitud del cp es máximo de 5 carácteres</div>
                     }
-                    <div className='pregunta'>
-                        <label></label>
-                        <br></br>
-                        <input type='submit' className='submit1' />
-                    </div>
+                    <input type='submit' className='submit1' />
                 </form>
             </main>
 

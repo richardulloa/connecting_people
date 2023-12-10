@@ -4,7 +4,7 @@ import './css/CrearFamilia.css'
 import Navegador from './Navegador';
 
 function CrearFamilia() {
-    const { register, handleSubmit, formState: { errors }, reset, setFocus, } = useForm()
+    const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
 
     const datosFamilia = (datos) => {
 
@@ -57,7 +57,7 @@ function CrearFamilia() {
                     <div className='preguntaFamilia'>
                         <label htmlFor='descripccion' id='descripccion'>Describe tu família</label>
                         <p>Esto será lo que verá cualquier persona cuando accedan a al información de tu família, Podras actualizarlo más tarde si lo deseas.</p>
-                        <textarea id='descripccion' autoFocus {...register('descripccion', { required: true, minLength: 150, maxLength: 1000 })}></textarea>
+                        <textarea id='descripccion' {...register('descripccion', { required: true, minLength: 150, maxLength: 1000 })}></textarea>
                         {errors.descripccion?.type === 'required'
                             ? <div className='errores'>La descripción es obligatoria</div>
                             : null}
