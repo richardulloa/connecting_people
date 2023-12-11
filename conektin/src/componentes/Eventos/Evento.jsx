@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "./css/Evento.css"
+import "../css/Evento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupsIcon from '@mui/icons-material/Groups';
-import Navegador from "./Navegador";
+import Navegador from "../Navegador";
 import { useParams } from "react-router";
 
 

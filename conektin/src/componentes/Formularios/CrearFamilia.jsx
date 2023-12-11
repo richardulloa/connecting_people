@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm, } from 'react-hook-form';
-import './css/CrearFamilia.css'
-import Navegador from './Navegador';
+import '../css/CrearFamilia.css'
+import Navegador from '../Navegador';
 
 function CrearFamilia() {
     const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()

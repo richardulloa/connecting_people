@@ -1,6 +1,6 @@
 import React from "react";
-import "./css/BuscaFamilia.css"
-import Navegador from "./Navegador";
+import "../css/BuscaFamilia.css"
+import Navegador from "../Navegador";
 import VisualizarFamilia from "./VisualizarFamilia";
 
 const BuscaFamilias = () => {

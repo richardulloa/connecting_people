@@ -1,15 +1,15 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import InicioSinLogin from '../componentes/InicioSinLogin';
-import InicioConLogin from '../componentes/InicioConLogin';
+import InicioSinLogin from '../componentes/Inicio/InicioSinLogin';
+import InicioConLogin from '../componentes//Inicio/InicioConLogin';
 import Perfil from '../componentes/Perfil';
-import Alta from '../componentes/Alta'
-import ProximosEventos from '../componentes/ProximosEventos';
-import Evento from '../componentes/Evento';
-import CrearFamilia from '../componentes/CrearFamilia';
-import BuscaFamilias from '../componentes/BuscaFamilia';
-import InicioSesion from '../componentes/InicioSesion';
-import CerrarSesion from '../componentes/CerrarSesion';
+import Alta from '../componentes/Formularios/Alta'
+import ProximosEventos from '../componentes/Eventos/ProximosEventos';
+import Evento from '../componentes/Eventos/Evento';
+import CrearFamilia from '../componentes/Formularios/CrearFamilia';
+import BuscaFamilias from '../componentes/Familias/BuscaFamilia';
+import InicioSesion from '../componentes/Formularios/InicioSesion';
+import CerrarSesion from '../componentes/Formularios/CerrarSesion';
 
 
 export function Router() {

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "./css/ProximosEventos.css"
-import Navegador from "./Navegador";
+import "../css/ProximosEventos.css"
+import Navegador from "../Navegador";
 import VisualizarEvento from "./VisualizarEvento";
 
 const ProximosEventos = () => {

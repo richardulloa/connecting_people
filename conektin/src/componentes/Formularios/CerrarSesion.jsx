@@ -1,6 +1,6 @@
 import React from 'react';
-import './css/CerrarSesion.css'
-import Navegador from './Navegador';
+import '../css/CerrarSesion.css'
+import Navegador from '../Navegador';
 
 
 function CerrarSesion() {

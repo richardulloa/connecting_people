@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/VisualizarFamilia.css"
+import "../css/VisualizarFamilia.css"
 import { Link } from "react-router-dom";
 
 
