@@ -20,7 +20,7 @@ function Alta() {
 
     const recogerDatos = (datos) => {
 
-        const API_EXCURSIONES = 'http://localhost:3000/api/usuarios'
+        const API_EXCURSIONES = 'http://localhost:3300/api/usuarios'
 
         const objetoDatos = {
             nombreUsuario: datos.nombre,

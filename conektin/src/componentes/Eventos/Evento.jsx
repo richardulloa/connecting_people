@@ -24,7 +24,20 @@ const Evento = () => {
             })
             .then((evento) => {
                 setEvento(evento[0])
-                
+
+            })
+            .catch((error) => window.alert(error))
+
+
+        const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
+
+        const peticionMiembros = fetch(API_MIEMBROS)
+        peticionMiembros
+            .then((resp) => {
+                return resp.json()
+            })
+            .then((miembrosEvento) => {
+                setMiembros(miembros => [...miembros, miembrosEvento])
             })
             .catch((error) => window.alert(error))
 
@@ -32,7 +45,9 @@ const Evento = () => {
 
     }, [id])
 
-    
+    console.log(miembros[0])
+
+
     let fechaEvento = ""
 
     if (Object.keys(evento).length) {
@@ -53,7 +68,6 @@ const Evento = () => {
                             <p><LocationOnIcon fontSize="inherit" />{evento.calleEvento}, {evento.numerocalleEvento}</p>
                             <section className="miembros-evento">
                                 <h3>Miembros</h3>
-
                             </section>
                         </div>
                     </section>
