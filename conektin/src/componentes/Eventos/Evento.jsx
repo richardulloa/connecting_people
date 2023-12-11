@@ -12,9 +12,10 @@ const Evento = () => {
     const { id } = useParams()
 
     const [evento, setEvento] = useState({})
+    const [miembros, setMiembros] = useState([])
 
     useEffect(() => {
-        const API_EVENTO = `http://localhost:3000/api/eventos/${id}`
+        const API_EVENTO = `http://localhost:3300/api/eventos/${id}`
 
         const peticion = fetch(API_EVENTO)
         peticion
@@ -23,6 +24,7 @@ const Evento = () => {
             })
             .then((evento) => {
                 setEvento(evento[0])
+                
             })
             .catch((error) => window.alert(error))
 
@@ -30,6 +32,7 @@ const Evento = () => {
 
     }, [id])
 
+    
     let fechaEvento = ""
 
     if (Object.keys(evento).length) {

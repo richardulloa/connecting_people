@@ -15,13 +15,13 @@ const VisualizarEvento = ({evento}) => {
     }
 
     return (
-        <Link to={`/evento/${evento.ideventos}`} className='contenido-evento'>
+        <Link to={`/evento/${evento.idevento}`} className='contenido-evento'>
             <div className="flex-evento">
                 <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
                 <section className="info-inicial">
                     <h3>{evento.nombreEvento}</h3>
                     <h3 className="family"><GroupsIcon /><span className="nombre-familia">{evento.nombreFamilia}</span></h3>
-                    <p>{evento.nombreUsuario}</p>
+                    <p>Organizador: {evento.nombreUsuario}</p>
                 </section>
             </div>
             <section className="info-adicional">
