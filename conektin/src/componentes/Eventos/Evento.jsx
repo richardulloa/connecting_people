@@ -39,7 +39,7 @@ const Evento = () => {
             })
             .catch((error) => window.alert(error))
         //https://es.locationiq.com/
-    }, [id])
+    }, [id])      
 
     let fechaEvento = ""
 

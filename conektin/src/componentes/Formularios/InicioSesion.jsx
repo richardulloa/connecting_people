@@ -3,9 +3,12 @@ import { useForm, } from 'react-hook-form';
 import '../css/InicioSesion.css'
 import { Link } from 'react-router-dom';
 import Contexto from '../../context/Contexto';
+import { useNavigate } from 'react-router-dom';
 
 
 function InicioSesion() {
+
+    const navigate = useNavigate()
 
     const { register, handleSubmit, formState: { errors } } = useForm()
 
@@ -31,12 +34,14 @@ function InicioSesion() {
                 if (mesage.error) {
                     alert("ALGO SALIO MAL")
                 } else {
-                    console.log(mesage)
                     setUsuario(mesage)
                     sessionStorage.setItem('usuario', mesage.token)
+                    navigate("/main")
                 }
             })
             .catch((error) => alert(error))
+
+  
     }
 
         return (

@@ -2,8 +2,8 @@ import React from "react";
 import "./css/Perfil.css";
 import Navegador from "./Navegador";
 import Intereses from "./Intereses";
-import VisualizarEvento from './VisualizarEvento'
-import VisualizarFamilia from "./VisualizarFamilia";
+import VisualizarEvento from './Eventos/VisualizarEvento'
+import VisualizarFamilia from "./Familias/VisualizarFamilia";
 
 const Perfil = () => {
   return (

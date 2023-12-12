@@ -22,8 +22,6 @@ const ProximosEventos = () => {
             .catch((error) => window.alert(error))
     }, [])
 
-    console.log(proximosEventos)
-
     return (
         <div className='contenido-proximos-eventos'>
             <Navegador />
