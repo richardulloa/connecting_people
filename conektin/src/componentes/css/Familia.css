@@ -1,0 +1,52 @@
+.familia-flex {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px auto;
+}
+
+.familia .titulo-familia {
+    font-size: 3em;
+    margin: 0;
+}
+
+.info-familia {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.img-miembros {
+    width: 70%;
+    display: flex;
+    align-items: start;
+    gap: 1em;
+}
+
+.img-familia {
+    width: 55%;
+    border-radius: 5px;
+}
+
+.miembros-familia {
+    height: 100%;
+    width: 40%;
+    border: 1px solid black;
+}
+
+.miembros-familia>h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+.descripcion-Familia {
+    width: 30%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.descripcion-Familia>h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+}
