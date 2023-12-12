@@ -2,13 +2,13 @@ import Contexto from '../../context/Contexto';
 import React, { useContext } from 'react';
 import '../css/CerrarSesion.css'
 import Navegador from '../Navegador';
-
+import { useNavigate } from 'react-router';
 
 function CerrarSesion() {
 
     const { usuario, setUsuario } = useContext(Contexto)
 
-    console.log(usuario)
+    const navigate = useNavigate()
 
     const desconexion = () => {
         const parametros = {
@@ -28,8 +28,9 @@ function CerrarSesion() {
                 if (mensaje.error) {
                     window.alert(mensaje.error)
                 } else {
-                    setUsuario(null)
                     sessionStorage.removeItem('usuario')
+                    setUsuario(null)
+                    navigate("/")
                 }
             })
             .catch((error) => window.alert(error))

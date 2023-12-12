@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import Contexto from "../context/Contexto";
 import "./css/Perfil.css";
 import Navegador from "./Navegador";
 import Intereses from "./Intereses";
@@ -6,6 +7,9 @@ import VisualizarEvento from './Eventos/VisualizarEvento'
 import VisualizarFamilia from "./Familias/VisualizarFamilia";
 
 const Perfil = () => {
+
+  const {usuario} = useContext(Contexto)
+
   return (
     <div className="Perfil">
       <Navegador />
@@ -13,16 +17,13 @@ const Perfil = () => {
         <div className="barraPerfil">
           <h1>Tus Datos</h1>
           <div className="imagen-perfil">
-            <img
-              src="https://www.optimaley.com/wp-content/uploads/2014/09/foto-perfil-generica.jpg"
-              alt="imagen-perfil"
-            />
+            <img src="https://www.optimaley.com/wp-content/uploads/2014/09/foto-perfil-generica.jpg" alt="imagen-perfil" />
           </div>
           <div className="datos-perfil">
-            <p>NombreApellidos</p>
-            <p>Correo</p>
-            <p>CodigoPostal</p>
-            <p>FecchaNacimiento</p>
+            <p>{usuario.nombreUsuario}</p>
+            <p>{usuario.email}</p>
+            <p>{usuario.cp}</p>
+            <p>{usuario.fechaNacimiento}</p>
           </div>
           <h1>Tus Intereses</h1>
           <div className="contenido-principal">
@@ -31,19 +32,15 @@ const Perfil = () => {
               <Intereses />
               <Intereses />
               <Intereses />
-              </div>
+            </div>
           </div>
         </div>
         <div className="eventos-perfil">
           <h1>Tus Eventos</h1>
           <div className="eventos">
-            <VisualizarEvento/>
-            <VisualizarEvento/>
           </div>
-          <button>Ver mas</button>
           <h1>Tus Familias</h1>
           <div className="familias">
-          <VisualizarFamilia></VisualizarFamilia>
           </div>
         </div>
       </div>
