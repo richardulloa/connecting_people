@@ -10,6 +10,7 @@ import CrearFamilia from '../componentes/Formularios/CrearFamilia';
 import BuscaFamilias from '../componentes/Familias/BuscaFamilia';
 import InicioSesion from '../componentes/Formularios/InicioSesion';
 import CerrarSesion from '../componentes/Formularios/CerrarSesion';
+import CrearEvento from '../componentes/Formularios/CrearEvento';
 
 
 export function Router() {
@@ -27,6 +28,7 @@ export function Router() {
             <Route path='/login' element={<InicioSesion/>} />
             <Route path='/logout' element={<CerrarSesion/>} />
             <Route path='/*' element={<Navigate to='/'/>}/>
+            <Route path='crear-evento' element={<CrearEvento />} />
         </Routes>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm, } from 'react-hook-form';
-import '../css/CrearFamilia.css'
+import '../css/CrearEvento.css'
 import Navegador from '../Navegador';
 
 function CrearFamilia() {
