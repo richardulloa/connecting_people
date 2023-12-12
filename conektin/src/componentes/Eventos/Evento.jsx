@@ -19,7 +19,7 @@ const Evento = () => {
 
         const peticion = fetch(API_EVENTO)
         peticion
-            .then((resp) => {
+            .then((resp) => {            
                 return resp.json()
             })
             .then((evento) => {

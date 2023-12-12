@@ -7,12 +7,12 @@
   background: linear-gradient(to top, #172a54, #3a5ba0);
   width: 33%;
   padding: 20px;
+  height: 100vh;
 }
 
 .barraPerfil h1 {
   color: #fff;
   text-align: center;
-  text-decoration: underline;
 }
 
 
@@ -46,7 +46,6 @@
 .contenido-principal {
   display: flex;
   flex-wrap: wrap;
-  /* Permite que los elementos se envuelvan a la siguiente línea */
   margin-top: 1em;
   padding: 20px;
 }
@@ -54,27 +53,25 @@
 .intereses-perfil {
   display: flex;
   flex-wrap: wrap;
-  /* Puedes ajustar esto según sea necesario */
 }
 .eventos-perfil{
   display: flex;
   margin: auto;
   flex-direction: column;
   text-align: center;
-
   align-items: center;
   height: 100vh;
   width: 67%;
-
 }
+
 .eventos-perfil h1 {
   text-align: center;
-  text-decoration: underline;
   margin-bottom: 20px;
 }
+
 .eventos, .familias {
   display: flex;
-  flex-direction: column; /* Asegura que los eventos se apilen verticalmente */
+  flex-direction: column;
   padding: 20px;
   margin: 10px;
   align-items: center;

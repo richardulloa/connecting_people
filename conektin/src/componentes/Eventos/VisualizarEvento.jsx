@@ -21,7 +21,7 @@ const VisualizarEvento = ({evento}) => {
                 <section className="info-inicial">
                     <h3>{evento.nombreEvento}</h3>
                     <h3 className="family"><GroupsIcon /><span className="nombre-familia">{evento.nombreFamilia}</span></h3>
-                    <p>Organizador: {evento.nombreUsuario}</p>
+                    <p>Organizador: <strong>{evento.nombreUsuario}</strong></p>
                 </section>
             </div>
             <section className="info-adicional">

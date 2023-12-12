@@ -71,7 +71,7 @@ function InicioSesion() {
                     }
                     <div className='pregunta'>
                         <label className="labelPregunta" htmlFor='password'>Contraseña:</label>
-                        <input type='password' id='password' {...register('password', { required: true, minLength: 6, })} />
+                        <input type='password' id='password' {...register('password', { required: true})} />
                         {
                             errors.password && (
                                 <div className='errores'>

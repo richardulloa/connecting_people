@@ -8,7 +8,7 @@ import VisualizarFamilia from "./Familias/VisualizarFamilia";
 
 const Perfil = () => {
 
-  const {usuario} = useContext(Contexto)
+  const { usuario } = useContext(Contexto)
 
   return (
     <div className="Perfil">
@@ -19,12 +19,15 @@ const Perfil = () => {
           <div className="imagen-perfil">
             <img src="https://www.optimaley.com/wp-content/uploads/2014/09/foto-perfil-generica.jpg" alt="imagen-perfil" />
           </div>
-          <div className="datos-perfil">
-            <p>{usuario.nombreUsuario}</p>
-            <p>{usuario.email}</p>
-            <p>{usuario.cp}</p>
-            <p>{usuario.fechaNacimiento}</p>
-          </div>
+          {
+            usuario &&
+            <div className="datos-perfil">
+              <p>{usuario.nombreUsuario}</p>
+              <p>{usuario.email}</p>
+              <p>{usuario.cp}</p>
+              <p>{usuario.fechaNacimiento}</p>
+            </div>
+          }
           <h1>Tus Intereses</h1>
           <div className="contenido-principal">
             <div className="intereses-perfil">
@@ -45,7 +48,7 @@ const Perfil = () => {
         </div>
       </div>
 
-    </div>
+    </div >
   );
 };
 

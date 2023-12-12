@@ -3,19 +3,21 @@ import "../css/VisualizarFamilia.css"
 import { Link } from "react-router-dom";
 
 
-const VisualizarFamilia = () => {
+const VisualizarFamilia = ({familia}) => {
+
+    
+
     return (
-        <Link to={"/evento"} className='contenido-familia'>
+        <Link to={`/familia/${familia.idfamilia}`} className='contenido-familia'>
             <div className="flex-familia">
                 <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
-                <section className="info-inicial">
-                    <h3>Nombre Familia</h3>
-                    <p>Nombre organizador</p>
+                <section className="info-inicial-familia">
+                    <h3>{familia.nombreFamilia}</h3>
+                    <p>Organizador familia: <strong>{familia.nombreUsuario}</strong></p>
                 </section>
                 <section className="descripcion-familia">
                     <h4>Descripcion</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit..</p>
-
+                    <p>{familia.descripcionFamilia}</p>
                 </section>
             </div>
         </Link>

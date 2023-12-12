@@ -1,6 +1,6 @@
 .contenido-familia {
-    height: 175px;
-    width: 85%;
+    height: 250px;
+    width: 100%;
     background-color: white;
     border-radius: 5px;
     display: flex;
@@ -28,7 +28,8 @@
     border-radius: 5px 0 0 5px;
 }
 
-.contenido-familia > .flex-familia > .info-inicial {
+.contenido-familia > .flex-familia > .info-inicial-familia {
+    height: 100%;
     width: 300px;
     display: flex;
     justify-content: start;
@@ -42,19 +43,7 @@
     gap: 0.5em;
 }
 
-.contenido-familia > .info-adicional {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    gap: 0.75em;
-    margin-right: 5%;
-}
-
-.contenido-familia  .info-inicial > h3, .contenido-familia > .info-adicional > p {
-    margin: 0;
-}
-
-.contenido-familia > .info-inicial > p {
-    margin-bottom: 0;
+.descripcion-familia {
+    height: 100%;
+    max-width: 400px;
 }
