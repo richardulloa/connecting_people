@@ -61,7 +61,7 @@
   margin: auto;
   flex-direction: column;
   text-align: center;
-  border: 1px solid black;
+
   align-items: center;
   height: 100vh;
   width: 67%;
@@ -77,4 +77,5 @@
   flex-direction: column; /* Asegura que los eventos se apilen verticalmente */
   padding: 20px;
   margin: 10px;
+  align-items: center;
 }

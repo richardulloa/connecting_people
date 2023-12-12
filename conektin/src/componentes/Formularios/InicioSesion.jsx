@@ -35,7 +35,7 @@ function InicioSesion() {
                     alert("ALGO SALIO MAL")
                 } else {
                     setUsuario(mesage)
-                    sessionStorage.setItem('usuario', mesage.token)
+                    sessionStorage.setItem('usuario', JSON.stringify(mesage))
                     navigate("/main")
                 }
             })

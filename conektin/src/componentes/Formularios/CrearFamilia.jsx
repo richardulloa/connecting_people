@@ -8,11 +8,11 @@ function CrearFamilia() {
 
     const datosFamilia = (datos) => {
 
-        const API_EXCURSIONES = 'http://localhost:3000/api/familias'
+        const API_EXCURSIONES = 'http://localhost:3300/api/familias'
 
         const objetoDatos = {
             nombreFamilia: datos.nombreFamilia,
-            descripcionFamilia: datos.descripccion,
+            descripcionFamilia: datos.descripcionFamilia,
         }
 
         const parametros = {
@@ -55,15 +55,15 @@ function CrearFamilia() {
                     </div>
                     <br />
                     <div className='preguntaFamilia'>
-                        <label htmlFor='descripccion' id='descripccion'>Describe tu família</label>
+                        <label htmlFor='descripcionFamilia' id='descripcionFamilia'>Describe tu família</label>
                         <p>Esto será lo que verá cualquier persona cuando accedan a al información de tu família, Podras actualizarlo más tarde si lo deseas.</p>
-                        <textarea id='descripccion' {...register('descripccion', { required: true, minLength: 150, maxLength: 1000 })}></textarea>
-                        {errors.descripccion?.type === 'required'
+                        <textarea id='descripcionFamilia' {...register('descripcionFamilia', { required: true, minLength: 150, maxLength: 1000 })}></textarea>
+                        {errors.descripcionFamilia?.type === 'required'
                             ? <div className='errores'>La descripción es obligatoria</div>
                             : null}
-                        {errors.descripccion?.type === 'maxLength' &&
+                        {errors.descripcionFamilia?.type === 'maxLength' &&
                             <div className='errores'>La descripcción de tu família no puede superar los 1000 carácteres</div>}
-                        {errors.descripccion?.type === 'minLength' &&
+                        {errors.descripcionFamilia?.type === 'minLength' &&
                             <div className='errores'>La descripcción de tu família tiene que tener 150 caracteres como minimo.</div>}
                     </div>
                     <div className='preguntaFamilia'>
