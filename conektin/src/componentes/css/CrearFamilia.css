@@ -11,12 +11,12 @@
     background-color: #1f4690;
 }
 
-input#nombreFamilia {
+input#nombreFamilia{
     height: 40px;
     width: 750px;
 }
 
-textarea#descripccion {
+textarea#descripcionFamilia {
     color: black;
     font-size: small;
     font-weight: lighter;
@@ -36,7 +36,7 @@ form>h1 {
 }
 
 label#nombreFamilia,
-#descripccion {
+#descripcionFamilia {
     font-size: 2em;
     font-weight: 900;
     color: #ffc700;
