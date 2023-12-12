@@ -1,4 +1,4 @@
-import Context from "./Context";
+import Contexto from "./Contexto";
 import { useEffect, useState } from "react"
 
 
@@ -12,12 +12,10 @@ const Provider = ({ children }) => {
         usuarioStorage ? setUsuario(JSON.parse(usuarioStorage)) : setUsuario(null)
     }, [])
 
-    console.log(usuario)
-
     return (
-        <Context.Provider value={{ usuario, setUsuario }}>
+        <Contexto.Provider value={{ usuario, setUsuario }}>
             {children}
-        </Context.Provider>
+        </Contexto.Provider>
     )
 }
 

@@ -8,7 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const InicioSinLogin = () => {
   return (
-    <div className="Nologin">
+    <div className="no-login">
       <header className="cabecera">
         <Link><img className="imglogo" src="../logo512.png" alt="Logo" /></Link>
         <div>

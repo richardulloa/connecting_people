@@ -24,10 +24,8 @@ const Evento = () => {
             })
             .then((evento) => {
                 setEvento(evento[0])
-
             })
             .catch((error) => window.alert(error))
-
 
         const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
 
@@ -37,16 +35,11 @@ const Evento = () => {
                 return resp.json()
             })
             .then((miembrosEvento) => {
-                setMiembros(miembros => [...miembros, miembrosEvento])
+                setMiembros(miembros => [...miembros, ...miembrosEvento])
             })
             .catch((error) => window.alert(error))
-
         //https://es.locationiq.com/
-
     }, [id])
-
-    console.log(miembros[0])
-
 
     let fechaEvento = ""
 
@@ -54,13 +47,19 @@ const Evento = () => {
         fechaEvento = evento.fechaEvento.split("T")[0]
     }
 
+    let iniciales = miembros.map(objeto => objeto.nombreUsuario
+        .split(" ")
+        .map(elem => elem[0])
+        .join(" ")
+    )
+
     return (
         <div className='evento'>
             <Navegador />
             <div className="evento-box-flex">
                 <div className="evento-info">
                     <h1 className="titulo-evento">{evento.nombreEvento}</h1>
-                    <p><GroupsIcon fontSize="inherit" />Nombre familia idfamilia: {evento.idfamilia}</p>
+                    <p><GroupsIcon fontSize="inherit" />{evento.nombreFamilia}</p>
                     <section className="caja-evento">
                         <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
                         <div className="caja-evento-info">
@@ -68,6 +67,25 @@ const Evento = () => {
                             <p><LocationOnIcon fontSize="inherit" />{evento.calleEvento}, {evento.numerocalleEvento}</p>
                             <section className="miembros-evento">
                                 <h3>Miembros</h3>
+                                <div className="miembros-inside">
+                                    {
+                                        iniciales.map((inicial, index) => {
+                                            if (index > 20) {
+                                                return (<></>)
+                                            } else if (index <= 19) {
+                                                return (
+                                                    <div key={index} className="miembros-iniciales">
+                                                        {inicial}
+                                                    </div>
+                                                )
+                                            } else {
+                                                return (<div key={index} className="miembros-iniciales">
+                                                    ...
+                                                </div>)
+                                            }
+                                        })
+                                    }
+                                </div>
                             </section>
                         </div>
                     </section>

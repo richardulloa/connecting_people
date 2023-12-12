@@ -1,60 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm, } from 'react-hook-form';
 import '../css/InicioSesion.css'
 import { Link } from 'react-router-dom';
+import Contexto from '../../context/Contexto';
 
 
 function InicioSesion() {
-    
-    const { register, handleSubmit, formState: { errors }, reset} = useForm()
+
+    const { register, handleSubmit, formState: { errors } } = useForm()
+
+    const { setUsuario } = useContext(Contexto)
 
     const recogerDatos = (datos) => {
 
-        const API_EXCURSIONES = 'http://localhost:3000/api/usuarios'
-
-        const objetoDatos = {
-            nombreUsuario: datos.nombre,
-            email: datos.email,
-            password: datos.password,
-            cp: datos.cp,
-            fechaNacimiento: datos.fechaNacimiento
-        }
+        const API_LOGIN = 'http://localhost:3300/api/login'
 
         const parametros = {
-            method: 'POST',
+            method: 'GET',
             headers: {
-                'Content-Type': 'application/json'
+                usuario: datos.email,
+                password: datos.password
             },
-            body: JSON.stringify(objetoDatos),
             mode: 'cors'
         }
 
-        const peticion = fetch(API_EXCURSIONES, parametros)
+        const peticion = fetch(API_LOGIN, parametros)
         peticion
             .then((resp) => resp.json())
             .then((mesage) => {
                 if (mesage.error) {
                     alert("ALGO SALIO MAL")
                 } else {
-                    alert("ALTA COMPLETADA")
+                    console.log(mesage)
+                    setUsuario(mesage)
+                    sessionStorage.setItem('usuario', mesage.token)
                 }
             })
             .catch((error) => alert(error))
-        reset()
     }
 
-    return (
+        return (
         <div>
             <header className='cabezeraInicio'>
                 <div>
-                    <Link to={"/"}><img src="../logo512.png" alt="logo"/></Link>
+                    <Link to={"/"}><img src="../logo512.png" alt="logo" /></Link>
                     <Link to={"/alta"} className='inicioSesion'>Registrate</Link>
                 </div>
             </header>
             <main className='mainInicioSesion'>
                 <form className='formularioInicio' onSubmit={handleSubmit(recogerDatos)}>
                     <h1>Inicio Sesión</h1>
-                  
+
                     <div className='pregunta'>
                         <label className="labelPregunta" htmlFor='email'>Correo electrónico: </label>
                         <input type='email' id='email' autoFocus {...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />
@@ -65,7 +61,7 @@ function InicioSesion() {
                             : null
                     }
                     {
-                        errors.email?.type === 'pattern' && 
+                        errors.email?.type === 'pattern' &&
                         (<p className='errores'>Ingrese un correo electrónico válido</p>)
                     }
                     <div className='pregunta'>
