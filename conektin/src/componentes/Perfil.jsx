@@ -2,6 +2,8 @@ import React from "react";
 import "./css/Perfil.css";
 import Navegador from "./Navegador";
 import Intereses from "./Intereses";
+import VisualizarEvento from './VisualizarEvento'
+import VisualizarFamilia from "./VisualizarFamilia";
 
 const Perfil = () => {
   return (
@@ -28,12 +30,24 @@ const Perfil = () => {
               <Intereses />
               <Intereses />
               <Intereses />
-              <Intereses /><Intereses /><Intereses /><Intereses />
-            </div>
+              <Intereses />
+              </div>
+          </div>
+        </div>
+        <div className="eventos-perfil">
+          <h1>Tus Eventos</h1>
+          <div className="eventos">
+            <VisualizarEvento/>
+            <VisualizarEvento/>
+          </div>
+          <button>Ver mas</button>
+          <h1>Tus Familias</h1>
+          <div className="familias">
+          <VisualizarFamilia></VisualizarFamilia>
           </div>
         </div>
       </div>
-      <div className="eventosPerfil"></div>
+
     </div>
   );
 };
