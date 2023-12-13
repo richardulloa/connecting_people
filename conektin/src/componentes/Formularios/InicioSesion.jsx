@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { useForm, } from 'react-hook-form';
-import '../css/InicioSesion.css'
+import './css/InicioSesion.css'
 import { Link } from 'react-router-dom';
 import Contexto from '../../context/Contexto';
 import { useNavigate } from 'react-router-dom';
@@ -40,11 +40,9 @@ function InicioSesion() {
                 }
             })
             .catch((error) => alert(error))
-
-  
     }
 
-        return (
+    return (
         <div>
             <header className='cabezeraInicio'>
                 <div>
@@ -71,7 +69,7 @@ function InicioSesion() {
                     }
                     <div className='pregunta'>
                         <label className="labelPregunta" htmlFor='password'>Contraseña:</label>
-                        <input type='password' id='password' {...register('password', { required: true})} />
+                        <input type='password' id='password' {...register('password', { required: true })} />
                         {
                             errors.password && (
                                 <div className='errores'>

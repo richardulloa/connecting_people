@@ -37,11 +37,43 @@
     flex-direction: column;
 }
 
-.family {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
+.info-inicial-familia > p {
+    margin: 0;
 }
+
+.miembros-visualizar-familia {
+    width: 100%;
+}
+
+.miembros-visualizar-familia > h4 {
+    margin-bottom: 0;
+}
+
+.miembros-visualizar-familia > .flex-miembros {
+    padding-top: 10px;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 1em;
+    max-width: 500px;
+}
+
+.caja-miembros {
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #ffc700;
+    transition: 0.2s ;
+}
+
+.contenido-familia:hover .caja-miembros{
+    background-color: #a66702;
+}
+
 
 .descripcion-familia {
     height: 100%;

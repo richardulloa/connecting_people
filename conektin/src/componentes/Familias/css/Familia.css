@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 80%;
     margin: 50px auto;
+    gap: 1.5em;
 }
 
 .familia .titulo-familia {
@@ -11,17 +12,15 @@
 }
 
 .info-familia {
-    margin-top: 20px;
     display: flex;
     justify-content: space-between;
-
 }
 
 .img-miembros {
     width: 70%;
     display: flex;
     align-items: start;
-    gap: 1em;
+    gap: 2em;
 }
 
 .img-familia {
@@ -32,7 +31,6 @@
 .miembros-familia {
     height: 100%;
     width: 40%;
-    border: 1px solid black;
 }
 
 .miembros-familia>h3 {
@@ -40,13 +38,32 @@
     margin-top: 0;
 }
 
+.miembrosFlex{
+    display: flex;
+    justify-content: start;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
 .descripcion-Familia {
     width: 30%;
     height: 100%;
-    border: 1px solid black;
+}
+
+.descripcion-Familia > p {
+    margin: 0;
+    height: 100%;
+    max-height: 328px;
+    overflow-y: scroll;
 }
 
 .descripcion-Familia>h3 {
     font-size: 1.5em;
     margin-top: 0;
+}
+
+.eventos-familia {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }

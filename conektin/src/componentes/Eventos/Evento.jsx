@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/Evento.css"
+import "./css/Evento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupsIcon from '@mui/icons-material/Groups';
@@ -31,9 +31,9 @@ const Evento = () => {
 
         const peticionMiembros = fetch(API_MIEMBROS)
         peticionMiembros
-            .then((resp) => {
-                return resp.json()
-            })
+            .then((resp) => { 
+                return resp.json() 
+            })       
             .then((miembrosEvento) => {
                 setMiembros(miembros => [...miembros, ...miembrosEvento])
             })

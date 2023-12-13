@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/VisualizarEvento.css"
+import "./css/VisualizarEvento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupsIcon from '@mui/icons-material/Groups';

@@ -1,6 +1,6 @@
 import Contexto from '../../context/Contexto';
 import React, { useContext } from 'react';
-import '../css/CerrarSesion.css'
+import './css/CerrarSesion.css'
 import Navegador from '../Navegador';
 import { useNavigate } from 'react-router';
 

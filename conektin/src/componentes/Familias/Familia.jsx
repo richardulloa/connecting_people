@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "../css/Familia.css"
-import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import GroupsIcon from '@mui/icons-material/Groups';
+import React, { useContext, useEffect, useState } from "react";
+import "./css/Familia.css"
 import Navegador from "../Navegador";
+import VisualizarEvento from "../Eventos/VisualizarEvento";
 import { useParams } from "react-router";
+import Contexto from "../../context/Contexto";
+
 
 
 const Evento = () => {
 
     const { id } = useParams()
+    const { usuario } = useContext(Contexto)
 
     const [familia, setFamilia] = useState({})
     const [miembros, setMiembros] = useState([])
@@ -18,8 +19,8 @@ const Evento = () => {
     useEffect(() => {
         const API_FAMILIA = `http://localhost:3300/api/familia/${id}`
 
-        const peticion = fetch(API_FAMILIA)
-        peticion
+        const peticionFamilia = fetch(API_FAMILIA)
+        peticionFamilia
             .then((resp) => {
                 return resp.json()
             })
@@ -30,7 +31,24 @@ const Evento = () => {
             .catch((error) => window.alert(error))
 
         //https://es.locationiq.com/
+
+        const API_MIEMBROS_FAMILIA = `http://localhost:3300/api/miembrosfamilia/${id}`
+
+        const peticionMiembros = fetch(API_MIEMBROS_FAMILIA)
+        peticionMiembros
+            .then((resp) => {
+                return resp.json()
+            })
+            .then((miembrosFamilia) => {
+                setMiembros(miembrosFamilia)
+            })
+            .catch((error) => window.alert(error))
+
     }, [id])
+
+    //console.log(miembros.some(miembro => miembro.idusuario === usuario.idusuario))
+
+    console.log(familia)
 
     let iniciales = miembros.map(objeto => objeto.nombreUsuario
         .split(" ")
@@ -38,32 +56,67 @@ const Evento = () => {
         .join(" ")
     )
 
-    console.log(eventos)
-
     return (
         <div className='familia'>
             <Navegador />
             <section className="familia-flex">
-                <h1 className="titulo-familia">{familia.nombreFamilia}</h1>
+                {
+                    familia &&
+                    (<header>
+                        <h1 className="titulo-familia">{familia.nombreFamilia}</h1>
+                        {
+                            miembros.some(miembro => miembro.idusuario === usuario.idusuario)
+                            ? <></>
+                            : <button>Unirme a esta familia</button>
+                        }
+                    </header>)
+                }
+
                 <section className="info-familia">
                     <div className="img-miembros">
-                        <img className="img-familia" src="../img/bbq1.jpeg" alt="" />
+                        <img className="img-familia" src="../img/bbq1.jpeg" alt="imagen familia" />
                         <section className="miembros-familia">
                             <h3>Miembros</h3>
+                            <div className="miembrosFlex">
+                                {
+                                    iniciales.map((inicial, index) => {
+                                        if (index > 41) {
+                                            return (<></>)
+                                        } else if (index <= 40) {
+                                            return (
+                                                <div key={index} className="miembros-iniciales">
+                                                    {inicial}
+                                                </div>
+                                            )
+                                        } else {
+                                            return (<div key={index} className="miembros-iniciales">
+                                                ...
+                                            </div>)
+                                        }
+                                    })
+                                }
+                            </div>
                         </section>
                     </div>
-                    <section className="descripcion-Familia">
-                        <h3>Descripcion</h3>
-
-                    </section>
+                    {
+                        familia && (
+                            <section className="descripcion-Familia">
+                                <h3>Descripcion</h3>
+                                <p>{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}{familia.descripcionFamilia}</p>
+                            </section>
+                        )
+                    }
                 </section>
-                <h1 className="titulo-familia">EVENTOS FAMILIA</h1>
-                {
-                    eventos.map(evento => {
-                        console.log(evento)
-                        
-                    })
-                }
+                <h1 className="titulo-familia">Eventos Familia</h1>
+                <section className="eventos-familia">
+                    {
+                        eventos.map(evento => {
+                            return (
+                                <VisualizarEvento key={evento.idevento} evento={evento} />
+                            )
+                        })
+                    }
+                </section>
             </section>
         </div>
     );

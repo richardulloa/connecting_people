@@ -1,5 +1,5 @@
 import React from "react";
-import '../css/InicioConLogin.css'
+import './css/InicioConLogin.css'
 import Navegador from "../Navegador";
 import { Link } from "react-router-dom";
 

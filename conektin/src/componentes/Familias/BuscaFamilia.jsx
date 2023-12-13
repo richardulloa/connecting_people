@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/BuscaFamilia.css"
+import "./css/BuscaFamilia.css"
 import Navegador from "../Navegador";
 import VisualizarFamilia from "./VisualizarFamilia";
 import { useState, useEffect } from "react";
@@ -31,9 +31,9 @@ const BuscaFamilias = () => {
                 <section className="familias-seccion">
                     {
                         familias.map(familia => {
-                            return(
-                            <VisualizarFamilia key={familia.idfamilia} familia={familia} />
-                        )
+                            return (
+                                <VisualizarFamilia key={familia.idfamilia} familia={familia} />
+                            )
                         })
                     }
                 </section>

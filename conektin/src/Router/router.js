@@ -10,8 +10,6 @@ import ProximosEventos from '../componentes/Eventos/ProximosEventos';
 import Evento from '../componentes/Eventos/Evento';
 import CrearFamilia from '../componentes/Formularios/CrearFamilia';
 import BuscaFamilias from '../componentes/Familias/BuscaFamilia';
-import InicioSesion from '../componentes/Formularios/InicioSesion';
-import CerrarSesion from '../componentes/Formularios/CerrarSesion';
 import CrearEvento from '../componentes/Formularios/CrearEvento';
 import Familia from '../componentes/Familias/Familia';
 
