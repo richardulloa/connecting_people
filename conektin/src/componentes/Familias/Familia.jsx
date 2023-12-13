@@ -43,9 +43,15 @@ const Evento = () => {
             })
             .then((miembrosFamilia) => {
                 setMiembros(miembrosFamilia)
+                setIniciales(miembrosFamilia.map(miembro => miembro.nombreUsuario
+                    .split(" ")
+                    .map(elem => elem[0])
+                    .join(" "))
+                )
+                usuario &&
+                    setJoin(miembrosFamilia.some(miembro => miembro.nombreUsuario === usuario.nombreUsuario))
             })
             .catch((error) => window.alert(error))
-
 
         const API_EVENTOS_FAMILIA = `http://localhost:3300/api/eventosfamilia/${id}`
 
@@ -58,23 +64,7 @@ const Evento = () => {
                 setEventos(eventosFamilia)
             })
             .catch((error) => window.alert(error))
-
-    }, [id,])
-
-    useEffect(() => {
-        miembros.some(miembro => miembro.idusuario === usuario.idusuario)
-            ? setJoin(true)
-            : setJoin(false)
-
-        setIniciales(miembros.map(objeto => objeto.nombreUsuario
-            .split(" ")
-            .map(elem => elem[0])
-            .join(" ")
-        ))
-
-    }, [miembros])
-
-    console.log(iniciales, join)
+    }, [id, usuario])
 
     const joinFamily = () => {
 
@@ -101,11 +91,13 @@ const Evento = () => {
                 if (mesage.error) {
                     alert("ALGO SALIO MAL")
                 } else {
-                    alert("UNIDO")
+                    setJoin(true)
                 }
             })
             .catch((error) => alert(error))
+    }
 
+    useEffect(() => {
         const API_MIEMBROS_FAMILIA = `http://localhost:3300/api/miembrosfamilia/${id}`
 
         const peticionMiembros = fetch(API_MIEMBROS_FAMILIA)
@@ -117,9 +109,17 @@ const Evento = () => {
                 setMiembros(miembrosFamilia)
             })
             .catch((error) => window.alert(error))
-    }
+    }, [join])
 
-    
+    useEffect(() => {
+        setIniciales(miembros.map(objeto => objeto.nombreUsuario
+            .split(" ")
+            .map(elem => elem[0])
+            .join(" ")
+        ))
+    }, [miembros])
+
+
     return (
         <div className='familia'>
             <Navegador />
