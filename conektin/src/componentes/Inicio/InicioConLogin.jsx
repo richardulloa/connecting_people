@@ -38,7 +38,7 @@ const InicioConLogin = () => {
                         </div>
                     </Link>
                     
-                    <Link to={"/"} className="secciones tradiciones">
+                    <Link to={"/tradiciones"} className="secciones tradiciones">
                         <div className="caja">
                             <div className="image tc"></div>
                             <div className="overlay">
