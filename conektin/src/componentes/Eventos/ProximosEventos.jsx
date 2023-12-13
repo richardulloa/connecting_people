@@ -9,7 +9,7 @@ const ProximosEventos = () => {
 
 
     useEffect(() => {
-        const API_EVENTOS = "http://localhost:3300/api/eventosfamilia"
+        const API_EVENTOS = "http://localhost:3300/api/eventos"
 
         const peticion = fetch(API_EVENTOS)
         peticion

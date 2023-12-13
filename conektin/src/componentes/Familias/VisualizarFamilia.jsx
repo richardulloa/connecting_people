@@ -30,9 +30,6 @@ const VisualizarFamilia = ({ familia }) => {
         .join(" ")
     )
 
-    console.log(familia.idfamilia, miembrosFamilia, iniciales)
-
-
     return (
         <Link to={`/familia/${familia.idfamilia}`} className='contenido-familia'>
             <div className="flex-familia">

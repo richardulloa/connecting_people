@@ -6,9 +6,37 @@
     gap: 1.5em;
 }
 
+.header-familia {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .familia .titulo-familia {
     font-size: 3em;
     margin: 0;
+    width: 38.5%;
+}
+
+.div-fam {
+    font-size: 1.4em;
+    width: 60%;
+}
+
+.div-fam>span {
+    background-color: #ffc700;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.button-join-fam {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.button-join-fam:hover {
+    background-color: #d19100;
 }
 
 .info-familia {
@@ -38,7 +66,7 @@
     margin-top: 0;
 }
 
-.miembrosFlex{
+.miembrosFlex {
     display: flex;
     justify-content: start;
     gap: 1em;
@@ -50,11 +78,11 @@
     height: 100%;
 }
 
-.descripcion-Familia > p {
+.descripcion-Familia>p {
     margin: 0;
     height: 100%;
     max-height: 328px;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .descripcion-Familia>h3 {
@@ -66,4 +94,8 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.eventos-familia > h2{
+    text-align: center;
 }
