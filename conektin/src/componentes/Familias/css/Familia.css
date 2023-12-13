@@ -18,6 +18,23 @@
     width: 38.5%;
 }
 
+.section-fam-header {
+    display: flex;
+    width: 60%;
+    gap: 1em;
+}
+
+.div-fam-span {
+    font-size: 1.4em;
+}
+
+.div-fam-span>span {
+    background-color: #ffc700;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
 .div-fam {
     font-size: 1.4em;
     width: 60%;
@@ -81,7 +98,7 @@
 .descripcion-Familia>p {
     margin: 0;
     height: 100%;
-    max-height: 328px;
+    max-height: 250px;
     overflow-y: auto;
 }
 
@@ -96,6 +113,6 @@
     gap: 1em;
 }
 
-.eventos-familia > h2{
+.eventos-familia>h2 {
     text-align: center;
 }

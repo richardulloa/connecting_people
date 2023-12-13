@@ -1,4 +1,4 @@
-import React, /*{useState}*/ from 'react'
+import React /*{useState}*/ from 'react'
 import Navegador from '../Navegador';
 import './css/Tradiciones.css'
 

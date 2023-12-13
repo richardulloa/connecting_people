@@ -6,11 +6,11 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import { Link } from "react-router-dom";
 
 
-const VisualizarEvento = ({evento}) => {
+const VisualizarEvento = ({ evento }) => {
 
     let fechaEvento = ""
 
-    if(Object.keys(evento).length){
+    if (Object.keys(evento).length) {
         fechaEvento = evento.fechaEvento.split("T")[0]
     }
 
@@ -21,7 +21,10 @@ const VisualizarEvento = ({evento}) => {
                 <section className="info-inicial">
                     <h3>{evento.nombreEvento}</h3>
                     <h3 className="family"><GroupsIcon /><span className="nombre-familia">{evento.nombreFamilia}</span></h3>
-                    <p>Organizador: <strong>{evento.nombreUsuario}</strong></p>
+                    {
+                        evento.organizadorEvento &&
+                        <p>Organizador: <strong>{evento.nombreUsuario}</strong></p>
+                    }
                 </section>
             </div>
             <section className="info-adicional">

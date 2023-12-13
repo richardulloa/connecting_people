@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm, } from 'react-hook-form';
 import './css/CrearEvento.css'
 import Navegador from '../Navegador';
+import Contexto from '../../context/Contexto'
 
 function CrearFamilia() {
+    
     const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
+
+    const {usuario} = useContext(Contexto)
 
     const datosFamilia = (datos) => {
 
@@ -13,6 +17,7 @@ function CrearFamilia() {
         const objetoDatos = {
             nombreFamilia: datos.nombreFamilia,
             descripcionFamilia: datos.descripcionFamilia,
+            idusuario: usuario.idusuario
         }
 
         const parametros = {

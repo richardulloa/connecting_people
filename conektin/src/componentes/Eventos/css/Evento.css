@@ -3,18 +3,8 @@
     margin: 50px auto;
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     gap: 1em;
-}
-
-.evento-info {
-    width: 65%;
-}
-
-.evento-info>p {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-    font-size: 1.15em;
 }
 
 .titulo-evento {
@@ -22,14 +12,60 @@
     margin: 0;
 }
 
+.evento-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.evento-info > a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    width: max-content;
+    background-color: #ffc700;
+    border-radius: 5px;
+    transition: 0.2s;
+}
+
+.evento-info > a:hover{
+    background-color: #d19100;
+}
+
+.evento-info > a > p{
+    padding: 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.15em;
+}
+
+.more-event-info {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.more-event-info > p {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.15em;
+}
+
 .caja-evento {
+    width: 70%;
     display: flex;
     justify-content: start;
     gap: 2em;
 }
 
 .imagen-evento {
-    width: 700px;
+    width: 55%;
+    border-radius: 5px;
 }
 
 .caja-evento-info {
@@ -43,16 +79,20 @@
     font-size: 1.15em;
 }
 
+.miembros-evento {
+    width: 30%;
+}
+
 .miembros-evento h3 {
     font-size: 2em;
-    width: 400px;
-    margin-bottom: 0;
+    margin: 0 auto;
+    padding: 0;
+    border: 1px solid black;
 }
 
 .miembros-inside{
     padding: 10px 0;
     max-width: 400px;
-    height: 100%;
     display: flex;
     justify-content: start;
     align-items: start;
@@ -78,10 +118,4 @@
 .descripcion-evento {
     width: 100%;
     line-height: 1.2em;
-}
-
-.mapa-evento {
-    width: 25%;
-    margin: 104px 0 18px 0;
-    border: 1px solid black;
 }

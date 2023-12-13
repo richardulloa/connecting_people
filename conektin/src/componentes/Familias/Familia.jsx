@@ -130,7 +130,12 @@ const Evento = () => {
                         <h1 className="titulo-familia">{familia.nombreFamilia}</h1>
                         {
                             join
-                                ? <div className="div-fam"><span>Tu familia</span></div>
+                                ? (
+                                    <section className="section-fam-header">
+                                        <div className="div-fam-span"><span>Tu familia</span></div>
+                                        <div className="div-fam-span"><span>Crear Evento</span></div>
+                                    </section>
+                                )
                                 : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam">Unirte a la familia</span></div>
                         }
                     </header>)
@@ -153,9 +158,10 @@ const Evento = () => {
                                                 </div>
                                             )
                                         } else {
-                                            return (<div key={index} className="miembros-iniciales">
-                                                ...
-                                            </div>)
+                                            return (
+                                                <div key={index} className="miembros-iniciales">
+                                                    ...
+                                                </div>)
                                         }
                                     })
                                 }

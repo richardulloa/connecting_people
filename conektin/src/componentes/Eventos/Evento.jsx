@@ -5,6 +5,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupsIcon from '@mui/icons-material/Groups';
 import Navegador from "../Navegador";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 
 const Evento = () => {
@@ -19,7 +20,7 @@ const Evento = () => {
 
         const peticion = fetch(API_EVENTO)
         peticion
-            .then((resp) => {            
+            .then((resp) => {
                 return resp.json()
             })
             .then((evento) => {
@@ -31,15 +32,15 @@ const Evento = () => {
 
         const peticionMiembros = fetch(API_MIEMBROS)
         peticionMiembros
-            .then((resp) => { 
-                return resp.json() 
-            })       
+            .then((resp) => {
+                return resp.json()
+            })
             .then((miembrosEvento) => {
                 setMiembros(miembros => [...miembros, ...miembrosEvento])
             })
             .catch((error) => window.alert(error))
         //https://es.locationiq.com/
-    }, [id])      
+    }, [id])
 
     let fechaEvento = ""
 
@@ -57,43 +58,42 @@ const Evento = () => {
         <div className='evento'>
             <Navegador />
             <div className="evento-box-flex">
+                <h1 className="titulo-evento">{evento.nombreEvento}</h1>
                 <div className="evento-info">
-                    <h1 className="titulo-evento">{evento.nombreEvento}</h1>
-                    <p><GroupsIcon fontSize="inherit" />{evento.nombreFamilia}</p>
-                    <section className="caja-evento">
-                        <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
-                        <div className="caja-evento-info">
-                            <p><CalendarMonthIcon fontSize="inherit" />{fechaEvento}</p>
-                            <p><LocationOnIcon fontSize="inherit" />{evento.calleEvento}, {evento.numerocalleEvento}</p>
-                            <section className="miembros-evento">
-                                <h3>Miembros</h3>
-                                <div className="miembros-inside">
-                                    {
-                                        iniciales.map((inicial, index) => {
-                                            if (index > 20) {
-                                                return (<></>)
-                                            } else if (index <= 19) {
-                                                return (
-                                                    <div key={index} className="miembros-iniciales">
-                                                        {inicial}
-                                                    </div>
-                                                )
-                                            } else {
-                                                return (<div key={index} className="miembros-iniciales">
-                                                    ...
-                                                </div>)
-                                            }
-                                        })
-                                    }
-                                </div>
-                            </section>
-                        </div>
+                    <Link to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
+                    <section className="more-event-info">
+                        <section className="caja-evento">
+                            <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
+                            <div className="caja-evento-info">
+                                <p><CalendarMonthIcon fontSize="inherit" />{fechaEvento}</p>
+                                <p><LocationOnIcon fontSize="inherit" />{evento.calleEvento}, {evento.numerocalleEvento}</p>
+                            </div>
+                        </section>
+                        <section className="miembros-evento">
+                            <h3>Miembros</h3>
+                            <div className="miembros-inside">
+                                {
+                                    iniciales.map((inicial, index) => {
+                                        if (index > 11) {
+                                            return (<></>)
+                                        } else if (index <= 10) {
+                                            return (
+                                                <div key={index} className="miembros-iniciales">
+                                                    {inicial}
+                                                </div>
+                                            )
+                                        } else {
+                                            return (<div key={index} className="miembros-iniciales">
+                                                ...
+                                            </div>)
+                                        }
+                                    })
+                                }
+                            </div>
+                        </section>
                     </section>
                     <h3 className="titulo-descripcion-evento">Descripcion</h3>
                     <p className="descripcion-evento">{evento.descripcionEvento}</p>
-                </div>
-                <div className="mapa-evento">
-                    MAPA
                 </div>
             </div>
         </div>
