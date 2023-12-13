@@ -12,12 +12,17 @@ function CrearEvento() {
 
     const datosEvento = (datos) => {
 
-        const API_EXCURSIONES = 'http://localhost:3000/api/eventos'
+        const API_EXCURSIONES = 'http://localhost:3300/api/eventos'
 
         const objetoDatos = {
             nombreEvento: datos.nombreEvento,
-            descripcionEvento: datos.descripccion,
+            descripcionEvento: datos.descripcionEvento,
+            fechaEvento: datos.fechaEvento,
+            calleEvento: datos.calleEvento,
+            numerocalleEvento: datos.numerocalleEvento,
+            cpEvento:datos.cpEvento
         }
+        console.table(datos)
 
         const parametros = {
             method: 'POST',

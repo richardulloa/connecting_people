@@ -48,7 +48,7 @@ const InicioConLogin = () => {
                     </Link>
                 </section>
 
-                <Link to={"/"} className="secciones evento-cercano">
+                <Link to={"/crear-evento"} className="secciones evento-cercano">
                     <div className="caja">
                         <div className="image ec"></div>
                         <div className="overlay">

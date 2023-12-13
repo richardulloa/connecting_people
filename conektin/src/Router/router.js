@@ -31,7 +31,7 @@ export function Router() {
             <Route path='/login' element={<InicioSesion/>} />
             <Route path='/logout' element={<CerrarSesion/>} />
             <Route path='/*' element={<Navigate to='/'/>}/>
-            <Route path='crear-evento' element={<CrearEvento />} />
+            <Route path='/crear-evento' element={<CrearEvento />} />
             <Route path='/familia/:id' element={<Familia />} />
             <Route path='/*' element={<Navigate to='/' />} /> 
         </Routes>
