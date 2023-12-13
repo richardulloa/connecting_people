@@ -1,0 +1,48 @@
+body {
+   
+    margin: 0;
+    padding: 0;
+  }
+  
+   .main{
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav {
+    background-color: #eee;
+    padding: 10px;
+  }
+  
+  nav span {
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  nav span:hover {
+    color: #0066cc;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
