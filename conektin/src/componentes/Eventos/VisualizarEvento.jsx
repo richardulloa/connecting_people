@@ -8,12 +8,6 @@ import { Link } from "react-router-dom";
 
 const VisualizarEvento = ({ evento }) => {
 
-    let fechaEvento = ""
-
-    if (Object.keys(evento).length) {
-        fechaEvento = evento.fechaEvento.split("T")[0]
-    }
-
     return (
         <Link to={`/evento/${evento.idevento}`} className='contenido-evento'>
             <div className="flex-evento">
@@ -25,7 +19,7 @@ const VisualizarEvento = ({ evento }) => {
                 </section>
             </div>
             <section className="info-adicional">
-                <p><CalendarMonthIcon /><span>{fechaEvento}</span></p>
+                <p><CalendarMonthIcon /><span>{evento.fechaEvento}</span></p>
                 <p><LocationOnIcon />{evento.calleEvento}, {evento.numerocalleEvento}</p>
             </section>
         </Link>

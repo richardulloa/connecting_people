@@ -46,8 +46,9 @@ const Evento = () => {
                     .map(elem => elem[0])
                     .join(" "))
                 )
-                usuario &&
-                    setJoin(miembrosFamilia.some(miembro => miembro.nombreUsuario === usuario.nombreUsuario))
+                if (usuario) {
+                    setJoin(miembrosFamilia.some(miembro => miembro.idusuario === usuario.idusuario))
+                }
             })
             .catch((error) => window.alert(error))
 
@@ -107,7 +108,7 @@ const Evento = () => {
                 setMiembros(miembrosFamilia)
             })
             .catch((error) => window.alert(error))
-    }, [join])
+    }, [join, id])
 
     useEffect(() => {
         setIniciales(miembros.map(objeto => objeto.nombreUsuario
@@ -116,7 +117,6 @@ const Evento = () => {
             .join(" ")
         ))
     }, [miembros])
-
 
     return (
         <div className='familia'>
@@ -131,7 +131,7 @@ const Evento = () => {
                                 ? (
                                     <section className="section-fam-header">
                                         <div className="div-fam-span"><span><Diversity3Icon className="group-icon" />Tu familia</span></div>
-                                        <div className="div-fam-span"><span>Crear Evento</span></div>
+                                        <div className="div-fam-span crear-evento"><span>Crear Evento</span></div>
                                     </section>
                                 )
                                 : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam"><GroupAddIcon className="group-icon" />Unirte a la familia</span></div>

@@ -5,6 +5,9 @@
     justify-content: space-between;
     flex-direction: column;
     gap: 1em;
+    background-color: rgb(248, 240, 240);
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .titulo-evento {
@@ -23,20 +26,44 @@
 .botones-evento{
     display: flex;
     gap: 1em;
+    width: 37.5%;
+    justify-content: space-between;
 }
 
 .enlace-familia-evento {
     text-decoration: none;
-    color: black;
     font-weight: 700;
     width: max-content;
-    background-color: #ffc700;
     border-radius: 5px;
     transition: 0.2s;
 }
 
-.enlace-familia-evento:hover {
+.direct-familia {
+    background-color: #ffc700;
+    color: black;
+}
+
+.direct-familia:hover {
     background-color: #d19100;
+}
+
+.in-evento{
+    background-color: #3a5ba0;
+    color: white;
+}
+
+.join-evento {
+    background-color: #ffc700;
+    color: black;
+}
+
+.join-evento:hover {
+    background-color: #d19100;
+}
+
+.need-familia {
+    background-color: #dc3545;
+    color: white;
 }
 
 .enlace-familia-evento>p {
@@ -55,7 +82,6 @@
 .more-event-info {
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
 }
 
 .more-event-info>p {
@@ -77,7 +103,17 @@
     border-radius: 5px;
 }
 
-.caja-evento-info {}
+.caja-evento-info {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.enlace-mapa > img {
+    width: 75%;
+    border-radius: 15px;
+}
 
 .caja-evento-info>p {
     display: flex;
@@ -95,7 +131,6 @@
     font-size: 2em;
     margin: 0 auto;
     padding: 0;
-    border: 1px solid black;
 }
 
 .miembros-inside {

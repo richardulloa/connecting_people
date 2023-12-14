@@ -4,6 +4,9 @@
     width: 80%;
     margin: 50px auto;
     gap: 1.5em;
+    background-color: rgb(248, 240, 240);
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .header-familia {
@@ -26,13 +29,19 @@
 
 .div-fam-span > span{
     font-size: 1.4em;
-    background-color: #ffc700;
+    background-color:#3a5ba0;
+    color: white;
     padding: 10px;
     border-radius: 5px;
     font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.5em;
+}
+
+.crear-evento > span{
+    background-color: #ffd700;
+    color: black;
 }
 
 .div-fam {

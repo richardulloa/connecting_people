@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./css/Evento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -7,17 +7,23 @@ import EventIcon from '@mui/icons-material/Event';
 import Navegador from "../Navegador";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Contexto from "../../context/Contexto";
 
 
 const Evento = () => {
 
     const { id } = useParams()
 
+    const { usuario } = useContext(Contexto)
+
     const [evento, setEvento] = useState({})
     const [miembros, setMiembros] = useState([])
+    const [usuarioEnFamilia, setUsuarioEnFamilia] = useState()
+    const [usuarioEnEvento, setUsuarioEnEvento] = useState()
 
     useEffect(() => {
         const API_EVENTO = `http://localhost:3300/api/eventos/${id}`
+        const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
 
         const peticion = fetch(API_EVENTO)
         peticion
@@ -29,8 +35,6 @@ const Evento = () => {
             })
             .catch((error) => window.alert(error))
 
-        const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
-
         const peticionMiembros = fetch(API_MIEMBROS)
         peticionMiembros
             .then((resp) => {
@@ -40,13 +44,73 @@ const Evento = () => {
                 setMiembros(miembrosEvento)
             })
             .catch((error) => window.alert(error))
+
     }, [id])
 
-    let fechaEvento = ""
 
-    if (Object.keys(evento).length) {
-        fechaEvento = evento.fechaEvento.split("T")[0]
+    useEffect(() => {
+        const API_USUARIO_FAMILIA = "http://localhost:3300/api/usuarioeninfo"
+
+        if (usuario) {
+            const parametros = {
+                method: 'GET',
+                headers: {
+                    idusuario: usuario.idusuario,
+                    idfamilia: evento.idfamilia,
+                    idevento: evento.idevento
+                },
+                mode: 'cors'
+            }
+            const peticionUsuario = fetch(API_USUARIO_FAMILIA, parametros)
+            peticionUsuario
+                .then((resp) => {
+                    return resp.json()
+                })
+                .then((usuarioInfo) => {
+                    if (usuarioInfo) {
+                        setUsuarioEnFamilia(usuarioInfo[0].usuarioEnFamilia)
+                        setUsuarioEnEvento(usuarioInfo[0].usuarioEnEvento)
+                    }
+                })
+                .catch((error) => window.alert(error))
+        }
+
+    }, [usuario, evento])
+
+
+    
+    const joinEvent = () => {
+
+        const API_UNIRTE_EVENTO = `http://localhost:3300/api/unirteevento`
+
+        const objetoDatos = {
+            idusuario: usuario.idusuario,
+            idevento: evento.idevento
+        }
+
+        const parametros = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objetoDatos),
+            mode: 'cors'
+        }
+
+        const peticionEventos = fetch(API_UNIRTE_EVENTO, parametros)
+        peticionEventos
+            .then((resp) => resp.json())
+            .then((mesage) => {
+                if (mesage.error) {
+                    alert("ALGO SALIO MAL")
+                } else {
+                    setUsuarioEnEvento(1)
+                }
+            })
+            .catch((error) => alert(error))
     }
+
+
 
     let iniciales = miembros.map(objeto => objeto.nombreUsuario
         .split(" ")
@@ -61,16 +125,26 @@ const Evento = () => {
                 <h1 className="titulo-evento">{evento.nombreEvento}</h1>
                 <div className="evento-info">
                     <section className="botones-evento">
-                        <Link className="enlace-familia-evento" to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
-                        <div className="enlace-familia-evento join-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unirse al evento</p></div>
+                        <Link className="enlace-familia-evento direct-familia" to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
+                        {
+                            usuarioEnEvento
+                                ? <div className="enlace-familia-evento in-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Ya estás en el evento</p></div>
+                                : usuarioEnFamilia 
+                                    ? <div onClick={joinEvent} className="enlace-familia-evento join-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unirse al evento</p></div>
+                                    : <div className="enlace-familia-evento need-familia" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unete a la familia</p></div>
+                        }
                     </section>
 
                     <section className="more-event-info">
                         <section className="caja-evento">
                             <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
                             <div className="caja-evento-info">
-                                <p><CalendarMonthIcon fontSize="inherit" />{fechaEvento}</p>
+                                <p><CalendarMonthIcon fontSize="inherit" />{evento.fechaEvento}</p>
                                 <p><LocationOnIcon fontSize="inherit" />{evento.calleEvento}, {evento.numerocalleEvento}</p>
+                                {
+                                    Object.keys(evento).length &&
+                                    <a className="enlace-mapa" href={`https://www.google.com/maps/place/${evento.calleEvento.split(" ").join("+")}+${evento.numerocalleEvento}`} target="_blank" rel="noreferrer"><img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2023/02/google-maps-2961754.jpg?tf=3840x" alt="" /></a>
+                                }
                             </div>
                         </section>
                         <section className="miembros-evento">
