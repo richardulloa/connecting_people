@@ -6,7 +6,7 @@
 
 .barraPerfil {
   background: linear-gradient(to top, #172a54, #3a5ba0);
-  width: 26%;
+  width: 25%;
 }
 
 .barraPerfil h1 {
@@ -61,7 +61,7 @@
   justify-content: start;
   align-items: center;
   width: 67%;
-  gap: 3em;
+  gap: 5em;
 }
 
 .tus-eventos-perfil,
