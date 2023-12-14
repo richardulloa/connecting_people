@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import Contexto from "../../context/Contexto";
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
+import { Link } from "react-router-dom";
 
 
 const Evento = () => {
@@ -131,7 +132,7 @@ const Evento = () => {
                                 ? (
                                     <section className="section-fam-header">
                                         <div className="div-fam-span"><span><Diversity3Icon className="group-icon" />Tu familia</span></div>
-                                        <div className="div-fam-span crear-evento"><span>Crear Evento</span></div>
+                                        <Link to={`/crear-evento/${familia.idfamilia}`}><div className="div-fam-span crear-evento"><span>Crear Evento</span></div></Link>
                                     </section>
                                 )
                                 : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam"><GroupAddIcon className="group-icon" />Unirte a la familia</span></div>

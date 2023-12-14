@@ -29,7 +29,7 @@ export function Router() {
             <Route path='/evento/:id' element={<Evento />} />
             <Route path='/crear-familia' element={<CrearFamilia />} />
             <Route path='/busca-familia' element={<BuscaFamilias />} />
-            <Route path='/crear-evento' element={<CrearEvento />} />
+            <Route path='/crear-evento/:idfamilia' element={<CrearEvento />} />
             <Route path='/familia/:id' element={<Familia />} />
             <Route path='/tradiciones' element={<Tradiciones />} />
             <Route path='/*' element={<Navigate to='/' />} />
