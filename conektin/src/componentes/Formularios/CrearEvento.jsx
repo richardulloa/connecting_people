@@ -1,28 +1,35 @@
 import React from 'react'
-import { useForm, } from 'react-hook-form';
+import { useForm,  } from 'react-hook-form';
 import './css/CrearFamilia.css'
 import Navegador from '../Navegador';
 import { ListItemAvatar } from '@mui/material';
+import { useContext } from 'react';
+import Contexto from '../../context/Contexto';
+import { useParams } from 'react-router';
 
 
 
 function CrearEvento() {
 
     const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
-
+    const {usuario} = useContext(Contexto)
+    const {idfamilia} = useParams()
     const datosEvento = (datos) => {
 
         const API_EXCURSIONES = 'http://localhost:3300/api/eventos'
 
         const objetoDatos = {
             nombreEvento: datos.nombreEvento,
-            descripcionEvento: datos.descripcionEvento,
+            descripcionEvento: datos.descripccion,
             fechaEvento: datos.fechaEvento,
-            calleEvento: datos.calleEvento,
-            numerocalleEvento: datos.numerocalleEvento,
-            cpEvento:datos.cpEvento
+            calleEvento: datos.calle,
+            numerocalleEvento: datos.numeroCalle,
+            cpEvento:datos.cp,
+            idfamilia:idfamilia,
+            idusuario: usuario.idusuario
+          
         }
-        console.table(datos)
+        console.table(objetoDatos)
 
         const parametros = {
             method: 'POST',
