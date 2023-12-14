@@ -59,7 +59,7 @@ function Alta() {
   }
 
   return (
-    <div>
+    <div className="body-registro">
       <header>
         <div className="cajita">
           <Link to={"/"}>

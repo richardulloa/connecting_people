@@ -79,7 +79,9 @@ const Perfil = () => {
             <h1>Tus Eventos</h1>
             <div className="eventos">
               {
-                eventosUsuario.map((evento => <VisualizarEventoPerfil key={evento.idevento} evento={evento} />))
+                eventosUsuario.length
+                  ? eventosUsuario.map((evento => <VisualizarEventoPerfil key={evento.idevento} evento={evento} />))
+                  : <h2>No tienes eventos</h2>
               }
             </div>
           </section>
@@ -88,7 +90,9 @@ const Perfil = () => {
             <h1>Tus Familias</h1>
             <div className="familias">
               {
-                familiasUsuario.map((familia => <VisualizarFamiliaPerfil key={familia.idfamilia} familia={familia} />))
+                familiasUsuario.length
+                  ? familiasUsuario.map((familia => <VisualizarFamiliaPerfil key={familia.idfamilia} familia={familia} />))
+                  : <h2>No estas en ninguna familia</h2>
               }
             </div>
           </section>
@@ -97,5 +101,6 @@ const Perfil = () => {
     </div >
   );
 };
+
 
 export default Perfil;

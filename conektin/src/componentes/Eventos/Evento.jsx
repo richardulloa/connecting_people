@@ -20,6 +20,8 @@ const Evento = () => {
     const [miembros, setMiembros] = useState([])
     const [usuarioEnFamilia, setUsuarioEnFamilia] = useState()
     const [usuarioEnEvento, setUsuarioEnEvento] = useState()
+    const [iniciales, setIniciales] = useState([])
+
 
     useEffect(() => {
         const API_EVENTO = `http://localhost:3300/api/eventos/${id}`
@@ -42,6 +44,11 @@ const Evento = () => {
             })
             .then((miembrosEvento) => {
                 setMiembros(miembrosEvento)
+                setIniciales(miembros.map(objeto => objeto.nombreUsuario
+                    .split(" ")
+                    .map(elem => elem[0])
+                    .join(" ")
+                ))
             })
             .catch((error) => window.alert(error))
 
@@ -78,7 +85,7 @@ const Evento = () => {
     }, [usuario, evento])
 
 
-    
+
     const joinEvent = () => {
 
         const API_UNIRTE_EVENTO = `http://localhost:3300/api/unirteevento`
@@ -110,30 +117,48 @@ const Evento = () => {
             .catch((error) => alert(error))
     }
 
+    useEffect(() => {
+        const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
 
+        const peticionMiembros = fetch(API_MIEMBROS)
+        peticionMiembros
+            .then((resp) => {
+                return resp.json()
+            })
+            .then((miembrosEvento) => {
+                setMiembros(miembrosEvento)
+            })
+            .catch((error) => window.alert(error))
+    }, [usuarioEnEvento])
 
-    let iniciales = miembros.map(objeto => objeto.nombreUsuario
-        .split(" ")
-        .map(elem => elem[0])
-        .join(" ")
-    )
+    useEffect(() => {
+        setIniciales(miembros.map(miembro => miembro.nombreUsuario
+            .split(" ")
+            .map(elem => elem[0])
+            .join(" ")
+        ))
+    }, [miembros])
 
     return (
         <div className='evento'>
             <Navegador />
             <div className="evento-box-flex">
-                <h1 className="titulo-evento">{evento.nombreEvento}</h1>
                 <div className="evento-info">
-                    <section className="botones-evento">
-                        <Link className="enlace-familia-evento direct-familia" to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
-                        {
-                            usuarioEnEvento
-                                ? <div className="enlace-familia-evento in-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Ya estás en el evento</p></div>
-                                : usuarioEnFamilia 
-                                    ? <div onClick={joinEvent} className="enlace-familia-evento join-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unirse al evento</p></div>
-                                    : <div className="enlace-familia-evento need-familia" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unete a la familia</p></div>
-                        }
-                    </section>
+                    <header className="header-evento">
+                        <h1 className="titulo-evento">{evento.nombreEvento}</h1>
+                        <section className="botones-evento">
+
+                            <Link className="enlace-familia-evento direct-familia" to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
+                            {
+                                usuarioEnEvento
+                                    ? <div className="enlace-familia-evento in-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Ya estás en el evento</p></div>
+                                    : usuarioEnFamilia
+                                        ? <div onClick={joinEvent} className="enlace-familia-evento join-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unirse al evento</p></div>
+                                        : <div className="enlace-familia-evento need-familia" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unete a la familia</p></div>
+                            }
+                        </section>
+                    </header>
+
 
                     <section className="more-event-info">
                         <section className="caja-evento">
