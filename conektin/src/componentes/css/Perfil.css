@@ -1,20 +1,19 @@
 .contenido-perfil {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .barraPerfil {
   background: linear-gradient(to top, #172a54, #3a5ba0);
-  width: 33%;
-  padding: 20px;
-  height: 100vh;
+  width: 25%;
 }
 
 .barraPerfil h1 {
   color: #fff;
   text-align: center;
+  font-size: 2em;
 }
-
 
 .contenido-principal {
   flex: 1;
@@ -25,9 +24,8 @@
 .imagen-perfil {
   width: 10em;
   height: 10em;
-  background-color: #fff;
   overflow: hidden;
-  border-radius: 100px;
+  border-radius: 50%;
   margin: auto;
 }
 
@@ -41,6 +39,7 @@
 .datos-perfil {
   color: #ffe5b4;
   text-align: center;
+  font-size: 1.25em;
 }
 
 .contenido-principal {
@@ -52,27 +51,38 @@
 
 .intereses-perfil {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
-.eventos-perfil{
+
+.eventos-perfil {
   display: flex;
-  margin: auto;
-  flex-direction: column;
-  text-align: center;
+  margin: 0 auto;
+  justify-content: start;
   align-items: center;
-  height: 100vh;
   width: 67%;
+  gap: 5em;
 }
 
-.eventos-perfil h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.eventos, .familias {
+.tus-eventos-perfil,
+.tus-familias-perfil {
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  margin: 10px;
+  justify-content: start;
   align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.tus-eventos-perfil h1,
+.tus-familias-perfil h1 {
+  font-size: 2em;
+}
+
+.eventos,
+.familias {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
 }

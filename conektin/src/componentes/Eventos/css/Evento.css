@@ -20,7 +20,12 @@
     gap: 1em;
 }
 
-.evento-info > a{
+.botones-evento{
+    display: flex;
+    gap: 1em;
+}
+
+.enlace-familia-evento {
     text-decoration: none;
     color: black;
     font-weight: 700;
@@ -30,11 +35,11 @@
     transition: 0.2s;
 }
 
-.evento-info > a:hover{
+.enlace-familia-evento:hover {
     background-color: #d19100;
 }
 
-.evento-info > a > p{
+.enlace-familia-evento>p {
     padding: 10px;
     margin: 0;
     display: flex;
@@ -43,13 +48,17 @@
     font-size: 1.15em;
 }
 
+.join-evento{
+    cursor: pointer;
+}
+
 .more-event-info {
     display: flex;
     justify-content: space-between;
     border: 1px solid black;
 }
 
-.more-event-info > p {
+.more-event-info>p {
     display: flex;
     align-items: center;
     gap: 1em;
@@ -68,8 +77,7 @@
     border-radius: 5px;
 }
 
-.caja-evento-info {
-}
+.caja-evento-info {}
 
 .caja-evento-info>p {
     display: flex;
@@ -90,7 +98,7 @@
     border: 1px solid black;
 }
 
-.miembros-inside{
+.miembros-inside {
     padding: 10px 0;
     max-width: 400px;
     display: flex;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import './css/Navegador.css'
 import ListIcon from '@mui/icons-material/List';
 import SearchIcon from '@mui/icons-material/Search';
@@ -6,9 +6,12 @@ import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { Link } from "react-router-dom";
+import Contexto from "../context/Contexto";
 
 
 const Navegador = () => {
+
+    const { usuario } = useContext(Contexto)
 
     const [menu, setMenu] = useState(false)
 
@@ -27,7 +30,10 @@ const Navegador = () => {
                 </section>
                 <section className="perfil">
                     <Link to={"/crear-familia"} className="crear-familia"><AddIcon fontSize="inherit" /> <span className="crear-familia-text">Crear Familia</span></Link>
-                    <Link to={"/perfil"} className="foto-perfil"><PersonIcon fontSize="inherit" /></Link>
+                    {
+                        usuario &&
+                        <Link to={`/perfil/${usuario.idusuario}`} className="foto-perfil"><PersonIcon fontSize="inherit" /></Link>
+                    }
                     <Link to={"/logout"} className="foto-perfil"><LogoutIcon fontSize="inherit" /></Link>
                 </section>
             </div>

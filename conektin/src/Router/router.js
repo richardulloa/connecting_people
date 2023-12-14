@@ -23,7 +23,7 @@ export function Router() {
             <Route path='/login' element={<InicioSesion />} />
             <Route path='/logout' element={<CerrarSesion />} />
             <Route path='/main' element={<InicioConLogin />} />
-            <Route path='/perfil' element={<Perfil />} />
+            <Route path='/perfil/:id' element={<Perfil />} />
             <Route path='/alta' element={<Alta />} />
             <Route path='/proximos-eventos' element={<ProximosEventos />} />
             <Route path='/evento/:id' element={<Evento />} />

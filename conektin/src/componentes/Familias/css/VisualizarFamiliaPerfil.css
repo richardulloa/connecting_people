@@ -1,0 +1,49 @@
+.contenido-familia-perfil {
+    height: 150px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.2s;
+    text-decoration: none;
+    color: black
+}
+
+.contenido-familia-perfil:hover{
+    background-color: #ffc700;
+}
+
+.flex-familia-perfil {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2em;
+}
+
+.contenido-familia-perfil > .flex-familia-perfil > img {
+    height: 100%;
+    border-radius: 5px 0 0 5px;
+}
+
+.contenido-familia-perfil > .flex-familia-perfil > .info-inicial-familia-perfil {
+    height: 100%;
+    width: 300px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+.miembros-visualizar-familia-perfil {
+    width: 100%;
+}
+
+.miembros-visualizar-familia-perfil > h4 {
+    margin-bottom: 0;
+}
+
+.miembros-visualizar-familia-perfil > h4 > span {
+font-weight: 500;}

@@ -3,36 +3,47 @@ import Contexto from "../context/Contexto"
 import "./css/Perfil.css"
 import Navegador from "./Navegador"
 import Intereses from "./Intereses"
-import VisualizarEvento from './Eventos/VisualizarEvento'
-import VisualizarFamilia from "./Familias/VisualizarFamilia"
+import VisualizarEventoPerfil from './Eventos/VisualizarEventoPerfil'
+import VisualizarFamiliaPerfil from "./Familias/VisualizarFamiliaPerfil"
 import { useState, useEffect } from "react"
+import { useParams } from "react-router"
 
 
-const Perfil = () => { 
+const Perfil = () => {
 
   const { usuario } = useContext(Contexto)
+  const { id } = useParams()
 
   const [eventosUsuario, setEventosUsuario] = useState([])
+  const [familiasUsuario, setFamiliasUsuario] = useState([])
 
   useEffect(() => {
-    
-    if(usuario){
-      const API_EVENTOS_USUARIO = `http://localhost:3300/api/eventosusuario/${usuario.idusuario}`
 
-      const peticion = fetch(API_EVENTOS_USUARIO)
-      peticion
-        .then((resp) => {
-          return resp.json() 
-        })
-        .then((eventos) => {
-          setEventosUsuario(eventos)
-        })
-        .catch((error) => window.alert(error))
-    }
-  
-  }, [])
+    const API_EVENTOS_USUARIO = `http://localhost:3300/api/eventosusuario/${id}`
 
-  console.log(eventosUsuario)
+    const peticionEventos = fetch(API_EVENTOS_USUARIO)
+    peticionEventos
+      .then((resp) => {
+        return resp.json()
+      })
+      .then((eventos) => {
+        setEventosUsuario(eventos)
+      })
+      .catch((error) => window.alert(error))
+
+    const API_FAMILIAS_USUARIO = `http://localhost:3300/api/familiasusuario/${id}`
+
+    const peticionFamilias = fetch(API_FAMILIAS_USUARIO)
+    peticionFamilias
+      .then((resp) => {
+        return resp.json()
+      })
+      .then((familias) => {
+        setFamiliasUsuario(familias)
+      })
+      .catch((error) => window.alert(error))
+
+  }, [id])
 
   return (
     <div className="Perfil">
@@ -62,20 +73,27 @@ const Perfil = () => {
             </div>
           </div>
         </div>
+
         <div className="eventos-perfil">
-          <h1>Tus Eventos</h1>
-          <div className="eventos">
-          {
-            eventosUsuario.map((evento => <VisualizarEvento evento={evento}/>)
-            )
-          }
-          </div>
-          <h1>Tus Familias</h1>
-          <div className="familias">
-          </div>
+          <section className="tus-eventos-perfil">
+            <h1>Tus Eventos</h1>
+            <div className="eventos">
+              {
+                eventosUsuario.map((evento => <VisualizarEventoPerfil key={evento.idevento} evento={evento} />))
+              }
+            </div>
+          </section>
+
+          <section className="tus-familias-perfil">
+            <h1>Tus Familias</h1>
+            <div className="familias">
+              {
+                familiasUsuario.map((familia => <VisualizarFamiliaPerfil key={familia.idfamilia} familia={familia} />))
+              }
+            </div>
+          </section>
         </div>
       </div>
-
     </div >
   );
 };

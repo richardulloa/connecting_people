@@ -24,15 +24,15 @@
     gap: 1em;
 }
 
-.div-fam-span {
+.div-fam-span > span{
     font-size: 1.4em;
-}
-
-.div-fam-span>span {
     background-color: #ffc700;
     padding: 10px;
     border-radius: 5px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
 }
 
 .div-fam {
@@ -40,14 +40,19 @@
     width: 60%;
 }
 
-.div-fam>span {
+.group-icon {
+    font-size: 1.3em;
+}
+
+.button-join-fam {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    width: max-content;
     background-color: #ffc700;
     padding: 10px;
     border-radius: 5px;
     font-weight: 700;
-}
-
-.button-join-fam {
     cursor: pointer;
     transition: 0.2s;
 }

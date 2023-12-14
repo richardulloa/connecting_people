@@ -4,7 +4,8 @@ import Navegador from "../Navegador";
 import VisualizarEvento from "../Eventos/VisualizarEvento";
 import { useParams } from "react-router";
 import Contexto from "../../context/Contexto";
-
+import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
 
 
 const Evento = () => {
@@ -18,7 +19,6 @@ const Evento = () => {
     const [join, setJoin] = useState(false)
     const [iniciales, setIniciales] = useState([])
 
-
     useEffect(() => {
         const API_FAMILIA = `http://localhost:3300/api/familia/${id}`
 
@@ -31,8 +31,6 @@ const Evento = () => {
                 setFamilia(eventosFamilia[0])
             })
             .catch((error) => window.alert(error))
-
-        //https://es.locationiq.com/
 
         const API_MIEMBROS_FAMILIA = `http://localhost:3300/api/miembrosfamilia/${id}`
 
@@ -132,11 +130,11 @@ const Evento = () => {
                             join
                                 ? (
                                     <section className="section-fam-header">
-                                        <div className="div-fam-span"><span>Tu familia</span></div>
+                                        <div className="div-fam-span"><span><Diversity3Icon className="group-icon" />Tu familia</span></div>
                                         <div className="div-fam-span"><span>Crear Evento</span></div>
                                     </section>
                                 )
-                                : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam">Unirte a la familia</span></div>
+                                : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam"><GroupAddIcon className="group-icon" />Unirte a la familia</span></div>
                         }
                     </header>)
                 }

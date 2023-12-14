@@ -3,6 +3,7 @@ import "./css/Evento.css"
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import GroupsIcon from '@mui/icons-material/Groups';
+import EventIcon from '@mui/icons-material/Event';
 import Navegador from "../Navegador";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -36,10 +37,9 @@ const Evento = () => {
                 return resp.json()
             })
             .then((miembrosEvento) => {
-                setMiembros(miembros => [...miembros, ...miembrosEvento])
+                setMiembros(miembrosEvento)
             })
             .catch((error) => window.alert(error))
-        //https://es.locationiq.com/
     }, [id])
 
     let fechaEvento = ""
@@ -60,7 +60,11 @@ const Evento = () => {
             <div className="evento-box-flex">
                 <h1 className="titulo-evento">{evento.nombreEvento}</h1>
                 <div className="evento-info">
-                    <Link to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
+                    <section className="botones-evento">
+                        <Link className="enlace-familia-evento" to={`/familia/${evento.idfamilia}`}><p><GroupsIcon fontSize="large" />{evento.nombreFamilia}</p></Link>
+                        <div className="enlace-familia-evento join-evento" to={`/familia/${evento.idfamilia}`}><p><EventIcon fontSize="large" />Unirse al evento</p></div>
+                    </section>
+
                     <section className="more-event-info">
                         <section className="caja-evento">
                             <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
