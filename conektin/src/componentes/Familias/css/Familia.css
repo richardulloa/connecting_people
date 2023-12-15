@@ -23,8 +23,13 @@
 
 .section-fam-header {
     display: flex;
-    width: 60%;
+    width: max-content;
     gap: 1em;
+}
+
+.section-fam-header > a {
+    color: black;
+    text-decoration: none;
 }
 
 .div-fam-span > span{
@@ -41,6 +46,12 @@
 
 .crear-evento > span{
     background-color: #ffd700;
+    color: black;
+    transition: 0.2s;
+}
+
+.crear-evento > span:hover{
+    background-color: #d19100;
     color: black;
 }
 

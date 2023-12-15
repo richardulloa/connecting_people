@@ -135,7 +135,7 @@ const Evento = () => {
                                         <Link to={`/crear-evento/${familia.idfamilia}`}><div className="div-fam-span crear-evento"><span>Crear Evento</span></div></Link>
                                     </section>
                                 )
-                                : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam"><GroupAddIcon className="group-icon" />Unirte a la familia</span></div>
+                                : <div className="div-fam"><span onClick={joinFamily} className="button-join-fam"><GroupAddIcon className="group-icon" />Únete a la familia</span></div>
                         }
                     </header>)
                 }

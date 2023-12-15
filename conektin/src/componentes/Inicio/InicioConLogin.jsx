@@ -29,7 +29,7 @@ const InicioConLogin = () => {
                 </Link>
                 
                 <section className="eventos-familias">
-                    <Link to={"/"} className="secciones eventos-ciudad ">
+                    <Link to={"/eventosciudad"} className="secciones eventos-ciudad ">
                         <div className="caja">
                             <div className="image ec"></div>
                             <div className="overlay">

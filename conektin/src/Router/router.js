@@ -13,6 +13,7 @@ import BuscaFamilias from '../componentes/Familias/BuscaFamilia';
 import CrearEvento from '../componentes/Formularios/CrearEvento';
 import Familia from '../componentes/Familias/Familia';
 import Tradiciones from '../componentes/Tradiciones/Tradiciones';
+import EventosCiudad from '../componentes/EventosCiudad/EventosCiudad';
 
 
 export function Router() {
@@ -32,6 +33,7 @@ export function Router() {
             <Route path='/crear-evento/:idfamilia' element={<CrearEvento />} />
             <Route path='/familia/:id' element={<Familia />} />
             <Route path='/tradiciones' element={<Tradiciones />} />
+            <Route path='/eventosciudad' element={<EventosCiudad />} />
             <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
     )
