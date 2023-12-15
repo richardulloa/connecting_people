@@ -1,5 +1,5 @@
 import React from 'react'
-import { useForm,  } from 'react-hook-form';
+import { useForm, } from 'react-hook-form';
 import './css/CrearFamilia.css'
 import Navegador from '../Navegador';
 import { ListItemAvatar } from '@mui/material';
@@ -12,8 +12,9 @@ import { useParams } from 'react-router';
 function CrearEvento() {
 
     const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
-    const {usuario} = useContext(Contexto)
-    const {idfamilia} = useParams()
+    const { usuario } = useContext(Contexto)
+    const { idfamilia } = useParams()
+
     const datosEvento = (datos) => {
 
         const API_EXCURSIONES = 'http://localhost:3300/api/eventos'
@@ -24,10 +25,10 @@ function CrearEvento() {
             fechaEvento: datos.fechaEvento,
             calleEvento: datos.calle,
             numerocalleEvento: datos.numeroCalle,
-            cpEvento:datos.cp,
-            idfamilia:idfamilia,
+            cpEvento: datos.cp,
+            idfamilia: idfamilia,
             idusuario: usuario.idusuario
-          
+
         }
         console.table(objetoDatos)
 
@@ -69,21 +70,21 @@ function CrearEvento() {
 
                     <div className='cajita3'>
                         <label htmlFor='fecha' id='fecha'>Fecha en la que se celebrará el evento</label>
-                        <br></br>
+                        <br />
                         <input type='date' id='fechaEvento' min={new Date().toISOString().split('T')[0]} {...register('fechaEvento', { required: true })} />
                         {errors.fechaEvento?.type === 'required' ?
                             <div className='errores'>La fecha para el evento es obligatoria</div> : null}
                     </div>
                     <div className='CalleEvento'>
                         <label htmlFor='calle' id='calle'>Nombre de la calle donde tendrá lugar</label>
-                        <br></br>
+                        <br />
                         <input type='text' id='calle' {...register('calle', { required: true })} />
                         {errors.calle?.type === 'required' ?
                             <div className='errores'>La dirección donde se realizará el evento obligatoria</div> : null}
                     </div>
                     <div className='preguntaEvento'>
                         <label htmlFor='numeroCalle' id='numeroCalle'>Indica aquí el número de la calle</label>
-                        <br></br>
+                        <br />
                         <input type='text' id='numeroCalle' {...register('numeroCalle', { required: true, maxLength: 45 })} />
                         {errors.numeroCalle?.type === 'required' ?
                             <div className='errores'>El numero de la callae es obligatorio</div> : null}
@@ -91,7 +92,7 @@ function CrearEvento() {
 
                     <div className='preguntaEvento'>
                         <label htmlFor='cp' id='cp'>Código postal</label>
-                        <br></br>
+                        <br />
                         <input type='text' id='cp' {...register('cp', { required: true, maxLength: 5 })} />
                         {errors.cp?.type === "required" ? (
                             <div className="errores">Este campo es obligatorio</div>
@@ -114,7 +115,7 @@ function CrearEvento() {
                         {errors.descripccion?.type === 'minLength' &&
                             <div className='errores'>La descripcción del evento tiene que tener 150 caracteres como minimo.</div>}
                     </div>
-                    <br></br>
+                    <br />
                     <div className='preguntaEvento'>
                         <label></label>
                         <input type='submit' className='submit2' />

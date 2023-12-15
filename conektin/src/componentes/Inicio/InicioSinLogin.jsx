@@ -37,7 +37,7 @@ const InicioSinLogin = () => {
 
           <img
             className="imgcont"
-            src="../img/InicioSin/imagen1.png"
+            src="../img/InicioSin/imagen2.png"
             alt="imagen principal"
           />
         </section>

@@ -72,10 +72,8 @@ const Evento = () => {
                     return resp.json()
                 })
                 .then((usuarioInfo) => {
-                    if (usuarioInfo) {
-                        setUsuarioEnFamilia(usuarioInfo[0].usuarioEnFamilia)
-                        setUsuarioEnEvento(usuarioInfo[0].usuarioEnEvento)
-                    }
+                    setUsuarioEnFamilia(usuarioInfo[0].usuarioEnFamilia)
+                    setUsuarioEnEvento(usuarioInfo[0].usuarioEnEvento)
                 })
                 .catch((error) => window.alert(error))
         }

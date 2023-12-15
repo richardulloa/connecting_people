@@ -8,7 +8,7 @@
 }
 
 .imglogo {
-  width: 75px;
+  width: 175px;
 }
 
 .botones {
@@ -45,7 +45,7 @@
 
 .contenido1 {
   display: flex;
-  align-items: start;
+  align-items: center;
   gap: 15vh;
 }
 
@@ -59,7 +59,6 @@
 
 .imgcont {
   width: 40%;
-  height: 50%;
 }
 
 .contenido2 {

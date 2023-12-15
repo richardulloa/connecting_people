@@ -18,7 +18,7 @@ const Navegador = () => {
     return (
         <header className="navegador">
             <div className="navegador-flex">
-                <Link to={"/main"}><img className="logo-navegador" src="../logo192.png" alt="Logo" /></Link>
+                <Link to={"/main"}><img className="logo-navegador" src="../logo512.png" alt="Logo" /></Link>
                 <section className="barra-busqueda">
                     <div className="lista">
                         <div onClick={() => setMenu(!menu)} className="label-barra"> <ListIcon /> <span className="texto-lista">Menu</span> </div>
