@@ -22,7 +22,6 @@ const Evento = () => {
     const [usuarioEnEvento, setUsuarioEnEvento] = useState()
     const [iniciales, setIniciales] = useState([])
 
-
     useEffect(() => {
         const API_EVENTO = `http://localhost:3300/api/eventos/${id}`
         const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
@@ -47,7 +46,6 @@ const Evento = () => {
                 setIniciales(miembros.map(objeto => objeto.nombreUsuario
                     .split(" ")
                     .map(elem => elem[0])
-                    .join(" ")
                 ))
             })
             .catch((error) => window.alert(error))
@@ -83,7 +81,6 @@ const Evento = () => {
         }
 
     }, [usuario, evento])
-
 
 
     const joinEvent = () => {
@@ -135,7 +132,6 @@ const Evento = () => {
         setIniciales(miembros.map(miembro => miembro.nombreUsuario
             .split(" ")
             .map(elem => elem[0])
-            .join(" ")
         ))
     }, [miembros])
 
@@ -159,7 +155,6 @@ const Evento = () => {
                         </section>
                     </header>
 
-
                     <section className="more-event-info">
                         <section className="caja-evento">
                             <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
@@ -182,7 +177,11 @@ const Evento = () => {
                                         } else if (index <= 10) {
                                             return (
                                                 <div key={index} className="miembros-iniciales">
-                                                    {inicial}
+                                                    {
+                                                        inicial.map(ini =>
+                                                            <span>{ini}</span>
+                                                        )
+                                                    }
                                                 </div>
                                             )
                                         } else {

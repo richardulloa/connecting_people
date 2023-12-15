@@ -21,62 +21,63 @@ const InicioSinLogin = () => {
         </div>
       </header>
 
-      <main className="contenido">
+      <main className="contenido-sin-inicio">
         <section className="contenido1">
-          <h2>Titulo Descripción</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit
-            odit distinctio iusto veniam voluptatibus possimus quis officia
-            repellendus quaerat! Officiis ipsa dolore necessitatibus commodi
-            eligendi adipisci? Nostrum earum repellendus quia?
-          </p>
+          <aside className="info-contenido1">
+            <h1>Bienvenido a Conektin</h1>
+            <p>
+              Conektin es más que una plataforma, es el vínculo que une
+              corazones y crea recuerdos inolvidables en la vibrante ciudad de Barcelona.
+              Nuestro lema, "Conectando familias y gustos en Barcelona",
+              refleja nuestra misión de fortalecer lazos familiares y fomentar
+              la comunidad a través de experiencias compartidas.
+              <br />
+            </p>
+          </aside>
+
           <img
             className="imgcont"
-            src="https://i.kinja-img.com/image/upload/c_fit,q_60,w_1315/290c1a587fb5e6a9ac97ee526ff8d6c7.jpg"
+            src="../img/InicioSin/imagen1.png"
             alt="imagen principal"
           />
         </section>
+
         <section className="contenido2">
-          <h2>Titulo Lema</h2>
+          <h2>Conectando a personas del mundo en Barcelona</h2>
           <div className="objetivos">
             <article>
+              <h3>Familiares en una Tierra Extraña</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                laborum consequuntur cum facilis officiis! Excepturi molestias,
-                sit perferendis facilis, perspiciatis necessitatibus debitis
-                alias modi distinctio voluptates sequi at illum? Aliquid.
+                En Conektin, no estás solo. Conéctate con otras
+                familias migrantes que entienden las experiencias
+                únicas de vivir lejos de casa. Forjemos juntos una
+                red de apoyo que haga que Barcelona se sienta como un hogar.
               </p>
             </article>
             <article>
+              <h3>Únete a una familia</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                laborum consequuntur cum facilis officiis! Excepturi molestias,
-                sit perferendis facilis, perspiciatis necessitatibus debitis
-                alias modi distinctio voluptates sequi at illum? Aliquid.
+                En Conektin, te invitamos a formar parte de algo más grande:
+                una familia acogedora que trasciende las barreras geográficas.
+                Únete a una red de familias dispuestas a compartir risas,
+                experiencias y apoyo mutuo.
               </p>
             </article>
             <article>
+              <h3>Eventos que unen</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                laborum consequuntur cum facilis officiis! Excepturi molestias,
-                sit perferendis facilis, perspiciatis necessitatibus debitis
-                alias modi distinctio voluptates sequi at illum? Aliquid.
+                Organiza y participa en eventos diseñados para compartir
+                y celebrar las ricas tradiciones de diversas culturas.
+                Desde reuniones informales hasta festivales temáticos,
+                en Conektin creamos oportunidades para crear recuerdos duraderos.
               </p>
             </article>
             <article>
+              <h3>Tradiciones y cultura</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                laborum consequuntur cum facilis officiis! Excepturi molestias,
-                sit perferendis facilis, perspiciatis necessitatibus debitis
-                alias modi distinctio voluptates sequi at illum? Aliquid.
-              </p>
-            </article>
-            <article>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
-                laborum consequuntur cum facilis officiis! Excepturi molestias,
-                sit perferendis facilis, perspiciatis necessitatibus debitis
-                alias modi distinctio voluptates sequi at illum? Aliquid.
+                Ofrecemos recursos útiles para facilitar la adaptación a la vida en Barcelona,
+                como la cultura de la ciudad y de sus tradiciones. Conektin es tu guía mientras
+                te embarcas en esta nueva aventura.
               </p>
             </article>
           </div>
@@ -94,7 +95,7 @@ const InicioSinLogin = () => {
           <div className="enlacespag">
             <Link to={"/login"}>Iniciar Sesión</Link>
             <Link to={"/alta"}>Registrate</Link>
-            <a>Ayuda</a>
+            <Link>Ayuda</Link>
           </div>
         </div>
       </footer>

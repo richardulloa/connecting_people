@@ -20,14 +20,13 @@ const VisualizarFamilia = ({ familia }) => {
             .then((miembros) => {
                 setMiembrosFamilia(miembros)
             })
-            .catch((error) => window.alert(error))    
-    }, [])
+            .catch((error) => window.alert(error))
+    }, [id])
 
 
     let iniciales = miembrosFamilia.map(objeto => objeto.nombreUsuario
         .split(" ")
         .map(elem => elem[0])
-        .join(" ")
     )
 
     return (
@@ -47,9 +46,13 @@ const VisualizarFamilia = ({ familia }) => {
                                     } else if (index <= 8) {
                                         return (
                                             <div key={index} className="caja-miembros">
-                                                {inicial}
+                                                {
+                                                    inicial.map(ini =>
+                                                        <span>{ini}</span>
+                                                    )
+                                                }
                                             </div>
-                                        )    
+                                        )
                                     } else {
                                         return (<div key={index} className="caja-miembros">
                                             ...

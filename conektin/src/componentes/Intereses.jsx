@@ -2,7 +2,7 @@ import React from "react";
 import "./css/Intereses.css";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
-const Intereses = () => {
+const Intereses = ({usuario}) => {
   return (
     <div className="intereses">
       <div className="interes">

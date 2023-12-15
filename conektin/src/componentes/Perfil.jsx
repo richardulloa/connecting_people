@@ -7,6 +7,10 @@ import VisualizarEventoPerfil from './Eventos/VisualizarEventoPerfil'
 import VisualizarFamiliaPerfil from "./Familias/VisualizarFamiliaPerfil"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router"
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import { Hidden } from "@mui/material"
 
 
 const Perfil = () => {
@@ -16,6 +20,22 @@ const Perfil = () => {
 
   const [eventosUsuario, setEventosUsuario] = useState([])
   const [familiasUsuario, setFamiliasUsuario] = useState([])
+  const [abrirIntereses, setAbrirIntereses] = useState(false)
+  const [intereses, setIntereses] = useState([])
+
+  const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 900,
+    height: 800,
+    bgcolor: 'background.paper',
+    border: '2px solid #000',
+    boxShadow: 24,
+    p: 4,
+    overflowY: "auto",
+  };
 
   useEffect(() => {
 
@@ -43,6 +63,18 @@ const Perfil = () => {
       })
       .catch((error) => window.alert(error))
 
+      const API_INTERESES = `http://localhost:3300/api/intereses`
+
+      const peticionIntereses = fetch(API_INTERESES)
+      peticionIntereses
+        .then((resp) => {
+          return resp.json()
+        })
+        .then((intereses) => {
+          setIntereses(intereses)
+        })
+        .catch((error) => window.alert(error))
+
   }, [id])
 
   return (
@@ -64,6 +96,21 @@ const Perfil = () => {
             </div>
           }
           <h1>Tus Intereses</h1>
+          <h4 onClick={() => setAbrirIntereses(true)}>Añadir intereses</h4>
+
+          <Modal
+            open={abrirIntereses}
+            onClose={() => setAbrirIntereses(false)}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+             {
+              intereses.map(interes => <Intereses />)
+             }
+            </Box>
+          </Modal>
+
           <div className="contenido-principal">
             <div className="intereses-perfil">
               <Intereses />

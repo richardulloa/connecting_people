@@ -44,8 +44,7 @@ const Evento = () => {
                 setMiembros(miembrosFamilia)
                 setIniciales(miembrosFamilia.map(miembro => miembro.nombreUsuario
                     .split(" ")
-                    .map(elem => elem[0])
-                    .join(" "))
+                    .map(elem => elem[0]))
                 )
                 if (usuario) {
                     setJoin(miembrosFamilia.some(miembro => miembro.idusuario === usuario.idusuario))
@@ -115,7 +114,6 @@ const Evento = () => {
         setIniciales(miembros.map(objeto => objeto.nombreUsuario
             .split(" ")
             .map(elem => elem[0])
-            .join(" ")
         ))
     }, [miembros])
 
@@ -153,7 +151,11 @@ const Evento = () => {
                                         } else if (index <= 40) {
                                             return (
                                                 <div key={index} className="miembros-iniciales">
-                                                    {inicial}
+                                                    {
+                                                        inicial.map(ini =>
+                                                            <span>{ini}</span>
+                                                        )
+                                                    }
                                                 </div>
                                             )
                                         } else {
