@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import Contexto from "../context/Contexto"
 import "./css/Perfil.css"
 import Navegador from "./Navegador"
-import Intereses from "./Intereses"
+import InteresesPerfil from "./Intereses/InteresesPerfil"
 import VisualizarEventoPerfil from './Eventos/VisualizarEventoPerfil'
 import VisualizarFamiliaPerfil from "./Familias/VisualizarFamiliaPerfil"
 import { useState, useEffect } from "react"
@@ -126,7 +126,7 @@ const Perfil = () => {
                 usuario &&
                 intereses.map(interes => {
                   return (
-                    <Intereses key={interes.idinteres} usuario={usuario} interes={interes} />
+                    <InteresesPerfil key={interes.idinteres} usuario={usuario} interes={interes} />
                   )
                 })
               }
@@ -137,7 +137,7 @@ const Perfil = () => {
               {
                 interesesUsuario.map(interesUsuario => {
                   return (
-                    <Intereses key={interesUsuario.idinteres} usuario={usuario} interes={interesUsuario} />
+                    <InteresesPerfil key={interesUsuario.idinteres} usuario={usuario} interes={interesUsuario} />
                   )
                 })
               }

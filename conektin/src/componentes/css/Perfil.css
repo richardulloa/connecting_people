@@ -78,6 +78,11 @@
   display: flex;
   align-items: center;
   gap: 1em;
+  transition: 0.2s;
+}
+
+.añadir-intereses:hover {
+  background-color: #d19100;
 }
 
 .intereses-perfil {
