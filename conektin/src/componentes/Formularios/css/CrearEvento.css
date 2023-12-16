@@ -57,7 +57,7 @@ textarea#descripccion {
     padding: 10px;
 }
 
-label#calle, #fecha, #numeroCalle, #cp {
+label#calle, #fecha, #numeroCalle, #cp, #añadir-intereses-evento {
     color: #ffc700;
     text-align: left;
     margin: auto;
@@ -73,6 +73,11 @@ label#nombreEvento,
 
 #crearEvento p {
     color: white;
+}
+
+.interesesEvento {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .submit2 {

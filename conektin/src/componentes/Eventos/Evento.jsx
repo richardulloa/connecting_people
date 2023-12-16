@@ -8,6 +8,7 @@ import Navegador from "../Navegador";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Contexto from "../../context/Contexto";
+import InteresesEvento from '../Intereses/InteresesEvento';
 
 
 const Evento = () => {
@@ -21,10 +22,12 @@ const Evento = () => {
     const [usuarioEnFamilia, setUsuarioEnFamilia] = useState()
     const [usuarioEnEvento, setUsuarioEnEvento] = useState()
     const [iniciales, setIniciales] = useState([])
+    const [interesesEvento, setInteresesEvento] = useState([])
 
     useEffect(() => {
         const API_EVENTO = `http://localhost:3300/api/eventos/${id}`
         const API_MIEMBROS = `http://localhost:3300/api/miembrosevento/${id}`
+        const API_INTERESES_EVENTO = `http://localhost:3300/api/getinteresesevento/${id}`
 
         const peticion = fetch(API_EVENTO)
         peticion
@@ -36,12 +39,24 @@ const Evento = () => {
             })
             .catch((error) => window.alert(error))
 
+
+
+        const peticionInteresesEvento = fetch(API_INTERESES_EVENTO)
+        peticionInteresesEvento
+            .then(resp => {
+                return resp.json()
+            })
+            .then(interesesEvento => {
+                setInteresesEvento(interesesEvento)
+            })
+                .catch((error) => window.alert(error))
+
         const peticionMiembros = fetch(API_MIEMBROS)
         peticionMiembros
             .then((resp) => {
                 return resp.json()
             })
-            .then((miembrosEvento) => {
+            .then(miembrosEvento => {
                 setMiembros(miembrosEvento)
                 setIniciales(miembros.map(objeto => objeto.nombreUsuario
                     .split(" ")
@@ -50,8 +65,10 @@ const Evento = () => {
             })
             .catch((error) => window.alert(error))
 
+
     }, [id])
 
+    console.log(interesesEvento)
 
     useEffect(() => {
         const API_USUARIO_FAMILIA = "http://localhost:3300/api/usuarioeninfo"
@@ -166,7 +183,7 @@ const Evento = () => {
                             </div>
                         </section>
                         <section className="miembros-evento">
-                            <h3>Miembros</h3>
+                            <h3 className="titulo-evento">Miembros</h3>
                             <div className="miembros-inside">
                                 {
                                     iniciales.map((inicial, index) => {
@@ -177,7 +194,7 @@ const Evento = () => {
                                                 <div key={index} className="miembros-iniciales">
                                                     {
                                                         inicial.map(ini =>
-                                                            <span>{ini}</span>
+                                                            <span key={ini}>{ini}</span>
                                                         )
                                                     }
                                                 </div>
@@ -188,6 +205,14 @@ const Evento = () => {
                                             </div>)
                                         }
                                     })
+                                }
+                            </div>
+                            <h3 className="titulo-evento">Intereses</h3>
+                            <div className="intereses-inside">
+                                {
+                                    interesesEvento.map(interesEvento => 
+                                        <InteresesEvento className="interes-compo" key={interesEvento.idinteres} usuario={usuario} interes={interesEvento} interesesEvento={{ interesesEvento, setInteresesEvento }} />
+                                    )
                                 }
                             </div>
                         </section>
