@@ -23,8 +23,6 @@ const Perfil = () => {
   const [intereses, setIntereses] = useState([])
   const [interesesUsuario, setInteresesUsuario] = useState([])
 
-
-
   useEffect(() => {
 
     const API_EVENTOS_USUARIO = `http://localhost:3300/api/eventosusuario/${id}`

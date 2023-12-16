@@ -2,18 +2,47 @@ import React from 'react'
 import { useForm, } from 'react-hook-form';
 import './css/CrearFamilia.css'
 import Navegador from '../Navegador';
-import { ListItemAvatar } from '@mui/material';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Contexto from '../../context/Contexto';
 import { useParams } from 'react-router';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import InteresesEvento from '../Intereses/InteresesEvento';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function CrearEvento() {
 
-    const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
+    const { register, handleSubmit, formState: { errors }, setFocus } = useForm()
     const { usuario } = useContext(Contexto)
     const { idfamilia } = useParams()
+    const [abrirIntereses, setAbrirIntereses] = useState(false)
+    const [intereses, setIntereses] = useState([])
+    const [interesesEvento, setInteresesEvento] = useState([])
+    const [idinteresesEvento, setIdinteresesEvento] = useState([])
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        const API_INTERESES = `http://localhost:3300/api/intereses`
+
+        const peticionIntereses = fetch(API_INTERESES)
+        peticionIntereses
+            .then((resp) => {
+                return resp.json()
+            })
+            .then((intereses) => {
+                setIntereses(intereses)
+            })
+            .catch((error) => window.alert(error))
+
+    }, [])
+
+    useEffect(() => {
+        setIdinteresesEvento(interesesEvento.map(interes => interes.idinteres))
+    }, [interesesEvento])
 
     const datosEvento = (datos) => {
 
@@ -27,8 +56,8 @@ function CrearEvento() {
             numerocalleEvento: datos.numeroCalle,
             cpEvento: datos.cp,
             idfamilia: idfamilia,
-            idusuario: usuario.idusuario
-
+            idusuario: usuario.idusuario,
+            idintereses: idinteresesEvento
         }
         console.table(objetoDatos)
 
@@ -40,7 +69,6 @@ function CrearEvento() {
             body: JSON.stringify(objetoDatos),
             mode: 'cors'
         }
-
         const peticion = fetch(API_EXCURSIONES, parametros)
         peticion
             .then((resp) => resp.json())
@@ -48,14 +76,14 @@ function CrearEvento() {
                 if (mesage.error) {
                     alert("ALGO SALIO MAL")
                 } else {
-                    alert("ALTA COMPLETADA")
+                    navigate(`/evento/${mesage.idevento}`)
                 }
             })
             .catch((error) => alert(error))
-
         setFocus('nombreEvento')
-        reset()
     }
+
+
     return (
         <div>
             < Navegador />
@@ -116,12 +144,46 @@ function CrearEvento() {
                             <div className='errores'>La descripcción del evento tiene que tener 150 caracteres como minimo.</div>}
                     </div>
                     <br />
+
+                    <div className='preguntaEvento'>
+                        <h4 className="añadir-intereses" onClick={() => setAbrirIntereses(true)}><PlaylistAddIcon />Añadir intereses</h4>
+
+                        <Modal
+                            open={abrirIntereses}
+                            onClose={() => setAbrirIntereses(false)}
+                            aria-labelledby="modal-modal-title"
+                            aria-describedby="modal-modal-description"
+                        >
+                            <Box className="box-modal-perfil">
+                                {
+                                    usuario &&
+                                    intereses.map(interes => {
+                                        return (
+                                            <InteresesEvento key={interes.idinteres} usuario={usuario} interes={interes} interesesEvento={{ interesesEvento, setInteresesEvento }} />
+                                        )
+                                    })
+                                }
+                            </Box>
+                        </Modal>
+
+                        <div className='interesesEvento'>
+                            {
+                                interesesEvento.map(interesEvento => {
+                                    return (
+                                        <InteresesEvento key={interesEvento.idinteres} usuario={usuario} interes={interesEvento} interesesEvento={{ interesesEvento, setInteresesEvento }} />
+                                    )
+                                })
+                            }
+
+                        </div>
+
+                    </div>
+                    <br />
                     <div className='preguntaEvento'>
                         <label></label>
                         <input type='submit' className='submit2' />
                     </div>
                 </form>
-
 
             </main >
         </div >

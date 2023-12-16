@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./css/Intereses.css";
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import DoneIcon from '@mui/icons-material/Done';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
+import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
+import BookmarkRemoveIcon from '@mui/icons-material/BookmarkRemove';
 
-const Intereses = ({ usuario, interes, }) => {
+const InteresesPerfil = ({ usuario, interes }) => {
 
   const [interesEnUsuario, setInteresEnUsuario] = useState()
 
@@ -63,7 +65,6 @@ const Intereses = ({ usuario, interes, }) => {
         }
       })
       .catch((error) => window.alert(error))
-
   }
 
   return (
@@ -73,11 +74,11 @@ const Intereses = ({ usuario, interes, }) => {
       </div>
       {
         interesEnUsuario
-          ? <DoneIcon className="in-interes" sx={{ fontSize: 30 }} />
-          : <AddBoxIcon onClick={seguirInteres} className="get-interes" sx={{ fontSize: 30 }} />
+          ? <BookmarkIcon className="in-interes" sx={{ fontSize: 30 }} />
+          : <BookmarkAddIcon onClick={seguirInteres} className="get-interes" sx={{ fontSize: 30 }} />
       }
     </div>
   );
 };
 
-export default Intereses;
+export default InteresesPerfil;
