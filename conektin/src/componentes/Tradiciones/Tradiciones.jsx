@@ -8,6 +8,7 @@ function Tradiciones() {
     console.log(DatosTradiciones)
     const tradicionesEstacion = DatosTradiciones
 
+
     if (!tradicionesEstacion) {
         return (
             <div>
@@ -31,23 +32,24 @@ function Tradiciones() {
                     </nav>
                 </div>
             </header>
-            <main id='tradiciones'>
+            <main className='contenedor-tradiciones'>
                 {Object.entries(tradicionesEstacion).map(([estacion, tradiciones]) => (
-                    <div key={estacion} id='contenedor'>
+                    <div key={estacion.id}>
                         <h2>{estacion}</h2>
-                        <div className='columnas'>
-                            <ul>
-                                {tradiciones.map((tradicion, index) => (
-                                    <li key={index} id={tradicion.id}>
-                                        <div id='cajitacontodo'>
-                                        <div id='fotos'><img src={` ../img/Tradiciones/${tradicion.imagen}`} alt='castells' /></div>
-                                        <strong className='titulos'>{tradicion.name}</strong>
-                                        <p className='texto'>{tradicion.description}</p>
+                        <ul>
+                            {tradiciones.map((tradicion, index) => (
+                                <div id='contenedor-tradiciones'>
+                                    <li key={index} id={tradicion.id} className={tradicion.clase}>
+                                        <div className='foto-tradicion'><img src={` ../img/Tradiciones/${tradicion.imagen}`} alt='castells' /></div>
+                                        <div  className='detalle-tradicion'> 
+                                            <h5 className='nombre-tradicion'>{tradicion.name}</h5>
+                                            <p>{tradicion.description}</p>
                                         </div>
                                     </li>
-                                ))}
-                            </ul>
-                        </div>
+                                </div>
+                            ))}
+                        </ul>
+
 
                     </div>
                 ))}
