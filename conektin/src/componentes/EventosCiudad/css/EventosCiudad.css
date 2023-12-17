@@ -1,12 +1,74 @@
-.webs-eventos {
-    width: 80%;
-    margin: 50px auto;
+.encabezado-ciudad{
+    background-color: #3a5ba0;
 }
 
 .titulo-ciudad-eventos {
-    font-size: 3em;
+    font-size: 2.5em;
+   
+    text-align: center;
+    color: #ffc700;
+    text-shadow: #d6a802f4;
+    margin-bottom: 0px;
+
 }
 
-.subtitulo-ciudad-eventos{
+
+.subtitulo-ciudad-eventos {
+    
     color: black;
+    margin-top: 0px;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 50px;
+}
+
+.contenedor-webs{
+    margin: auto;
+}
+.detalle-web {
+    display: flex;
+}
+
+.resumen-web {
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 600px;
+}
+
+.resumen-web>p{
+    height: 10px
+    
+}
+
+.foto-web>img {
+    width: 800px;
+
+}
+
+.nombre-web {
+    color: #bd9609;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.nombre-web:hover {
+    color: #745f16;
+    text-decoration: none;
+    font-size: 2em;
+}
+
+.webs-eventos{
+    margin-top: 50px;
+}
+.detalle-web1 {
+    flex-direction: row;
+    display: flex;
+    
+}
+
+.detalle-web2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }

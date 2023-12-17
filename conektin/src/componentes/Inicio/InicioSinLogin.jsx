@@ -95,7 +95,7 @@ const InicioSinLogin = () => {
           <div className="enlacespag">
             <Link to={"/login"}>Iniciar Sesión</Link>
             <Link to={"/alta"}>Registrate</Link>
-            <Link>Ayuda</Link>
+            <Link to={"/ayuda"}>Ayuda</Link>
           </div>
         </div>
       </footer>
