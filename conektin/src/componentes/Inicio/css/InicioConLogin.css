@@ -64,21 +64,20 @@
 }
 
 .bf {
-    background-image: url("https://img.freepik.com/foto-gratis/gente-jugando-globos-fondo-pantalla-fiesta_53876-137700.jpg?size=626&ext=jpg&ga=GA1.1.1658983444.1698594809&semt=ais");
+    background-image: url("../../../../public/img/InicioCon/bf-min.jpg");
 }
 
 .ec {
-    background-image: url("https://www.tornaveu.cat/app/uploads/sites/25/2023/11/9d9folre.jpg");
+    background-image: url("../../../../public/img/InicioCon/ec-min.jpg");
 }
 
-.ec {
+.evc {
     background-image: url("https://img.freepik.com/foto-gratis/grupo-fanaticos-reunidos-estadio-thge-animando_1303-18617.jpg?w=1380&t=st=1701601669~exp=1701602269~hmac=8a9c509f50f3bb91dcd72fd7004dc5ec4fae3e137edde52b50f8fe8471e0f746");
 }
 
 .tc {
-    background-image: url("https://www.tiodenadal.online/wp-content/uploads/2023/10/catalan-barretina-cagatio.jpg");
+    background-image: url("../../../../public/img/InicioCon/tc.jpg");
 }
-
 .overlay {
     position: absolute;
     top: 0;

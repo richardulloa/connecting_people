@@ -50,7 +50,7 @@ const InicioConLogin = () => {
 
                 <Link to={"/main"} className="secciones evento-cercano">
                     <div className="caja">
-                        <div className="image ec"></div>
+                        <div className="image evc"></div>
                         <div className="overlay">
                             <p className="text">Evento Cercano</p>
                         </div>

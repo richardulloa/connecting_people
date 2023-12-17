@@ -1,26 +1,40 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./css/ProximosEventos.css"
 import Navegador from "../Navegador";
 import VisualizarEvento from "./VisualizarEvento";
+import Contexto from "../../context/Contexto";
 
 const ProximosEventos = () => {
 
     const [proximosEventos, setProximosEventos] = useState([])
 
+    const { usuario } = useContext(Contexto)
 
     useEffect(() => {
+
         const API_EVENTOS = "http://localhost:3300/api/eventos"
 
-        const peticion = fetch(API_EVENTOS)
-        peticion
-            .then((resp) => {
-                return resp.json()
-            })
-            .then((eventos) => {
-                setProximosEventos(eventos)
-            })
-            .catch((error) => window.alert(error))
-    }, [])
+        if (usuario) {
+            const parametros = {
+                method: 'GET',
+                headers: {
+                    idusuario: usuario.idusuario,
+                },
+                mode: 'cors'
+            }
+
+            const peticion = fetch(API_EVENTOS, parametros)
+            peticion
+                .then((resp) => {
+                    return resp.json()
+                })
+                .then((eventos) => {
+                    setProximosEventos(eventos)
+                })
+                .catch((error) => window.alert(error))
+        }
+
+    }, [usuario])
 
     return (
         <div className='contenido-proximos-eventos'>
@@ -29,9 +43,9 @@ const ProximosEventos = () => {
                 <h1 className="titulo-seccion">Proximos Eventos</h1>
                 <section className="eventos-seccion">
                     {
-                        proximosEventos.map((evento,index) => {
+                        proximosEventos.map((evento) => {
                             return (
-                                <VisualizarEvento key={index} evento={evento} />
+                                <VisualizarEvento key={evento.idevento} evento={evento} />
                             )
                         })
                     }

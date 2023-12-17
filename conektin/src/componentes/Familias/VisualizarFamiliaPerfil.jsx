@@ -27,7 +27,7 @@ const VisualizarFamilia = ({ familia }) => {
     return (
         <Link to={`/familia/${familia.idfamilia}`} className='contenido-familia-perfil'>
             <div className="flex-familia-perfil">
-                <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
+            <img src={`../img/Familias/familia${familia.idfamilia%3+1}.jpg`} alt="Imagen prueba" />
                 <section className="info-inicial-familia-perfil">
                     <h3>{familia.nombreFamilia}</h3>
                     <section className="miembros-visualizar-familia-perfil">

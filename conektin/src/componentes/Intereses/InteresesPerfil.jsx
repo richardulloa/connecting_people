@@ -70,12 +70,12 @@ const InteresesPerfil = ({ usuario, interes }) => {
   return (
     <div className="intereses">
       <div className="interes">
-        <h3>{interes.nombreInteres}</h3>
+        <h4>{interes.nombreInteres}</h4>
       </div>
       {
         interesEnUsuario
-          ? <BookmarkIcon className="in-interes" sx={{ fontSize: 30 }} />
-          : <BookmarkAddIcon onClick={seguirInteres} className="get-interes" sx={{ fontSize: 30 }} />
+          ? <BookmarkIcon className="in-interes" fontSize="inherit" />
+          : <BookmarkAddIcon onClick={seguirInteres} className="get-interes" fontSize="inherit" />
       }
     </div>
   );

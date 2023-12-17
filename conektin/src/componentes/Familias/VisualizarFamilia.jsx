@@ -32,7 +32,7 @@ const VisualizarFamilia = ({ familia }) => {
     return (
         <Link to={`/familia/${familia.idfamilia}`} className='contenido-familia'>
             <div className="flex-familia">
-                <img src="../img/bbq1.jpeg" alt="Imagen prueba" />
+                <img src={`../img/Familias/familia${familia.idfamilia%3+1}.jpg`} alt="Imagen prueba" />
                 <section className="info-inicial-familia">
                     <h3>{familia.nombreFamilia}</h3>
                     <p>Organizador familia: <strong>{familia.nombreUsuario}</strong></p>

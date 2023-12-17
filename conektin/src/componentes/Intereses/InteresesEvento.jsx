@@ -14,7 +14,7 @@ const InteresesEvento = ({ usuario, interes, interesesEvento }) => {
     return (
         <div className="intereses">
             <div className="interes">
-                <h3>{interes.nombreInteres}</h3>
+                <h4>{interes.nombreInteres}</h4>
             </div>
             {
                 interesesEvento.interesesEvento.some(interesEvento => interesEvento.idinteres === interes.idinteres)

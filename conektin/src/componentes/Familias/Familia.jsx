@@ -140,7 +140,7 @@ const Evento = () => {
 
                 <section className="info-familia">
                     <div className="img-miembros">
-                        <img className="img-familia" src="../img/bbq1.jpeg" alt="imagen familia" />
+                        <img className="img-familia" src={`../img/Familias/familia${familia.idfamilia%3+1}.jpg`} alt="imagen familia" />
                         <section className="miembros-familia">
                             <h3>Miembros</h3>
                             <div className="miembrosFlex">

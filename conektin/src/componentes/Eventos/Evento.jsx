@@ -49,7 +49,7 @@ const Evento = () => {
             .then(interesesEvento => {
                 setInteresesEvento(interesesEvento)
             })
-                .catch((error) => window.alert(error))
+            .catch((error) => window.alert(error))
 
         const peticionMiembros = fetch(API_MIEMBROS)
         peticionMiembros
@@ -68,7 +68,6 @@ const Evento = () => {
 
     }, [id])
 
-    console.log(interesesEvento)
 
     useEffect(() => {
         const API_USUARIO_FAMILIA = "http://localhost:3300/api/usuarioeninfo"
@@ -172,7 +171,7 @@ const Evento = () => {
 
                     <section className="more-event-info">
                         <section className="caja-evento">
-                            <img className="imagen-evento" src="../img/bbq1.jpeg" alt="imagen evento" />
+                            <img className="imagen-evento" src={`../img/Eventos/evento${evento.idevento % 3 + 1}.jpg`} alt="imagen evento" />
                             <div className="caja-evento-info">
                                 <p><CalendarMonthIcon fontSize="inherit" />{evento.fechaEvento}</p>
                                 <p><LocationOnIcon fontSize="inherit" />{evento.calleEvento}, {evento.numerocalleEvento}</p>
@@ -210,7 +209,7 @@ const Evento = () => {
                             <h3 className="titulo-evento">Intereses</h3>
                             <div className="intereses-inside">
                                 {
-                                    interesesEvento.map(interesEvento => 
+                                    interesesEvento.map(interesEvento =>
                                         <InteresesEvento className="interes-compo" key={interesEvento.idinteres} usuario={usuario} interes={interesEvento} interesesEvento={{ interesesEvento, setInteresesEvento }} />
                                     )
                                 }
