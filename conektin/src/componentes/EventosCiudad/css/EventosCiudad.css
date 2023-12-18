@@ -1,74 +1,72 @@
-.encabezado-ciudad{
+.body-webs {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.encabezado-ciudad {
     background-color: #3a5ba0;
+}
+
+.body-webs-header {
+    width: 80%;
+    margin: 50px auto;
 }
 
 .titulo-ciudad-eventos {
     font-size: 2.5em;
-   
     text-align: center;
     color: #ffc700;
     text-shadow: #d6a802f4;
-    margin-bottom: 0px;
-
+    margin: 0;
 }
-
 
 .subtitulo-ciudad-eventos {
-    
-    color: black;
-    margin-top: 0px;
+    color: white;
     text-align: center;
     font-style: italic;
-    margin-bottom: 50px;
+    padding: 20px 0;
 }
 
-.contenedor-webs{
-    margin: auto;
+.contener-webs {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
 }
+
+.webs-eventos h2{
+    color: #bd9609;
+    font-size: 2em;
+}
+
 .detalle-web {
     display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.evenNoticias{
+    flex-direction: row-reverse;
+}
+
+
+
+.imagen-web{
+    width: 45%;
+    max-height: 350px;
 }
 
 .resumen-web {
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 50px;
-    width: 600px;
-}
-
-.resumen-web>p{
-    height: 10px
-    
-}
-
-.foto-web>img {
-    width: 800px;
-
+    width: 50%;
 }
 
 .nombre-web {
     color: #bd9609;
     text-decoration: none;
-    font-size: 2em;
+    font-weight: 700;
+    transition: 0.1s;
 }
 
 .nombre-web:hover {
     color: #745f16;
     text-decoration: none;
-    font-size: 2em;
-}
-
-.webs-eventos{
-    margin-top: 50px;
-}
-.detalle-web1 {
-    flex-direction: row;
-    display: flex;
-    
-}
-
-.detalle-web2 {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
 }
