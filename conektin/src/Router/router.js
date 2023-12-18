@@ -15,6 +15,7 @@ import Familia from '../componentes/Familias/Familia';
 import Tradiciones from '../componentes/Tradiciones/Tradiciones';
 import EventosCiudad from '../componentes/EventosCiudad/EventosCiudad';
 import Ayuda from '../componentes/Ayuda/Ayuda';
+import BusquedaInteres from '../componentes/Intereses/BusquedaInteres';
 
 
 export function Router() {
@@ -35,8 +36,9 @@ export function Router() {
             <Route path='/familia/:id' element={<Familia />} />
             <Route path='/tradiciones' element={<Tradiciones />} />
             <Route path='/eventosciudad' element={<EventosCiudad />} />
-            <Route path='/*' element={<Navigate to='/' />} />
             <Route path='/ayuda' element={<Ayuda />} />
+            <Route path='/busqueda' element={<BusquedaInteres />} />
+            <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
     )
 }
