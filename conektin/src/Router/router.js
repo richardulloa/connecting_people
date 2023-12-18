@@ -37,7 +37,7 @@ export function Router() {
             <Route path='/tradiciones' element={<Tradiciones />} />
             <Route path='/eventosciudad' element={<EventosCiudad />} />
             <Route path='/ayuda' element={<Ayuda />} />
-            <Route path='/busqueda' element={<BusquedaInteres />} />
+            <Route path='/busqueda/:nombre' element={<BusquedaInteres />} />
             <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
     )

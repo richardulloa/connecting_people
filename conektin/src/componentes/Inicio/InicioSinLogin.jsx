@@ -11,10 +11,6 @@ const InicioSinLogin = () => {
     <div className="no-login">
       <header className="cabecera">
         <Link><img className="imglogo" src="../logo512.png" alt="Logo" /></Link>
-        <div>
-          <Link to={"/main"}>BOTON DE PRUEBA PARA CAMBIAR DE PAGINAS</Link>
-        </div>
-
         <div className="botones">
           <Link to={"/login"} className="btn1">Iniciar Sesion</Link>
           <Link to={"/alta"} className="btn2">Registrate</Link>

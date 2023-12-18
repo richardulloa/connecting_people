@@ -14,6 +14,7 @@ const Navegador = () => {
     const { usuario } = useContext(Contexto)
 
     const [menu, setMenu] = useState(false)
+    const [interesBus, setInteresBus] = useState("")
 
     return (
         <header className="navegador">
@@ -24,8 +25,12 @@ const Navegador = () => {
                         <div onClick={() => setMenu(!menu)} className="label-barra"> <ListIcon /> <span className="texto-lista">Menu</span> </div>
                     </div>
                     <div className="buscar">
-                        <input id="barra" className="input-barra" type="text" placeholder="Buscar" />
-                        <div className="label-barra"> <SearchIcon /> </div>
+                        <input id="barra" className="input-barra" type="text" value={interesBus} placeholder="Buscar" onChange={(interes) => setInteresBus(interes.target.value)} />
+                        {
+                            console.log(interesBus)
+                        }
+                        <Link to={`/busqueda/interes+${interesBus}`} onClick={() => setInteresBus("")} className="label-barra"> <SearchIcon /> </Link>
+
                     </div>
                 </section>
                 <section className="perfil">

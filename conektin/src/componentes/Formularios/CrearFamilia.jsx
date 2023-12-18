@@ -3,9 +3,11 @@ import { useForm, } from 'react-hook-form';
 import './css/CrearEvento.css'
 import Navegador from '../Navegador';
 import Contexto from '../../context/Contexto'
+import { useNavigate } from 'react-router';
 
 function CrearFamilia() {
     
+    const navigate = useNavigate()
     const { register, handleSubmit, formState: { errors }, reset, setFocus } = useForm()
 
     const {usuario} = useContext(Contexto)
@@ -36,7 +38,8 @@ function CrearFamilia() {
                 if (mesage.error) {
                     alert("ALGO SALIO MAL")
                 } else {
-                    alert("ALTA COMPLETADA")
+                    console.log(mesage)
+                    navigate(`/familia/${mesage.idfamilia}`)
                 }
             })
             .catch((error) => alert(error))
@@ -62,14 +65,14 @@ function CrearFamilia() {
                     <div className='preguntaFamilia'>
                         <label htmlFor='descripcionFamilia' id='descripcionFamilia'>Describe tu família</label>
                         <p>Esto será lo que verá cualquier persona cuando accedan a al información de tu família, Podras actualizarlo más tarde si lo deseas.</p>
-                        <textarea id='descripcionFamilia' {...register('descripcionFamilia', { required: true, minLength: 150, maxLength: 1000 })}></textarea>
+                        <textarea id='descripcionFamilia' {...register('descripcionFamilia', { required: true, minLength: 50, maxLength: 1000 })}></textarea>
                         {errors.descripcionFamilia?.type === 'required'
                             ? <div className='errores'>La descripción es obligatoria</div>
                             : null}
                         {errors.descripcionFamilia?.type === 'maxLength' &&
                             <div className='errores'>La descripcción de tu família no puede superar los 1000 carácteres</div>}
                         {errors.descripcionFamilia?.type === 'minLength' &&
-                            <div className='errores'>La descripcción de tu família tiene que tener 150 caracteres como minimo.</div>}
+                            <div className='errores'>La descripcción de tu família tiene que tener 50 caracteres como minimo.</div>}
                     </div>
                     <div className='preguntaFamilia'>
                         <label></label>
