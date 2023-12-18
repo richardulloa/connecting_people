@@ -40,7 +40,6 @@ const Evento = () => {
             .catch((error) => window.alert(error))
 
 
-
         const peticionInteresesEvento = fetch(API_INTERESES_EVENTO)
         peticionInteresesEvento
             .then(resp => {
@@ -148,6 +147,7 @@ const Evento = () => {
             .map(elem => elem[0])
         ))
     }, [miembros])
+
 
     return (
         <div className='evento'>

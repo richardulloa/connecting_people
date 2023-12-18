@@ -88,8 +88,16 @@ const Perfil = () => {
         setInteresesUsuario(interesesUsuario)
       })
       .catch((error) => window.alert(error))
-      
+
   }, [abrirIntereses])
+
+  let iniciales
+  if (usuario) {
+    iniciales = usuario.nombreUsuario
+      .split(" ")
+      .map(elem => elem[0])
+      .join(" ")
+  }
 
   return (
     <div className="Perfil">
@@ -98,7 +106,7 @@ const Perfil = () => {
         <div className="barraPerfil">
           <h1>Tus Datos</h1>
           <div className="imagen-perfil">
-            <img src="https://www.optimaley.com/wp-content/uploads/2014/09/foto-perfil-generica.jpg" alt="imagen-perfil" />
+            <h2 className="iniciales-perfil">{iniciales}</h2>
           </div>
           {
             usuario &&
@@ -109,7 +117,7 @@ const Perfil = () => {
               <p>{usuario.fechaNacimiento}</p>
             </div>
           }
-          
+
           <h1>Tus Intereses</h1>
           <h4 className="añadir-intereses" onClick={() => setAbrirIntereses(true)}><PlaylistAddIcon />Añadir intereses</h4>
 

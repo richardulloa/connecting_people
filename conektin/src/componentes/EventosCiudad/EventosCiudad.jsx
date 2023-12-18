@@ -18,7 +18,6 @@ const EventosCiudad = () => {
 
             <main className="body-webs">
                 <div className="contener-webs">
-
                     <div className="webs-eventos">
                         <h2>Time Out</h2>
                         <div className="detalle-web oddNoticias">

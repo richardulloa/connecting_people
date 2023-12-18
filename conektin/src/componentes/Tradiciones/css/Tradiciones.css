@@ -97,16 +97,12 @@ p#subtitle {
 }
 
 .foto-tradicion {
-  width: 35%;
+  width: 45%;
   overflow: hidden;
 }
 
-.foto-tradicion>img {
-  width: 800px;
-}
-
 .nombre-tradicion {
-  font-size: 3em;
+  font-size: 2.5em;
   margin: 0;
 }
 
@@ -115,4 +111,7 @@ p#subtitle {
   width: 50%;
   padding: 10px;
   margin: 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }

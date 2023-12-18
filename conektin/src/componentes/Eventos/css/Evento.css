@@ -159,10 +159,9 @@
     justify-content: start;
     align-content: space-between;
     flex-wrap: wrap;
-    height: 150px;
+    max-height: 150px;
     overflow-y: auto;
 }
-
 
 .miembros-iniciales {
     font-weight: 700;
@@ -181,7 +180,7 @@
 }
 
 .descripcion-evento {
-    max-width: 100%;
+    max-width: 65%;
     height: 100%;
     line-height: 1.2em;
 }
