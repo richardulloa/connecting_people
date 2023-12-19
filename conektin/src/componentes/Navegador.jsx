@@ -46,7 +46,7 @@ const Navegador = () => {
                     <li><Link to={"/busca-familia"}>Busca una Familia</Link></li>
                     <li><Link to={"/eventosciudad"}>Eventos Ciudad</Link></li>
                     <li><Link to={"/tradiciones"}>Tradiciones Ciudad</Link></li>
-                    <li><Link to={"/eventosintereses"}>Evento Cercano</Link></li>
+                    <li><Link to={"/eventosintereses"}>Eventos para ti</Link></li>
                 </ul>
             </div>
         </header>

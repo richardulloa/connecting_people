@@ -55,7 +55,7 @@ function Alta() {
       })
       .catch((error) => alert(error))
 
-    navigate("/")
+    navigate("/login")
   }
 
   return (

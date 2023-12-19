@@ -2,6 +2,7 @@ import React from "react";
 import './css/InicioConLogin.css'
 import Navegador from "../Navegador";
 import { Link } from "react-router-dom";
+import Footer from "../Footer";
 
 
 const InicioConLogin = () => {
@@ -59,6 +60,7 @@ const InicioConLogin = () => {
 
 
             </main>
+            <Footer />
         </div>
     )
 }

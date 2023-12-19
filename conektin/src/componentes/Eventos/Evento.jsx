@@ -9,6 +9,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import Contexto from "../../context/Contexto";
 import InteresesEvento from '../Intereses/InteresesEvento';
+import Footer from "../Footer";
 
 
 const Evento = () => {
@@ -220,6 +221,7 @@ const Evento = () => {
                     <p className="descripcion-evento">{evento.descripcionEvento}</p>
                 </div>
             </div>
+            <Footer />
         </div>
     );
 }

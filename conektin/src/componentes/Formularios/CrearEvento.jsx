@@ -59,7 +59,6 @@ function CrearEvento() {
             idusuario: usuario.idusuario,
             idintereses: idinteresesEvento
         }
-        console.table(objetoDatos)
 
         const parametros = {
             method: 'POST',
@@ -175,11 +174,9 @@ function CrearEvento() {
                             }
 
                         </div>
-
                     </div>
                     <br />
                     <div className='preguntaEvento'>
-                        <label></label>
                         <input type='submit' className='submit2' />
                     </div>
                 </form>

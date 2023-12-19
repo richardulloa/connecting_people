@@ -7,6 +7,7 @@ import Contexto from "../../context/Contexto";
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import { Link } from "react-router-dom";
+import Footer from "../Footer";
 
 
 const Evento = () => {
@@ -140,7 +141,7 @@ const Evento = () => {
 
                 <section className="info-familia">
                     <div className="img-miembros">
-                        <img className="img-familia" src={`../img/Familias/familia${familia.idfamilia%3+1}.jpg`} alt="imagen familia" />
+                        <img className="img-familia" src={`../img/Familias/familia${familia.idfamilia % 3 + 1}.jpg`} alt="imagen familia" />
                         <section className="miembros-familia">
                             <h3>Miembros</h3>
                             <div className="miembrosFlex">
@@ -191,6 +192,8 @@ const Evento = () => {
                     }
                 </section>
             </section>
+            <Footer />
+
         </div>
     );
 }

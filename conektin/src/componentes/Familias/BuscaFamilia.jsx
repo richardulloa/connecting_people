@@ -3,6 +3,7 @@ import "./css/BuscaFamilia.css"
 import Navegador from "../Navegador";
 import VisualizarFamilia from "./VisualizarFamilia";
 import { useState, useEffect } from "react";
+import Footer from "../Footer";
 
 const BuscaFamilias = () => {
 
@@ -25,19 +26,23 @@ const BuscaFamilias = () => {
 
     return (
         <div className='contenido-busca-familia'>
-            <Navegador />
-            <main className="busca-familia-seccion">
-                <h1 className="titulo-seccion">Familias</h1>
-                <section className="familias-seccion">
-                    {
-                        familias.map(familia => {
-                            return (
-                                <VisualizarFamilia key={familia.idfamilia} familia={familia} />
-                            )
-                        })
-                    }
-                </section>
-            </main>
+            <section>
+                <Navegador />
+                <main className="busca-familia-seccion">
+                    <h1 className="titulo-seccion">Familias</h1>
+                    <section className="familias-seccion">
+                        {
+                            familias.map(familia => {
+                                return (
+                                    <VisualizarFamilia key={familia.idfamilia} familia={familia} />
+                                )
+                            })
+                        }
+                    </section>
+                </main>
+
+            </section>
+            <Footer />
         </div>
     );
 }

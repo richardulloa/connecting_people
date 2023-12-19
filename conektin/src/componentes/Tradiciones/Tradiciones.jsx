@@ -2,6 +2,7 @@ import React from 'react'
 import Navegador from '../Navegador.jsx';
 import './css/Tradiciones.css'
 import DatosTradiciones from './Datos/DatosTradiciones.js'
+import Footer from "../Footer";
 
 
 function Tradiciones() {
@@ -52,6 +53,7 @@ function Tradiciones() {
                 ))
                 }
             </main >
+            <Footer />
         </div >
     )
 }

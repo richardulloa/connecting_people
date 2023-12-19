@@ -1,6 +1,7 @@
 import React from "react";
 import './css/EventosCiudad.css'
 import Navegador from "../Navegador";
+import Footer from "../Footer";
 
 
 const EventosCiudad = () => {
@@ -74,6 +75,7 @@ const EventosCiudad = () => {
                     </div>
                 </div>
             </main >
+            <Footer />
         </div >
     )
 }

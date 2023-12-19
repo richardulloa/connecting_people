@@ -78,5 +78,6 @@
 
 .descripcion-familia {
     height: 100%;
+    overflow: hidden;
     max-width: 400px;
 }

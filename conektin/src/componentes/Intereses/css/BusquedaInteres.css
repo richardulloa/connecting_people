@@ -1,3 +1,11 @@
+.contenido-busqueda-interes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
 .busqueda-interes-seccion {
     width: 80%;
     margin: 50px auto;
@@ -17,4 +25,9 @@
 
 .no-interes {
     text-align: center;
+}
+
+.footer-busqueda {
+    position: absolute;
+    bottom: 0;
 }

@@ -4,6 +4,7 @@ import Contexto from "../../context/Contexto"
 import Navegador from "../Navegador"
 import VisualizarEvento from "./VisualizarEvento"
 import "./css/EventosIntereses.css"
+import Footer from "../Footer";
 
 
 const EventosIntereses = () => {
@@ -56,24 +57,26 @@ const EventosIntereses = () => {
     }, [interesesIdUsuario])
 
     return (
-        <>
-            <Navegador />
-            <main className="eventos-intereses">
-                <h1 className="titulo-seccion">Eventos para ti</h1>
-                <section className="eventos-parati">
-                    {
-                        interesesIdUsuario.length
-                            ? (eventosInteresesUsuario.map((evento, index) => {
+        <div className="contenido-eventos-intereses">
+            <section>
+                <Navegador />
+                <main className="eventos-intereses">
+                    <h1 className="titulo-seccion">Eventos para ti</h1>
+                    <section className="eventos-parati">
+                        {
+                            interesesIdUsuario.length
+                                ? (eventosInteresesUsuario.map((evento, index) => {
 
-                                return <VisualizarEvento key={evento.idevento} evento={evento} />
-                            }
-                            ))
-                            : (<h2 className="no-interes-evento">No hay eventos con tus intereses</h2>)
-                    }
-                </section>
-            </main>
-
-        </>
+                                    return <VisualizarEvento key={evento.idevento} evento={evento} />
+                                }
+                                ))
+                                : (<h2 className="no-interes-evento">No hay eventos con tus intereses</h2>)
+                        }
+                    </section>
+                </main>
+            </section>
+            <Footer />
+        </div>
     )
 
 }
