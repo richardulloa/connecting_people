@@ -7,11 +7,11 @@ import { useForm, } from 'react-hook-form';
 
 function Ayuda() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm()
+   const { register,handleSubmit, formState: { errors } } = useForm()
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-
+       console.log(form.current)
         emailjs.sendForm('service_tpoxpks', 'template_bj93273', form.current, '9vLicmUKckcuN4W_d')
             .then((result) => {
                 form.current.reset();
@@ -30,31 +30,34 @@ function Ayuda() {
                 </div>
             </header>
             <main className='main-ayuda'>
-            <form className='ayuda' ref={form} onSubmit={sendEmail}>
                 <h1>¿Necesitas ayuda?</h1>
+                <form className='ayuda' ref={form} onSubmit={handleSubmit(sendEmail)}>
                     <label className='Pregunta-ayuda'>Nombre</label>
-                    <input className='input-ayuda' id='nombre-ayuda' type="text" name="user_name" {...register('nombre-ayuda', { required: true })} />
-                    <label className='Pregunta-ayuda'>Email</label>
-                    <input className='input-ayuda' type="email" name="user_email"{...register('email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />
+                    <input className='input-ayuda' id='nombre-ayuda' type="text" name="user_name"  {...register('user_name', { required: true })} />
                     {
-                        errors.email?.type === 'required'
+                        errors.user_name?.type === 'required'
+                            ? <div className="errores">Este campo es obligatorio</div>
+                            : null
+                    }
+                    <label className='Pregunta-ayuda'>Email</label>
+                    <input className='input-ayuda' type="email" name="user_email" {...register('user_email', { required: true, pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })} />
+                    {
+                        errors.user_email?.type === 'required'
                             ? <div className="errores">Este campo es obligatorio</div>
                             : null
                     }
                     <label className='Pregunta-ayuda'>Mensaje</label>
-                    <textarea className='mensaje-ayuda' name="message"  id='ayuda-mensaje' {...register('ayuda-mensaje', { required: true })} />
+                    <textarea className='mensaje-ayuda' name="message"  id='ayuda-mensaje'  {...register('message', { required: true })}  />
                     {
-                            errors.password && (
-                                <div className='errores'>
-                                    {errors.password.type === 'required' && 'Este campo es obligatorio'}
-                                </div>)
+                       errors.message?.type === 'required'
+                       ? <div className="errores">Este campo es obligatorio</div>
+                       : null
                         }
+                    
                     <input className='enviar-ayuda' type="submit" value="Enviar" />
                 </form>
             </main>
-               
-
         </div>
     );
 };
-export default Ayuda
+export default Ayuda
