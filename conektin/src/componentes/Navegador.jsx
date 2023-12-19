@@ -25,7 +25,7 @@ const Navegador = () => {
                         <div onClick={() => setMenu(!menu)} className="label-barra"> <ListIcon /> <span className="texto-lista">Menu</span> </div>
                     </div>
                     <div className="buscar">
-                        <input id="barra" className="input-barra" type="text" value={interesBus} placeholder="Buscar" onChange={(interes) => setInteresBus(interes.target.value)} />
+                        <input id="barra" className="input-barra" type="text" value={interesBus} placeholder="Buscar interes" onChange={(interes) => setInteresBus(interes.target.value)} />
                         <Link to={`/busqueda/interes+${interesBus}`} onClick={() => setInteresBus("")} className="label-barra"> <SearchIcon /> </Link>
 
                     </div>
@@ -46,7 +46,7 @@ const Navegador = () => {
                     <li><Link to={"/busca-familia"}>Busca una Familia</Link></li>
                     <li><Link to={"/eventosciudad"}>Eventos Ciudad</Link></li>
                     <li><Link to={"/tradiciones"}>Tradiciones Ciudad</Link></li>
-                    <li><Link to={"/"}>Evento Cercano</Link></li>
+                    <li><Link to={"/eventosintereses"}>Evento Cercano</Link></li>
                 </ul>
             </div>
         </header>

@@ -10,10 +10,6 @@
     align-items: center;
 }
 
-.cabezeraInicio > div img {
-    width: 75px;
-}
-
 .cabezeraInicio > div >.inicioSesion {
     text-decoration: none;
     font-size: 1.15em;

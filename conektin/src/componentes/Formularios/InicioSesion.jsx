@@ -46,7 +46,7 @@ function InicioSesion() {
         <div className='body-inicio'>
             <header className='cabezeraInicio'>
                 <div>
-                    <Link to={"/"}><img src="../logo512.png" alt="logo" /></Link>
+                    <Link to={"/"}><img className="logo-navegador" src="../logo512.png" alt="logo" /></Link>
                     <Link to={"/alta"} className='inicioSesion'>Registrate</Link>
                 </div>
             </header>

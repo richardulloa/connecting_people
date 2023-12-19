@@ -40,7 +40,7 @@
   display: flex;
   justify-content: start;
   flex-direction: column;
-  gap: 5vh;
+  gap: 10vh;
 }
 
 .contenido1 {
@@ -64,6 +64,15 @@
 .contenido2 {
   text-align: center;
   margin-bottom: 20px;
+}
+.contenido2>h2{
+  font-size: 2em;
+  margin-bottom: 3rem;
+}
+
+.carlitos {
+  width: 10vw;
+  margin: 0 auto;
 }
 
 .objetivos {

@@ -11,10 +11,6 @@
     align-items: center;
 }
 
-.cajita img {
-    width: 75px;
-}
-
 .cajita .inicioSesion {
     text-decoration: none;
     font-size: 1.15em;

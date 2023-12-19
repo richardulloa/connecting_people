@@ -63,7 +63,7 @@ function Alta() {
       <header>
         <div className="cajita">
           <Link to={"/"}>
-            <img src="../logo512.png" alt="logo" />
+            <img className="logo-navegador" src="../logo512.png" alt="logo" />
           </Link>
           <Link to={"/login"} className="inicioSesion">
             Inicia sesión

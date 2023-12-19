@@ -3,16 +3,17 @@ import { useParams } from "react-router"
 import Contexto from "../../context/Contexto"
 import Navegador from "../Navegador"
 import VisualizarEvento from "./VisualizarEvento"
+import "./css/EventosIntereses.css"
 
 
 const EventosIntereses = () => {
 
-    const [interesesUsuario, setInteresesUsuario] = useState([])
+    const [interesesIdUsuario, setInteresesIdUsuario] = useState([])
+
     const [eventosInteresesUsuario, setEventosInteresesUsuario] = useState([])
 
     const { nombre } = useParams()
     const { usuario } = useContext(Contexto)
-
     useEffect(() => {
         if (usuario) {
             const API_INTERESES_USUARIO = `http://localhost:3300/api/getinteresesusuario/${usuario.idusuario}`
@@ -23,22 +24,20 @@ const EventosIntereses = () => {
                     return resp.json()
                 })
                 .then((intereses) => {
-                    setInteresesUsuario(intereses)
+                    setInteresesIdUsuario(intereses.map(interes => interes.idinteres))
                 })
                 .catch((error) => window.alert(error))
         }
     }, [usuario])
 
-
     useEffect(() => {
-        const interesid = interesesUsuario.map(interes => interes.idinteres)
-        if (usuario) {
+        if (interesesIdUsuario.length) {
             const API_EVENTOS_INTERESES = `http://localhost:3300/api/eventosinteresusuario`
 
             const parametros = {
                 method: 'GET',
                 headers: {
-                    intereses: interesid
+                    intereses: interesesIdUsuario
                 },
                 mode: 'cors'
             }
@@ -53,24 +52,27 @@ const EventosIntereses = () => {
                 })
                 .catch((error) => window.alert(error))
         }
-    }, [interesesUsuario])
 
-    console.log("EVENTOS INTERES:", eventosInteresesUsuario)
+    }, [interesesIdUsuario])
 
     return (
         <>
             <Navegador />
-            {
-            eventosInteresesUsuario.map((evento,index) =>{
-                console.log(eventosInteresesUsuario.indexOf(evento))
-                if(eventosInteresesUsuario.indexOf(evento) !== index){
-                    return <></>
-                }else {
-                    return <VisualizarEvento key={evento.idevento} evento={evento}/>
-                }
-            })
-            }
-            
+            <main className="eventos-intereses">
+                <h1 className="titulo-seccion">Eventos para ti</h1>
+                <section className="eventos-parati">
+                    {
+                        interesesIdUsuario.length
+                            ? (eventosInteresesUsuario.map((evento, index) => {
+
+                                return <VisualizarEvento key={evento.idevento} evento={evento} />
+                            }
+                            ))
+                            : (<h2 className="no-interes-evento">No hay eventos con tus intereses</h2>)
+                    }
+                </section>
+            </main>
+
         </>
     )
 

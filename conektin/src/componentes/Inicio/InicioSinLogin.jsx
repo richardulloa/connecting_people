@@ -4,9 +4,13 @@ import "./css/InicioSinLogin.css";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
+import Diversity1Icon from '@mui/icons-material/Diversity1';
+import FamilyRestroomIcon from '@mui/icons-material/FamilyRestroom';
+import CelebrationIcon from '@mui/icons-material/Celebration';
+import FestivalIcon from '@mui/icons-material/Festival';
 
 const InicioSinLogin = () => {
+  
   return (
     <div className="no-login">
       <header className="cabecera">
@@ -42,7 +46,8 @@ const InicioSinLogin = () => {
           <h2>Conectando a personas del mundo en Barcelona</h2>
           <div className="objetivos">
             <article>
-              <h3>Familiares en una Tierra Extraña</h3>
+              <Diversity1Icon sx={{fontSize: 50}} />
+              <h3>Familiares extranjeros</h3>
               <p>
                 En Conektin, no estás solo. Conéctate con otras
                 familias migrantes que entienden las experiencias
@@ -51,6 +56,7 @@ const InicioSinLogin = () => {
               </p>
             </article>
             <article>
+              <FamilyRestroomIcon sx={{fontSize: 50}} />
               <h3>Únete a una familia</h3>
               <p>
                 En Conektin, te invitamos a formar parte de algo más grande:
@@ -60,6 +66,7 @@ const InicioSinLogin = () => {
               </p>
             </article>
             <article>
+              <FestivalIcon sx={{fontSize: 50}} />
               <h3>Eventos que unen</h3>
               <p>
                 Organiza y participa en eventos diseñados para compartir
@@ -69,6 +76,7 @@ const InicioSinLogin = () => {
               </p>
             </article>
             <article>
+              <CelebrationIcon sx={{fontSize: 50}} />
               <h3>Tradiciones y cultura</h3>
               <p>
                 Ofrecemos recursos útiles para facilitar la adaptación a la vida en Barcelona,
@@ -78,6 +86,8 @@ const InicioSinLogin = () => {
             </article>
           </div>
         </section>
+
+        <img className="carlitos" src="../img/InicioSin/carlitos.png" alt="Carlitos" />
       </main>
 
       <footer className="pie">
