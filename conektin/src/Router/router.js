@@ -17,6 +17,7 @@ import EventosCiudad from '../componentes/EventosCiudad/EventosCiudad';
 import Ayuda from '../componentes/Ayuda/Ayuda';
 import BusquedaInteres from '../componentes/Intereses/BusquedaInteres';
 import EventosIntereses from '../componentes/Eventos/EventosIntereses';
+import MensajeEnviado from '../componentes/Ayuda/MensajeEnviado';
 
 
 export function Router() {
@@ -41,6 +42,7 @@ export function Router() {
             <Route path='/busqueda/:nombre' element={<BusquedaInteres />} />
             <Route path='/eventosintereses' element={<EventosIntereses />} />
             <Route path='/*' element={<Navigate to='/' />} />
+            <Route path='/ayuda/mensajeenviado' element={<MensajeEnviado />} />
         </Routes>
     )
 }

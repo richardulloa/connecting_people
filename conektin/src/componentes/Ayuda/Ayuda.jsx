@@ -1,21 +1,25 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import './css/Ayuda.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm, } from 'react-hook-form';
+
+
 
 
 function Ayuda() {
 
    const { register,handleSubmit, formState: { errors } } = useForm()
-    const form = useRef();
+  
+   const form = useRef();
+   const navigate = useNavigate()
     const sendEmail = (e) => {
-        e.preventDefault();
        console.log(form.current)
         emailjs.sendForm('service_tpoxpks', 'template_bj93273', form.current, '9vLicmUKckcuN4W_d')
             .then((result) => {
                 form.current.reset();
                 console.log(result.text);
+                navigate('/ayuda/mensajeenviado');
             }, (error) => {
                 console.log(error.text);
             });
@@ -54,7 +58,7 @@ function Ayuda() {
                        : null
                         }
                     
-                    <input className='enviar-ayuda' type="submit" value="Enviar" />
+                    <input className='enviar-ayuda' type="submit" value="Enviar"  />
                 </form>
             </main>
         </div>

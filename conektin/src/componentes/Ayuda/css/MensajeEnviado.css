@@ -1,0 +1,15 @@
+.mensaje-enviado{
+    background-color: #1f4690;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    color: #ffc700;
+    font-size: 1.8em;
+}
+
+.mensaje-enviado>p{
+    color: white;
+    font-size: 0.7em;
+}
