@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react"
 import { useParams } from "react-router"
 import Contexto from "../../context/Contexto"
 import Navegador from "../Navegador"
+import VisualizarEvento from "./VisualizarEvento"
 
 
 const EventosIntereses = () => {
@@ -30,18 +31,19 @@ const EventosIntereses = () => {
 
 
     useEffect(() => {
+        const interesid = interesesUsuario.map(interes => interes.idinteres)
         if (usuario) {
-            const API_EVENTOS_INTERESES = `http://localhost:3300/api/eventosinteresusuario/`
+            const API_EVENTOS_INTERESES = `http://localhost:3300/api/eventosinteresusuario`
 
             const parametros = {
                 method: 'GET',
                 headers: {
-                    intereses: JSON.stringify(interesesUsuario)
+                    intereses: interesid
                 },
                 mode: 'cors'
             }
 
-            const peticion = fetch(API_EVENTOS_INTERESES,parametros)
+            const peticion = fetch(API_EVENTOS_INTERESES, parametros)
             peticion
                 .then((resp) => {
                     return resp.json()
@@ -53,10 +55,22 @@ const EventosIntereses = () => {
         }
     }, [interesesUsuario])
 
-    console.log(interesesUsuario)
+    console.log("EVENTOS INTERES:", eventosInteresesUsuario)
+
     return (
         <>
             <Navegador />
+            {
+            eventosInteresesUsuario.map((evento,index) =>{
+                console.log(eventosInteresesUsuario.indexOf(evento))
+                if(eventosInteresesUsuario.indexOf(evento) !== index){
+                    return <></>
+                }else {
+                    return <VisualizarEvento key={evento.idevento} evento={evento}/>
+                }
+            })
+            }
+            
         </>
     )
 
