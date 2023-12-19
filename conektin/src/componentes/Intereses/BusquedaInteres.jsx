@@ -1,20 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./css/BusquedaInteres.css"
 import Navegador from "../Navegador";
-import Contexto from "../../context/Contexto";
 import { useParams } from "react-router";
+import VisualizarEvento from "../Eventos/VisualizarEvento";
 
 const BusquedaInteres = () => {
 
-    //OBTENER EL NOMBRE DEL INTERES CON PARAMS ENVIADO DESDE EL NAVEGADOR Y ENVIAR ESE NOMBRE A LA API GG
     const [eventosInteres, setEventosInteres] = useState([])
 
-    const { usuario } = useContext(Contexto)
     const { nombre } = useParams()
-
 
     useEffect(() => {
 
-        const API_EVENTOS = "http://localhost:3300/api/eventointeres"
+        const API_EVENTOS = "http://localhost:3300/api/eventosinteres"
 
         const parametros = {
             method: 'GET',
@@ -33,20 +31,18 @@ const BusquedaInteres = () => {
             })
             .catch((error) => window.alert(error))
 
-    }, [usuario])
-
-    useEffect(() => {
-        
-    },[])
+    }, [nombre])
 
     return (
-        <div className='contenido-proximos-eventos'>
+        <div className='contenido-busqueda-interes'>
             <Navegador />
-            <main className="proximos-eventos-seccion">
-                <h1 className="titulo-seccion">Resultados para: {nombre.split("+").slice(1)}</h1>
-                <section className="eventos-seccion">
+            <main className="busqueda-interes-seccion">
+                <h1 className="titulo-seccion">Resultados para: "{nombre.split("+").slice(1)}"</h1>
+                <section className="busqueda-seccion">
                     {
-
+                        nombre.split("+").slice(1)[0].length > 2
+                        ? eventosInteres.map(evento => <VisualizarEvento key={evento.idevento} evento={evento} />)
+                        : <h2 className="no-interes">Escribe un interes para buscarlo</h2>
                     }
                 </section>
             </main>

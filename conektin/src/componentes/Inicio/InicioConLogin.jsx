@@ -48,11 +48,11 @@ const InicioConLogin = () => {
                     </Link>
                 </section>
 
-                <Link to={"/main"} className="secciones evento-cercano">
+                <Link to={"/eventosintereses"} className="secciones evento-cercano">
                     <div className="caja">
                         <div className="image evc"></div>
                         <div className="overlay">
-                            <p className="text">Evento Cercano</p>
+                            <p className="text">Eventos para ti</p>
                         </div>
                     </div>
                 </Link>

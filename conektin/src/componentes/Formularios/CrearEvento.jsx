@@ -134,17 +134,16 @@ function CrearEvento() {
                     <div className='preguntaEvento'>
                         <label htmlFor='descripccion' id='descripccion'>Añade una descripción para el evento</label>
                         <p>Intenta describir lo mejor posible de que tratará el evento y que tipos de actividades se realizaran, con que personas te gustaria encontrarte... Así las personas que lo vean podrán decidir si se adecua a su familia o no.</p>
-                        <textarea id='descripccion' {...register('descripccion', { required: true, minLength: 150, maxLength: 1000 })}></textarea>
+                        <textarea id='descripccion' {...register('descripccion', { required: true, minLength: 50, maxLength: 1000 })}></textarea>
                         {errors.descripccion?.type === 'required'
                             ? <div className='errores'>La descripción es obligatoria</div>
                             : null}
                         {errors.descripccion?.type === 'maxLength' &&
                             <div className='errores'>La descripcción del evento no puede superar los 1000 carácteres</div>}
                         {errors.descripccion?.type === 'minLength' &&
-                            <div className='errores'>La descripcción del evento tiene que tener 150 caracteres como minimo.</div>}
+                            <div className='errores'>La descripcción del evento tiene que tener 50 caracteres como minimo.</div>}
                     </div>
                     <br />
-
                     <div className='preguntaEvento'>
                         <h4 className="añadir-intereses" onClick={() => setAbrirIntereses(true)}><PlaylistAddIcon />Añadir intereses</h4>
 

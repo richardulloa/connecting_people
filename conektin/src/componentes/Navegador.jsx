@@ -26,9 +26,6 @@ const Navegador = () => {
                     </div>
                     <div className="buscar">
                         <input id="barra" className="input-barra" type="text" value={interesBus} placeholder="Buscar" onChange={(interes) => setInteresBus(interes.target.value)} />
-                        {
-                            console.log(interesBus)
-                        }
                         <Link to={`/busqueda/interes+${interesBus}`} onClick={() => setInteresBus("")} className="label-barra"> <SearchIcon /> </Link>
 
                     </div>

@@ -57,4 +57,4 @@ function Ayuda() {
         </div>
     );
 };
-export default Ayuda
+export default Ayuda

@@ -16,6 +16,7 @@ import Tradiciones from '../componentes/Tradiciones/Tradiciones';
 import EventosCiudad from '../componentes/EventosCiudad/EventosCiudad';
 import Ayuda from '../componentes/Ayuda/Ayuda';
 import BusquedaInteres from '../componentes/Intereses/BusquedaInteres';
+import EventosIntereses from '../componentes/Eventos/EventosIntereses';
 
 
 export function Router() {
@@ -38,6 +39,7 @@ export function Router() {
             <Route path='/eventosciudad' element={<EventosCiudad />} />
             <Route path='/ayuda' element={<Ayuda />} />
             <Route path='/busqueda/:nombre' element={<BusquedaInteres />} />
+            <Route path='/eventosintereses' element={<EventosIntereses />} />
             <Route path='/*' element={<Navigate to='/' />} />
         </Routes>
     )
