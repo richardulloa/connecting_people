@@ -1,0 +1,42 @@
+
+.pie {
+    padding: 10px;
+    background-color: black;
+  }
+  
+  .pie-flex {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .enlacesimg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .enlacespag {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: end;
+  }
+  
+  .pie h3,
+  .enlacespag,
+  .enlacespag a,
+  .enlacesimg,
+  .fi,
+  .ti,
+  .ii {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .pie h3 {
+    margin-right: 30px;
+  }

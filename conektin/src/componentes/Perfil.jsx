@@ -10,6 +10,7 @@ import { useParams } from "react-router"
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
+import Footer from "./Footer"
 
 
 const Perfil = () => {
@@ -175,6 +176,10 @@ const Perfil = () => {
           </section>
         </div>
       </div>
+      <div className="footer">
+        <Footer/>
+      </div>
+
     </div >
   );
 };
